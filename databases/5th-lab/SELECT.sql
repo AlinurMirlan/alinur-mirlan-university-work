@@ -7,7 +7,13 @@ GO
 
 SELECT Сырье.КодСырья AS Код_Сырья, Сырье.НаимСырья AS Наименование FROM Склад
 	RIGHT OUTER JOIN Сырье ON Сырье.КодСырья = Склад.КодСырья
-	WHERE Склад.КодСырья IS NULL;
+	WHERE Склад.КодСырья IS NULL
+	ORDER BY Сырье.КодСырья;
+
+-- Alternative to the above
+SELECT Сырье.КодСырья AS Код_Сырья, Сырье.НаимСырья AS Наименование FROM Сырье
+	WHERE Сырье.КодСырья NOT IN (SELECT Склад.КодСырья FROM Склад)
+	ORDER BY Сырье.КодСырья;;
 GO
 
 SELECT Склад.КодСырья AS Код_Сырья,
