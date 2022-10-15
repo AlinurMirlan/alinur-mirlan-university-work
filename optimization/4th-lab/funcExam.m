@@ -1,6 +1,6 @@
 function [] = funcExam(func)
-    xCoordinates = -20:.2:20;
-    yCoordinates = -20:.2:20;
+    xCoordinates = -20:.5:20;
+    yCoordinates = -20:.5:20;
     [x, y] = meshgrid(xCoordinates, yCoordinates);
     z = func(x, y);
     contour(x, y, z, 12);
@@ -8,7 +8,7 @@ function [] = funcExam(func)
     contourLines = contour(x, y, z, 3);
     clabel(contourLines);
     pause
-    surfc(z);
+    surfc(x, y, z);
     pause
     % Making that our function accepts one parameter instead of two. This
     % is due to the fminunc's incapability of taking functions with
