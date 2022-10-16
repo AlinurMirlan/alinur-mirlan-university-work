@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+
+/* HEADER */
+header {
+    display: flex;
+    background: #fff;
+    height: 65px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2 {
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+header ul.nav {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0 32px;
+}
+
+header ul.nav li.nav-item {
+    letter-spacing: 1.67px;
+    line-height: 1.2;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+header ul.nav li.nav-item button {
+    margin-left: 32px;
+    width: 64px;
+    height: 23px;
+    background-color: #000;
+    letter-spacing: 1.67px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+header a.logo {
+    background-image: url(../artifacts/logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 98px;
+    height: 13px;
+}
+
+/* CONTENT */
+
+
+
+/* FIRST BLOCK */
+.first-block {
+    height: 800px;
+    background-image: url(../artifacts/first-block-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.first-block-content {
+    justify-content: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+}
+
+.first-block-content h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 57px;
+    color: #fff;
+    letter-spacing: 0.81px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.first-block-content span {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+.first-block-content .buttons {
+    margin-top: 30px;
+    justify-content: center;
+    display: flex;
+    gap: 0 20px;
+}
+
+.first-block-content .buttons button {
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0 );
+    border-color: #fff;
+    border-style: solid;
+    width: 215px;
+    height: 36px;
+}
+
+/* SECOND BLOCK */
+
+.second-block {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.second-block-content {
+    gap: 0 20px;
+    display: flex;
+}
+
+.first-subblock, .second-subblock {
+    gap: 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-family: 'Montserrat', sans-serif;
+    width: 710px;
+    height: 500px;
+}
+
+.first-subblock h3, .second-subblock h3 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 34px;
+    color: #fff;
+}
+
+.second-block .subtext {
+    display: flex;
+    flex-direction: column;
+    gap: 9px 0;
+}
+
+.first-subblock, .second-subblock {
+    text-align: center;
+    color: #fff;
+}
+
+.first-subblock span:first-child, .second-subblock span:first-child {
+    font-size: 16px;
+}
+
+.first-subblock span:nth-child(2), .second-subblock span:nth-child(2) {
+    font-size: 15px;
+}
+
+.first-subblock {
+    background-image: url(../artifacts/second-block-first-image.png);
+}
+
+.second-subblock {
+    background-image: url(../artifacts/second-block-second-image.png);
+}
+
+.first-subblock .buttons button, .second-subblock .buttons button {
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0 );
+    border: none;
+    width: 215px;
+    height: 36px;
+}
+
+.first-subblock .buttons, .second-subblock .buttons {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+/* THIRD BLOCK */
+
+.third-block {
+    margin-top: 16px;
+    background-image: url(../artifacts/third-block-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 430px;
+}
+
+.third-block h3 {
+    
+}
