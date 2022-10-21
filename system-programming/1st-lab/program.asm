@@ -272,6 +272,7 @@ fail:	writeMessage passwordFailMessage
 				ret 6
 
 		error:	writeMessage errorMessage
+				add SP, sBytesForLocals
 				pop BP
 				ret 6
 		SaveMessage ENDP
