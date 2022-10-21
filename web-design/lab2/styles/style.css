@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+}
+
+body {
+    width: 1440px;
+    margin: 0px auto;
+}
+
+#logo {
+    width: 80px;
+    height: 24px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(../artifacts/logo.png);
+    position: relative;
+    margin-left: 80px;
+    top: 29px;
+}
+
+ul.nav {
+    display: inline-block;
+    top: 23px;
+    position: relative;
+    margin-left: 602px;
+}
+
+.nav li {
+    display: inline-block;
+    margin-left: 40px;
+    font-size: 14px;
+}
+
+.nav li:first-child {
+    margin-left: 0px;
+}
+
+header img {
+    position: relative;
+    margin-left: 80px;
+    top: 29px;
+}
+
+header button {
+    margin-left: 107px;
+    background-color: #DDDBDA;
+    border-radius: 3px;
+    border: none;
+    font-size: 12px;
+    width: 114px;
+    height: 42px;
+    position: absolute;
+    right: 80px;
+    top: 20px;
+}
+
+header button:hover {
+    background-color: lightgray;
+}
+
+header {
+    height: 82px;
+    position: relative;
+}
+
+.color-block {
+    margin: 80px auto 18px auto;
+    display: block;
+    background-color: #3F3B3D;
+    width: 1280px;
+    height: 482px;
+}
+
+.first-section .color-block h1 {
+    font-weight: normal;
+    font-size: 33px;
+    position: relative;
+    left: 64px;
+    margin: 264px 0px 28px 0px;
+}
+
+.color-block .button-anchor {
+    font-size: 16px;
+    display: inline-block;
+    line-height: 45px;
+    text-align: center;
+    width: 178px;
+    height: 45px;
+    border-radius: 3px;
+}
+
+.color-block .button-anchor:hover {
+    background-color: red;
+}
+
+.first-section a:first-of-type {
+    background-color: #F14814;
+    margin-left: 64px;
+}
+
+section.first-section {
+    position: relative;
+}
+
+.first-section .color-block {
+    position: relative;
+    color: #fff;
+    display: inline-block;
+    z-index: 0;
+    left: 92px;
+}
+
+.welcome-image-block {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    width: 768px; 
+    height: 562px;
+    right: 68px;
+}
+
+.merchandise {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    width: 421px;
+    height: 421px;
+    margin-bottom: 8px;
+}
+
+.merchandise p {
+    color: #3F3B3D;
+    font-size: 12px;
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+}
+
+.merchandise p:first-of-type {
+    bottom: 12px;
+    left: 12px;
+}
+
+.welcome-image-block + .merchandise {
+    margin-left: 80px;
+}
+
+.divider {
+    position: absolute;
+    bottom: 40px;
+    width: 397px;
+    height: 1px;
+    left: 12px;
+    background-color: rgba(0, 0, 0, 0.08);  
+}
+
+.first-section .image-block {
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    width: 636px;
+    height: 477px;
+    background-color: gray;
+    position: relative;
+    margin-bottom: 34px;
+    margin-left: 8px;
+}
+
+.merchandise + .image-block {
+    margin-left: 80px;
+}
+
+.first-section .image-block p {
+    position: absolute;
+}
+
+.first-section .image-block p:first-of-type {
+    font-size: 39px;
+}
+
+.first-section .image-block p:last-of-type {
+    font-size: 14px;
+}
+
+.first-section {
+    display: block;
+    font-size: 0px;
+}
+
+.second-section {
+    display: block;
+    font-size: 0px;
+    background-color: #F8F9FA;
+}
+
+.second-section div.block {
+    color: #3F3B3D;
+    vertical-align: top;
+    display: inline-block;
+    background-color: #DCEAE9;
+    width: 533px;
+    height: 536px;
+    text-align: center;
+    font-size: 12px;
+}
+
+div.block.main-image-info blockquote {
+    margin: 204px 0px 29px 63px;
+    width: 408px;
+    height: 128px;
+    font-size: 24px;
+}
+
+div.block.main-image-info span {
+    font-size: 12px;
+}
+
+.main-image-block + div.block {
+    margin-left: 8px;
+}
+
+.second-section .main-image-block {
+    margin-left: 186px;
+}
+
+.second-section h3:first-of-type {
+    text-align: center;
+    padding: 49px 0px 31px 0px;
+    font-size: 29px;
+    font-weight: normal;
+    color: #3F3B3D;
+}
+
+div.block.main-image-info + h3 {
+    text-align: center;
+    font-size: 29px;
+    color: #BDBDBD;
+    font-weight: normal;
+    padding: 79px 0px 64px 0px;
+}
+
+.second-section > img {
+    margin-left: 32px;
+    margin-bottom: 47px;
+}
+
+.second-section > img:first-of-type {
+    margin-left: 80px;
+}
+
+footer {
+    height: 100px;
+}

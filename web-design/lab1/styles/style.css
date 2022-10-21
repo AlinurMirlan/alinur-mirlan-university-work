@@ -1,0 +1,16 @@
+﻿.container {
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    text-align: left;
+}
+
+th {
+    background-color: #b4ffd6;
+}
