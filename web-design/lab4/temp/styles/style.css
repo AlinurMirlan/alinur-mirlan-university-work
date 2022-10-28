@@ -1,0 +1,127 @@
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0px;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+.banner {
+    margin-bottom: 20px;
+}
+
+.banner-in {
+    display: flex;
+}
+
+h1.title {
+    color: #134003;
+    background-color: #A4B56A;
+    font-size: 54px;
+    line-height: 1.18;
+    padding: 0 21px 0 32px;
+    display: flex;
+    align-items: center;
+}
+
+.banner-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1.title, .banner-img {
+    width: 50%;
+}
+
+.ext-bl-in {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 22px;
+    row-gap: 17px;
+}
+
+.ext-bl-item:first-child {
+    grid-row: span 3;
+}
+
+.ext-bl-item:nth-child(2) {
+    grid-row: span 2;
+}
+
+.ext-bl-item:nth-child(4) {
+    grid-column: 2;
+}
+
+.ext-bl-item:nth-child(5) {
+    grid-row: 2/4;
+    grid-column: 3;
+}
+
+.ext-bl-item {
+    position: relative;
+}
+
+h2.title {
+    background-color: #A4B56A;
+    font-size: 36px;
+    line-height: 1.16;
+    color: #fff;
+    text-transform: uppercase;
+    min-height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h4.title {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 22px;
+    line-height: 1.18;
+    background-color: #A4B56A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 11px 0 10px 0;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+    h1, h2, h3 {
+        font-size: 20px;
+    }
+    .banner-in {
+        flex-direction: column;
+    }
+
+    h1.title, .banner-img {
+        width: 100%;
+    }
+
+    .ext-bl-in {
+        display: flex;
+        flex-direction: column;
+        gap: unset;
+    }
+
+    .ext-bl-item:nth-child(3) {
+        order: -1;
+    }
+
+    .ext-bl-item img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}

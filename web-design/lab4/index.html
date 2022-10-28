@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <title>Lab-4</title>
+</head>
+<body>
+    <header class="main-header">
+        <a href="#" class="logo">
+            <img src="artifacts/logo.png" alt="Company logo">
+        </a>
+        <nav class="main-header-nav" id="navigation">
+            <a href="#">Главная</a>
+            <a href="#">О нас</a>
+            <a href="#">Товары</a>
+            <a href="#">Услуги</a>
+            <a href="#">Контакты</a>
+        </nav>
+        <a href="#" id="header-nav-button" onclick="navBarTrigger()">Меню</a>
+    </header>
+    <main>
+        <section class="banner">
+            <h1>Мы создаем нашу продукцию из качественных материалов</h1>
+            <div class="img-block">
+                <img src="artifacts/1-block-right.jpg" alt="turf">
+            </div>
+        </section>
+        <section class="default-grid first-block">
+            <div class="block">
+                <img src="artifacts/bin.jpg" alt="bin">
+                <h4>Урны</h4>
+            </div>
+            <div class="block">
+                <img src="artifacts/basin.jpg" alt="basin">
+                <h4>Вазоны</h4>
+            </div>
+            <div class="block">
+                <img src="artifacts/bench.jpg" alt="bench">
+                <h4>Скамейки</h4>
+            </div>
+            <div class="block">
+                <h2>Экстерьер</h2>
+            </div>
+            <div class="block">
+                <img src="artifacts/fence.jpg" alt="fence">
+                <h4>Заборы, ограды</h4>
+            </div>
+        </section>
+        <section class="reverse-grid second-block">
+            <div class="block">
+                <h2>Интерьер</h2>
+            </div>
+            <div class="block">
+                <img src="artifacts/loop.png" alt="loop">
+                <h4>Полотецесушители</h4>
+            </div>
+            <div class="block">
+                <img src="artifacts/counter.png" alt="kitchen counter">
+                <h4>Ресепшн Стойки</h4>
+            </div>
+            <div class="block">
+                <h4>Прочее</h4>
+            </div>
+            <div class="block">
+                <img src="artifacts/washbasin.png" alt="washbasin">
+                <h4>Столешницы</h4>
+            </div>
+        </section>
+        <section class="reverse-grid third-block">
+            <div class="block">
+                <img src="artifacts/bicycle-parking.png" alt="bicycle parking">
+                <h4>Велопарковки</h4>
+            </div>
+            <div class="block">
+                <img src="artifacts/pole.png" alt="parking pole">
+                <h4>Столбики парковочные</h4>
+            </div>
+            <div class="block">
+                <img src="artifacts/column-guard.png" alt="column guards">
+                <h4>Защита колонн, столбов </h4>
+            </div>
+            <div class="block">
+                <img src="artifacts/pipes.png" alt="pipes">
+                <h4>Колесоотбойники</h4>
+            </div>
+            <div class="block">
+                <h2>Для парковки</h2>
+            </div>
+            <div class="block">
+                <img src="artifacts/parking-barriers.png" alt="parking barriers">
+                <h4>Парковочные Барьеры</h4>
+            </div>
+        </section>
+        <section class="reverse-grid fourth-block">
+            <div class="block">
+                <h2>Спортивное оборудование</h2>
+            </div>
+            <div class="block">
+                <img src="artifacts/table-tennis.png" alt="table tennis">
+            </div>
+            <div class="block">
+                <img src="artifacts/chess.png" alt="chess table">
+            </div>
+            <div class="block">
+                <img src="artifacts/workout-facilities.png" alt="workout zone">
+            </div>
+            <div class="block">
+                <img src="artifacts/chess2.png" alt="chess table">
+            </div>
+        </section>
+        <section class="default-grid fifth-block">
+            <div class="block">
+                <img src="artifacts/carousel.png" alt="carousel">
+            </div>
+            <div class="block">
+            </div>
+            <div class="block">
+            </div>
+            <div class="block">
+                <h2>Детские площадки</h2>
+            </div>
+            <div class="block">
+                <img src="artifacts/carousel2.png" alt="carousel">
+                <h4>Заборы, ограды</h4>
+            </div>
+        </section>
+        <section class="reverse-grid sixth-block">
+            <div class="block">
+                <h2>Плитки, Дорожки</h2>
+            </div>
+            <div class="block">
+                <img src="artifacts/ebony-tiles.png" alt="ebony tiles">
+            </div>
+            <div class="block">
+                <img src="artifacts/round-tiles.png" alt="round tiles">
+            </div>
+            <div class="block">
+                <img src="artifacts/mixed-tiles.png" alt="mixed tiles">
+            </div>
+            <div class="block">
+                <img src="artifacts/tile-on-grass.png" alt="tile-on-grass">
+            </div> 
+        </section>
+        <section class="default-grid seventh-block">
+            <div class="block">
+            </div>
+            <div class="block">
+            </div>
+            <div class="block">
+            </div>
+            <div class="block">
+                <h2>Прочие изделия</h2>
+            </div>
+            <div class="block">
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-wrapper">
+            <nav class="footer-column">
+                <p>Вопросы:</p>
+                <a href="#">Как сделать заказ?</a>
+                <a href="#">Оплата и доставка</a>
+            </nav>
+            <div class="footer-column">
+                <p>Свяжитесь c нами:</p>
+                <address>
+                    <a href="tel+77014321814">+7 (701) 432 18 14</a>
+                    <a href="mailto:novatex1234@mail.ru">novatex1234@mail.ru</a>
+                </address>
+            </div>
+            <div class="footer-column">
+                <p>Наш адрес:</p>
+                <address>
+                    <p>Казахстан, г.Нур-Султан.</p>
+                    <p>ул. Шербакова, д.12/3</p>
+                </address>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function navBarTrigger() {
+            let navigation = document.getElementById("navigation");
+            if (navigation.className === "main-header-nav") {
+                navigation.className += " nav-rollup";
+            } else {
+                navigation.className = "main-header-nav";
+            }
+        }
+    </script>
+</body>
+</html>
