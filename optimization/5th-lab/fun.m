@@ -1,4 +1,4 @@
-function z = func(u1, u2)
+function z = fun(u1, u2)
     a1 = 9;
     a2 = -9;
     r1 = 5.9142;
