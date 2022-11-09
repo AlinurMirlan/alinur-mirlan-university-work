@@ -1,0 +1,15 @@
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\bin\Debug\net6.0\symbolic-pointers-d.exe
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\bin\Debug\net6.0\symbolic-pointers-d.deps.json
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\bin\Debug\net6.0\symbolic-pointers-d.runtimeconfig.json
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\bin\Debug\net6.0\symbolic-pointers-d.dll
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\bin\Debug\net6.0\symbolic-pointers-d.pdb
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\obj\Debug\net6.0\symbolic-pointers-d.csproj.AssemblyReference.cache
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\obj\Debug\net6.0\symbolic-pointers-d.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\obj\Debug\net6.0\symbolic-pointers-d.AssemblyInfoInputs.cache
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\obj\Debug\net6.0\symbolic-pointers-d.AssemblyInfo.cs
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\obj\Debug\net6.0\symbolic-pointers-d.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\obj\Debug\net6.0\symbolic-pointers-d.dll
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\obj\Debug\net6.0\refint\symbolic-pointers-d.dll
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\obj\Debug\net6.0\symbolic-pointers-d.pdb
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\obj\Debug\net6.0\symbolic-pointers-d.genruntimeconfig.cache
+C:\Alinur\university-work\icpc-training\contest-1\symbolic-pointers-d\symbolic-pointers-d\obj\Debug\net6.0\ref\symbolic-pointers-d.dll

@@ -1,0 +1,15 @@
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\bin\Debug\net6.0\divisibility-d.exe
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\bin\Debug\net6.0\divisibility-d.deps.json
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\bin\Debug\net6.0\divisibility-d.runtimeconfig.json
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\bin\Debug\net6.0\divisibility-d.dll
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\bin\Debug\net6.0\divisibility-d.pdb
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\obj\Debug\net6.0\divisibility-d.csproj.AssemblyReference.cache
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\obj\Debug\net6.0\divisibility-d.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\obj\Debug\net6.0\divisibility-d.AssemblyInfoInputs.cache
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\obj\Debug\net6.0\divisibility-d.AssemblyInfo.cs
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\obj\Debug\net6.0\divisibility-d.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\obj\Debug\net6.0\divisibility-d.dll
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\obj\Debug\net6.0\refint\divisibility-d.dll
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\obj\Debug\net6.0\divisibility-d.pdb
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\obj\Debug\net6.0\divisibility-d.genruntimeconfig.cache
+C:\Alinur\university-work\icpc-training\contest-1\divisibility-d\divisibility-d\obj\Debug\net6.0\ref\divisibility-d.dll

@@ -1,0 +1,15 @@
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\bin\Debug\net6.0\roman-arithmetic-n.exe
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\bin\Debug\net6.0\roman-arithmetic-n.deps.json
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\bin\Debug\net6.0\roman-arithmetic-n.runtimeconfig.json
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\bin\Debug\net6.0\roman-arithmetic-n.dll
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\bin\Debug\net6.0\roman-arithmetic-n.pdb
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\obj\Debug\net6.0\roman-arithmetic-n.csproj.AssemblyReference.cache
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\obj\Debug\net6.0\roman-arithmetic-n.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\obj\Debug\net6.0\roman-arithmetic-n.AssemblyInfoInputs.cache
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\obj\Debug\net6.0\roman-arithmetic-n.AssemblyInfo.cs
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\obj\Debug\net6.0\roman-arithmetic-n.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\obj\Debug\net6.0\roman-arithmetic-n.dll
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\obj\Debug\net6.0\refint\roman-arithmetic-n.dll
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\obj\Debug\net6.0\roman-arithmetic-n.pdb
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\obj\Debug\net6.0\roman-arithmetic-n.genruntimeconfig.cache
+C:\Alinur\university-work\icpc-training\contest-1\roman-arithmetic-n\roman-arithmetic-n\obj\Debug\net6.0\ref\roman-arithmetic-n.dll
