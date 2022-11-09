@@ -6,7 +6,7 @@ function [x, y, iterations] = steepestDescent(startPoint, e1, e2, M)
     gradient = [funcDx(currentPoint), funcDy(currentPoint)];
     gradientLength = sqrt(gradient(1).^2 + gradient(2).^2);
     iterations = 0;
-    while iterations < M || gradientLength > e1
+    while iterations < M && gradientLength > e1
         iterations = iterations + 1;
         funcOfA = @(a) func(currentPoint - a.*gradient);
         left = 0;
