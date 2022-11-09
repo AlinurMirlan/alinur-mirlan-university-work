@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-block">
+        <div class="container">
+            <div class="form-block-in">
+                <div class="form-block-img">
+                    <img src="img/man.png" alt="enquiry form">
+                </div>
+                <div class="form-block-enquiry">
+                    <h2 class="title">Enquiry Form</h2>
+                    <p>Dont be shy, Just tell us about yourself and we’ll figure out the best option for you and your project. Dont like Filling up forms ? Mail us then <a href="#">Company@email.com</a></p>
+
+                    <form action="">
+                        <div class="form-in">
+                            <div class="form-row">
+                                <div class="form-field-wrap">
+                                    <input type="text" class="form-field" placeholder="Name" required>
+                                    <span class="error">Error message informing me of a problem</span>
+                                </div>
+                                <div class="form-field-wrap">
+                                    <input type="text" class="form-field" placeholder="Company name" required>
+                                    <span class="error">Error message informing me of a problem</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field-wrap">
+                                    <input type="email" class="form-field" placeholder="Email" required>
+                                    <span class="error">Error message informing me of a problem</span>
+                                </div>
+                                <div class="form-field-wrap">
+                                    <!-- type in regeex in the pattern attribute -->
+                                    <input type="phone" pattern="" class="form-field" placeholder="Phone" required>
+                                    <span class="error">Error message informing me of a problem</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field-wrap">
+                                    <input type="text" class="form-field" placeholder="Servica looking for" required>
+                                    <span class="error">Error message informing me of a problem</span>
+                                </div>
+                                <div class="form-field-wrap">
+                                    <input type="text" class="form-field" placeholder="Industry" required>
+                                    <span class="error">Error message informing me of a problem</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <select name="" id="">
+                                    <option value="">Kyrgyzstan</option>
+                                    <option value="">Russia</option>
+                                    <option value="">Kazakhstan</option>
+                                </select>
+                            </div>
+                            <div class="form-row row-wrap">
+                                <div class="form-rad">
+                                    <input type="radio" id="silverRadio" name="radio-plan">
+                                    <label for="silverRadio"><span></span>Silver</label>
+                                </div>
+                                <div class="form-rad">
+                                    <input type="radio" id="goldRadio" name="radio-plan">
+                                    <label for="goldRadio"><span></span>Gold</label>
+                                </div>
+                                <div class="form-rad">
+                                    <input type="radio" id="platinumRadio" name="radio-plan">
+                                    <label for="platinumRadio"><span></span>Platinum</label>
+                                </div>
+                            </div>
+                            <div class="form-row form-textarea">
+                                <textarea name="" id="" cols="30" rows="4" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <button type="submit" class="btn">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
