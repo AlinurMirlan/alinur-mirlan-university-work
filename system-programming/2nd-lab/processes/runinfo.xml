@@ -1,0 +1,7 @@
+﻿<runinfo>
+	<memory_limit>268435456</memory_limit>
+	<processor_time_limit>1000</processor_time_limit>
+	<thread_count_limit>10</thread_count_limit>
+	<handle_count_limit>300</handle_count_limit>
+</runinfo>
+

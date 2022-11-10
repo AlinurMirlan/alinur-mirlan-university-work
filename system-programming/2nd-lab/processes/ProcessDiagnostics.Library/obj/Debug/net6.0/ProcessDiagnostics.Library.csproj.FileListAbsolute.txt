@@ -1,0 +1,12 @@
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\bin\Debug\net6.0\ProcessDiagnostics.Library.deps.json
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\bin\Debug\net6.0\ProcessDiagnostics.Library.dll
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\bin\Debug\net6.0\ProcessDiagnostics.Library.pdb
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\obj\Debug\net6.0\ProcessDiagnostics.Library.csproj.AssemblyReference.cache
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\obj\Debug\net6.0\ProcessDiagnostics.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\obj\Debug\net6.0\ProcessDiagnostics.Library.AssemblyInfoInputs.cache
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\obj\Debug\net6.0\ProcessDiagnostics.Library.AssemblyInfo.cs
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\obj\Debug\net6.0\ProcessDiagnostics.Library.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\obj\Debug\net6.0\ProcessDiagnostics.Library.dll
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\obj\Debug\net6.0\refint\ProcessDiagnostics.Library.dll
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\obj\Debug\net6.0\ProcessDiagnostics.Library.pdb
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics.Library\obj\Debug\net6.0\ref\ProcessDiagnostics.Library.dll

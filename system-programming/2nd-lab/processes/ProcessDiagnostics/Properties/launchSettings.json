@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ProcessDiagnostics": {
+      "commandName": "Project",
+      "commandLineArgs": "Notepad.exe"
+    }
+  }
+}
