@@ -27,3 +27,4 @@ C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostic
 C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics\obj\Debug\net6.0\ProcessDiagnostics.pdb
 C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics\obj\Debug\net6.0\ProcessDiagnostics.genruntimeconfig.cache
 C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics\obj\Debug\net6.0\ref\ProcessDiagnostics.dll
+C:\Alinur\university-work\system-programming\2nd-lab\processes\ProcessDiagnostics\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "rbuJHYJck3FvJIZDZumjcvGUjuxpL3EqjCQJhaUdLXhw2QukbhVNY+/JuwCpXkmwjkRmu8xXpC6rXPTkYmTaWQ==",
+  "dgSpecHash": "YwaW1roOm7OBCPTk6OiVLDJCrZHHVOxwCXCa5parRn+0n1aLYxaATR9MG6QZz1MjUrmKHv4LVvW9e3Ooq2Fg0A==",
   "success": true,
   "projectFilePath": "C:\\Alinur\\university-work\\system-programming\\2nd-lab\\processes\\ProcessDiagnostics\\ProcessDiagnostics.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.0\\microsoft.extensions.configuration.binder.7.0.0.nupkg.sha512",
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\7.0.0\\microsoft.extensions.configuration.fileextensions.7.0.0.nupkg.sha512",
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.configuration.json\\7.0.0\\microsoft.extensions.configuration.json.7.0.0.nupkg.sha512",
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",

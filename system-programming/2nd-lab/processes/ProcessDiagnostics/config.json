@@ -1,3 +1,5 @@
 {
-    "processLimitPath": "C:\\Alinur\\university-work\\system-programming\\2nd-lab\\processes\\runinfo.xml"
+    "processLimitPath": "C:\\Alinur\\university-work\\system-programming\\2nd-lab\\processes\\runinfo.xml",
+    "warningNotificationDelay": 1,
+    "notificationDelay": 2
 }
