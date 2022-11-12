@@ -1,0 +1,15 @@
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\bin\Debug\net6.0\leftnright-f.exe
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\bin\Debug\net6.0\leftnright-f.deps.json
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\bin\Debug\net6.0\leftnright-f.runtimeconfig.json
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\bin\Debug\net6.0\leftnright-f.dll
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\bin\Debug\net6.0\leftnright-f.pdb
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\obj\Debug\net6.0\leftnright-f.csproj.AssemblyReference.cache
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\obj\Debug\net6.0\leftnright-f.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\obj\Debug\net6.0\leftnright-f.AssemblyInfoInputs.cache
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\obj\Debug\net6.0\leftnright-f.AssemblyInfo.cs
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\obj\Debug\net6.0\leftnright-f.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\obj\Debug\net6.0\leftnright-f.dll
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\obj\Debug\net6.0\refint\leftnright-f.dll
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\obj\Debug\net6.0\leftnright-f.pdb
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\obj\Debug\net6.0\leftnright-f.genruntimeconfig.cache
+C:\Alinur\university-work\icpc-training\contest-2\leftnright-f\leftnright-f\obj\Debug\net6.0\ref\leftnright-f.dll

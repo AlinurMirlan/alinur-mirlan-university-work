@@ -1,0 +1,15 @@
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\bin\Debug\net6.0\binary-serach-time-complexity-h.exe
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\bin\Debug\net6.0\binary-serach-time-complexity-h.deps.json
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\bin\Debug\net6.0\binary-serach-time-complexity-h.runtimeconfig.json
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\bin\Debug\net6.0\binary-serach-time-complexity-h.dll
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\bin\Debug\net6.0\binary-serach-time-complexity-h.pdb
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\obj\Debug\net6.0\binary-serach-time-complexity-h.csproj.AssemblyReference.cache
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\obj\Debug\net6.0\binary-serach-time-complexity-h.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\obj\Debug\net6.0\binary-serach-time-complexity-h.AssemblyInfoInputs.cache
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\obj\Debug\net6.0\binary-serach-time-complexity-h.AssemblyInfo.cs
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\obj\Debug\net6.0\binary-serach-time-complexity-h.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\obj\Debug\net6.0\binary-serach-time-complexity-h.dll
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\obj\Debug\net6.0\refint\binary-serach-time-complexity-h.dll
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\obj\Debug\net6.0\binary-serach-time-complexity-h.pdb
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\obj\Debug\net6.0\binary-serach-time-complexity-h.genruntimeconfig.cache
+C:\Alinur\university-work\icpc-training\contest-2\binary-serach-time-complexity-h\binary-serach-time-complexity-h\obj\Debug\net6.0\ref\binary-serach-time-complexity-h.dll
