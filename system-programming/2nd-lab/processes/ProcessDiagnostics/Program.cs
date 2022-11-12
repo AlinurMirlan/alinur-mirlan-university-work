@@ -61,7 +61,10 @@ namespace ProcessDiagnostics
             {
                 processLimit = (ProcessLimit?)xmlSerializer.Deserialize(processLimitFileStream);
                 if (processLimit is null)
+                {
+                    Console.WriteLine($"Limits aren't properly set. Please, make sure everything's okay in {LimitsFilePath}");
                     return -1;
+                }
             }
 
             double fraction = .85;
@@ -79,6 +82,10 @@ namespace ProcessDiagnostics
 
             ProcessMessageBuilder message = new(process);
             ProcessEvent.Invoke(null, new ProcessEventInfo(process) { Type = 0, Message = "Started" });
+            process.Exited += (_, _) =>
+            {
+                ProcessEvent.Invoke(null, new ProcessEventInfo(process) { Type = 0, Message = "Finished" });
+            };
             Task[] warningTasks = new Task[4];
             for (int i = 0; i < warningTasks.Length; i++)
                 warningTasks[i] = Task.CompletedTask;
