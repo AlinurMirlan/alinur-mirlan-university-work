@@ -28,6 +28,8 @@ DECLARE @AvgDrink int = (SELECT AVG(—ырье_1.÷ена—ырь€) AS —редн€€_цена FROM —ырь
 	INNER JOIN “ипы_сырь€ ON —ырье_1. од“ипа—ырь€ = “ипы_сырь€. од“ипа—ырь€
 	WHERE “ипы_сырь€.Ќаим“ипа—ырь€ = N'Ќапитки');
 
+SELECT @AvgDrink AS —редн€€_цена_напитков, @AvgProduct AS —редн€€_цена_продуктов;
+
 DECLARE @Iterations int = 0;
 
 IF @AvgProduct > @AvgDrink
@@ -38,17 +40,25 @@ IF @AvgProduct > @AvgDrink
 					INNER JOIN “ипы_сырь€ ON —ырье_1. од“ипа—ырь€ = “ипы_сырь€. од“ипа—ырь€
 					WHERE “ипы_сырь€.Ќаим“ипа—ырь€ = N'ѕродукты';
 
+				SET @AvgProduct = (SELECT AVG(—ырье_1.÷ена—ырь€) AS —редн€€_цена FROM —ырье_1
+								INNER JOIN “ипы_сырь€ ON —ырье_1. од“ипа—ырь€ = “ипы_сырь€. од“ипа—ырь€
+									AND “ипы_сырь€.Ќаим“ипа—ырь€ = N'ѕродукты');
 				SET @Iterations += 1;
 			END
 ELSE IF @AvgProduct < @AvgDrink
-		WHILE(@AvgProduct > @AvgDrink)
+		WHILE(@AvgProduct < @AvgDrink)
 			BEGIN
 				UPDATE —ырье_1
 					SET —ырье_1.÷ена—ырь€ -= (—ырье_1.÷ена—ырь€ * 0.2) FROM —ырье_1
 						INNER JOIN “ипы_сырь€ ON —ырье_1. од“ипа—ырь€ = “ипы_сырь€. од“ипа—ырь€
 						WHERE “ипы_сырь€.Ќаим“ипа—ырь€ = N'Ќапитки';
 
+				SET @AvgDrink = (SELECT AVG(—ырье_1.÷ена—ырь€) AS —редн€€_цена FROM —ырье_1
+									INNER JOIN “ипы_сырь€ ON —ырье_1. од“ипа—ырь€ = “ипы_сырь€. од“ипа—ырь€
+										AND “ипы_сырь€.Ќаим“ипа—ырь€ = N'Ќапитки');
 				SET @Iterations += 1;
 			END
 
-PRINT(@Iterations);
+SELECT @AvgDrink AS —редн€€_цена_напитков,
+	@AvgProduct AS —редн€€_цена_продуктов,
+	@Iterations AS  оличество_итераций;
