@@ -1,3 +1,5 @@
+package first;
+
 public class GarbageCollection implements Runnable {
     @Override
     public void run() {

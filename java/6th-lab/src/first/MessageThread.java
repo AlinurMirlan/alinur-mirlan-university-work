@@ -1,5 +1,7 @@
+package first;
+
 public class MessageThread extends Thread {
-    MessageThread() {
+    public MessageThread() {
         System.out.println(this.getClass().getName()
                 + " "
                 + Thread.currentThread().threadId()
