@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Text&display=swap');
+
+* {
+    color: #00486D;
+    font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'DM Serif Text', serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+.notice {
+    background-color: #00486D;
+    font-size: 18px;
+    line-height: 1.94;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.notice p {
+    color: #99B6C5;
+}
+
+/* HEADER */
+.main-header {
+    display: flex;
+    justify-content: center;
+    padding: 24px 10px 25px 10px;
+}
+
+.main-header nav {
+    max-width: 1270px;
+    width: 100%;
+    font-size: 19px;
+    line-height: 1.84;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-header-left-side {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.main-header-left-side > a {
+    display: flex;
+    align-items: center;
+}
+
+
+.main-header-right-side  {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.main-header-left-side  .subnav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.button {
+    border: none;
+    background: #00486D;
+    border-radius: 4px;
+    padding: 12px 24px;
+    color: #fff;
+}
+
+/* INTRODUCTION SECTION */
+.introduction-section {
+    background: linear-gradient(to right, #E4ECF0 60%, #00486D 40%);
+}
+
+.introduction-section-content-wrapper {
+    max-width: 1460px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+    min-height: 753px;
+    display: flex;  
+    justify-content: center;
+    background-image: url("../items/dots.svg");
+    background-repeat: no-repeat;
+    background-position: 29px -150px;
+}
+
+.introduction-section-content {
+    display: flex;
+    max-width: 1270px;
+    width: 100%;
+}
+
+.introduction-left-side {
+    flex: 0 1 864px;
+    display: flex;
+    justify-content: right;
+}
+
+.introduction-left-side .content-wrapper {
+    flex: 0 1 789px;
+    padding-top: 85px;
+}
+
+.introduction-left-side h1 {
+    font-size: 55px;
+    max-width: 394px;
+    line-height: 1.21;
+}
+
+.introduction-left-side p {
+    margin-top: 25px;
+    max-width: 563px;
+    font-size: 24px;
+    line-height: 1.75;
+}
+
+.introduction-left-side .button {
+    margin-top: 47px;
+}
+
+.introduction-right-side {
+    flex: 0 1 576px;
+    z-index: 2;
+}
+
+.introduction-image-block {
+    position: relative;
+    top: 56px;
+}
+
+.introduction-image-block img {
+    position: relative;
+    filter: drop-shadow(0px 32px 24px rgba(0, 72, 109, 0.5));
+    z-index: 2;
+}
+
+.introduction-image-block img:nth-child(2) {
+    position: absolute;
+    bottom: -56px;
+    left: -56px;
+    z-index: 1;
+}
+
+/* PRACTICE SECTION */
+.practice-section {
+    padding: 0 10px;
+    margin-top: 155px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 160px;
+}
+
+.practice-section-content {
+    max-width: 1270px;
+    width: 100%;
+}
+
+.practice-section-content > h2 {
+    font-size: 44px;
+    line-height: 1.2;
+}
+
+.practice-section-content > p {
+    max-width: 605px;
+    margin-top: 25px;
+    font-size: 24px;
+    line-height: 1.75;
+}
+
+.practice-cards {
+    margin-top: 51px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.practice-card h4 {
+    margin-top: 40px;
+    font-size: 22px;
+    line-height: 1.5;
+    font-family: 'DM Sans', sans-serif;;
+}
+
+.practice-card {
+    flex: 0 1 397px;
+    border: 1px solid #E4ECF0;
+    box-shadow: 0px 24px 24px rgba(0, 72, 109, 0.2);
+    padding: 44px 33px 41px 33px;
+    display: grid;
+    grid-template-rows: 64px min-content 1fr min-content;
+}
+
+.practice-card img {
+    align-self: center;
+}
+
+.practice-card p {
+    margin-top: 12px;
+    font-size: 20px;
+    line-height: 1.75;
+}
+
+.practice-card a {
+    display: block;
+    margin-top: 36px;
+    font-size: 19px;
+    line-height: 1.84;  
+}
+
+.right-arrow {
+    display: inline-block;
+    height: 14px;
+    width: 19px;
+    background-size: contain;
+    background-image: url("../items/right-arrow.svg");
+    background-repeat: no-repeat;
+    margin-left: 9px;
+}
+
+/* LEGAL SERVICES SECTION */
+.legal-services-section {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #fff 50%, #F2F6F7 50%);
+}
+
+.legal-services-content {
+    max-width: 1270px;
+    width: 100%;
+    min-height: 680px;
+    background-image: url("../items/suitcase-man.png");
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+}
+
+.legal-service-block-wrapper {
+    flex: 0 1 423px;
+    position: relative;
+}
+
+.legal-service-block-wrapper::after {
+    top: -56px;
+    right: -56px;
+    position: absolute;
+    overflow:visible;
+    z-index: 1;
+    content: url("../items/dots.svg");
+}
+
+.legal-service-block {
+    z-index: 2;
+    position: relative;
+    background: #00486D;
+    min-height: 491px;
+    padding: 53px 0 72px 56px;
+}
+
+.legal-service-block h3,
+.legal-service-block p {
+    color: #fff;
+}
+
+.legal-service-block > h3 {
+    font-size: 35px;
+    line-height: 1.2;
+}
+
+.legal-service-block > p {
+    margin-top: 23px;
+    font-size: 19px;
+    max-width: 309px;
+    line-height: 1.84;
+}
+
+.legal-service-block .button {
+    margin-top: 60px;
+    color: #00486D;
+    background-color: #fff;
+}
+
+/* LEGAL ADVICE SECTION */
+.legal-advice-section {
+    display: flex;
+    background-color: #E4ECF0;
+    flex-direction: column;
+    align-items: center;
+    padding: 155px 0 176px 0;
+}
+
+.legal-advice-section > h2 {
+    font-size: 44px;
+    line-height: 1.2;
+}
+
+.legal-advice-section > p {
+    margin-top: 19px;
+    font-size: 23px;
+    line-height: 1.83;
+}
+
+.legal-advice-section > .button {
+    margin-top: 41px;
+}
+
+/* FOOTER */
+.upper-footer {
+    padding: 0 20px;
+    background-color: #00486D;
+    display: flex;
+    justify-content: center;
+}
+
+.upper-footer p,
+.upper-footer a,
+.upper-footer h2 {
+    color: #fff;
+}
+
+.upper-footer-content {
+    padding: 123px 0 124px;
+    max-width: 1270px;
+    width: 100%;
+    display: flex;
+    gap: 190px;
+    flex-wrap: wrap-reverse;
+}
+
+.footer-media > a {
+    display: block;
+}
+
+.footer-media p,
+.footer-media a {
+    font-size: 19px;
+    line-height: 1.84;
+    color: #99B6C5;
+}
+
+.footer-media:first-of-type {
+    margin-top: 40px;
+}
+
+.footer-media:nth-of-type(2) {
+    margin-top: 64px;
+}
+
+.social-media-handle a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-media-handle:not(:first-of-type) {
+    margin-top: 15px;
+}
+
+.mail-handle {
+    text-decoration: underline;
+}
+
+.footer-second-column {
+    flex: 0 1 397px;
+}
+
+.footer-second-column h2 {
+    font-size: 28px;
+    line-height: 1.28;
+}
+
+.email-form-wrapper {
+    margin-top: 23px;
+}
+
+.footer-email-form {
+    position: relative;
+}
+
+.footer-email-form input[type="email"] {
+    background: #99B6C5;
+    border: 1px solid #99B6C5;
+    border-radius: 2px;
+    width: 100%;
+    min-height: 56px;
+    padding-right: 54px;
+    padding-left: 10px;
+}
+
+.footer-email-form input[type="email"]::placeholder {
+    font-size: 19px;
+    line-height: 1.84;
+    color: #00486D;
+    padding-left: 23px;
+}
+
+.email-submit-button {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    background-image: url("../items/block-arrow.svg");
+    border: none;
+    position: absolute;
+    right: 9px;
+    top: 8px;
+}
+
+.lower-footer {
+    background-color: #002B41;
+    display: flex;
+    justify-content: center;
+}
+
+.lower-footer-content {
+    justify-content: space-between;
+    display: flex;
+    max-width: 1440px;
+    width: 100%;
+    background-color: #002B41;
+    flex-wrap: wrap;
+    padding: 7px 40px 9px 24px;
+}
+
+.lower-footer-content a,
+.lower-footer-content p {
+    color: #99B6C5;
+    font-size: 14px;
+    line-height: 2.5;
+}
+
+.lower-footer-left-side {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.lower-footer-right-side {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
