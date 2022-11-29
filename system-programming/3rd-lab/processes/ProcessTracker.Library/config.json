@@ -1,0 +1,12 @@
+{
+    "exclude": [
+        "**/bin",
+        "**/bower_components",
+        "**/jspm_packages",
+        "**/node_modules",
+        "**/obj",
+        "**/platforms"
+    ],
+
+    "logFilesLocation": "C:\\Alinur\\university-work\\system-programming\\3rd-lab\\processes\\logs"
+}

@@ -1,0 +1,17 @@
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\bin\Debug\net6.0-windows\Processes.exe
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\bin\Debug\net6.0-windows\Processes.deps.json
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\bin\Debug\net6.0-windows\Processes.runtimeconfig.json
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\bin\Debug\net6.0-windows\Processes.dll
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\bin\Debug\net6.0-windows\Processes.pdb
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\Processes.csproj.AssemblyReference.cache
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\Processes.csproj.GenerateResource.cache
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\Processes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\Processes.AssemblyInfoInputs.cache
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\Processes.AssemblyInfo.cs
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\Processes.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\Processes.dll
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\refint\Processes.dll
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\Processes.pdb
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\Processes.genruntimeconfig.cache
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\ref\Processes.dll
+C:\Alinur\university-work\system-programming\3rd-lab\processes\Processes\obj\Debug\net6.0-windows\Processes.ProcessesTracker.resources

@@ -1,0 +1,12 @@
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\bin\Debug\net6.0\ProcessTracker.Library.deps.json
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\bin\Debug\net6.0\ProcessTracker.Library.dll
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\bin\Debug\net6.0\ProcessTracker.Library.pdb
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\obj\Debug\net6.0\ProcessTracker.Library.csproj.AssemblyReference.cache
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\obj\Debug\net6.0\ProcessTracker.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\obj\Debug\net6.0\ProcessTracker.Library.AssemblyInfoInputs.cache
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\obj\Debug\net6.0\ProcessTracker.Library.AssemblyInfo.cs
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\obj\Debug\net6.0\ProcessTracker.Library.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\obj\Debug\net6.0\ProcessTracker.Library.dll
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\obj\Debug\net6.0\refint\ProcessTracker.Library.dll
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\obj\Debug\net6.0\ProcessTracker.Library.pdb
+C:\Alinur\university-work\system-programming\3rd-lab\processes\ProcessTracker.Library\obj\Debug\net6.0\ref\ProcessTracker.Library.dll

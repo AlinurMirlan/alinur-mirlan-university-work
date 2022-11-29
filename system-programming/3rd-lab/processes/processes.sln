@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessTracker", "Processes\ProcessTracker.csproj", "{C65E223C-9BD0-4356-9E6C-C81DD98A817E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessTracker.Library", "ProcessTracker.Library\ProcessTracker.Library.csproj", "{5C63A68E-4C28-4F11-BB3F-60A73635F998}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C65E223C-9BD0-4356-9E6C-C81DD98A817E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C65E223C-9BD0-4356-9E6C-C81DD98A817E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C65E223C-9BD0-4356-9E6C-C81DD98A817E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C65E223C-9BD0-4356-9E6C-C81DD98A817E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C63A68E-4C28-4F11-BB3F-60A73635F998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C63A68E-4C28-4F11-BB3F-60A73635F998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C63A68E-4C28-4F11-BB3F-60A73635F998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C63A68E-4C28-4F11-BB3F-60A73635F998}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6795A6FE-CCAA-4020-91FC-66D20C583C3D}
+	EndGlobalSection
+EndGlobal
