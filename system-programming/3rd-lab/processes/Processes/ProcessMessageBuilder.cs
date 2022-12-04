@@ -28,7 +28,7 @@ namespace Processes
         public override string ToString()
         {
             StringBuilder builder = new();
-            builder.Append($"{IndentSeverityText(this.MemorySeverity)}Memory: {_process.RamUsage()}; ");
+            builder.Append($"{IndentSeverityText(this.MemorySeverity)}Memory: {_process.WorkingSet64}; ");
             builder.Append($"{IndentSeverityText(this.ProcessorTimeSeverity)}Processor time:{_process.TotalProcessorTime.Milliseconds}; ");
             builder.Append($"{IndentSeverityText(this.ThreadCountSeverity)}Thread count: {_process.Threads.Count}; ");
             builder.Append($"{IndentSeverityText(this.HandleCountSeverity)}Handle count: {_process.HandleCount}; ");

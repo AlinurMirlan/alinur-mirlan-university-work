@@ -64,12 +64,12 @@
             this.terminateProcessButton});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView, 2);
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(3, 64);
+            this.dataGridView.Location = new System.Drawing.Point(3, 73);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 29;
-            this.dataGridView.Size = new System.Drawing.Size(970, 545);
+            this.dataGridView.Size = new System.Drawing.Size(970, 626);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellClick);
             // 
@@ -123,7 +123,7 @@
             this.terminateAllButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.terminateAllButton.Location = new System.Drawing.Point(491, 3);
             this.terminateAllButton.Name = "terminateAllButton";
-            this.terminateAllButton.Size = new System.Drawing.Size(482, 55);
+            this.terminateAllButton.Size = new System.Drawing.Size(482, 64);
             this.terminateAllButton.TabIndex = 2;
             this.terminateAllButton.Text = "Terminate All";
             this.terminateAllButton.UseVisualStyleBackColor = false;
@@ -135,7 +135,7 @@
             this.addProcessButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addProcessButton.Location = new System.Drawing.Point(3, 3);
             this.addProcessButton.Name = "addProcessButton";
-            this.addProcessButton.Size = new System.Drawing.Size(482, 55);
+            this.addProcessButton.Size = new System.Drawing.Size(482, 64);
             this.addProcessButton.TabIndex = 1;
             this.addProcessButton.Text = "Add Process(es)";
             this.addProcessButton.UseVisualStyleBackColor = false;
@@ -155,7 +155,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(976, 612);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(976, 702);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // openFileDialog
@@ -172,7 +172,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 612);
+            this.ClientSize = new System.Drawing.Size(976, 702);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Name = "ProcessesTracker";

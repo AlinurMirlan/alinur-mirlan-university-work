@@ -1,0 +1,14 @@
+<event>
+  <type>Notification</type>
+  <process_id>9076</process_id>
+  <process>Telegram9076</process>
+  <message>Started</message>
+  <time>2022-11-29T22:58:45.4159962+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>9076</process_id>
+  <process>Telegram9076</process>
+  <message>Finished</message>
+  <time>2022-11-29T22:58:45.6222787+06:00</time>
+</event>

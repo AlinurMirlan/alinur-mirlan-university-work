@@ -1,0 +1,294 @@
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Started</message>
+  <time>2022-11-29T22:58:08.5548139+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 73990144; Processor time:109; Thread count: 26; Handle count: 682; </message>
+  <time>2022-11-29T22:58:09.6590533+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 126119936; Processor time:671; Thread count: 41; Handle count: 1087; </message>
+  <time>2022-11-29T22:58:10.8627283+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 130203648; Processor time:484; Thread count: 41; Handle count: 1070; </message>
+  <time>2022-11-29T22:58:12.0811383+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 130211840; Processor time:500; Thread count: 41; Handle count: 1067; </message>
+  <time>2022-11-29T22:58:13.3459999+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132153344; Processor time:562; Thread count: 43; Handle count: 1100; </message>
+  <time>2022-11-29T22:58:14.5800353+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132358144; Processor time:562; Thread count: 43; Handle count: 1102; </message>
+  <time>2022-11-29T22:58:15.8411285+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132366336; Processor time:562; Thread count: 43; Handle count: 1102; </message>
+  <time>2022-11-29T22:58:17.0468913+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132239360; Processor time:562; Thread count: 43; Handle count: 1102; </message>
+  <time>2022-11-29T22:58:18.3068598+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132542464; Processor time:562; Thread count: 43; Handle count: 1111; </message>
+  <time>2022-11-29T22:58:19.5465268+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132546560; Processor time:578; Thread count: 41; Handle count: 1099; </message>
+  <time>2022-11-29T22:58:20.7740553+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132562944; Processor time:578; Thread count: 42; Handle count: 1101; </message>
+  <time>2022-11-29T22:58:21.9899961+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132562944; Processor time:578; Thread count: 42; Handle count: 1101; </message>
+  <time>2022-11-29T22:58:23.2411666+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132571136; Processor time:578; Thread count: 42; Handle count: 1104; </message>
+  <time>2022-11-29T22:58:24.4913111+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132468736; Processor time:578; Thread count: 40; Handle count: 1092; </message>
+  <time>2022-11-29T22:58:25.7328865+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132468736; Processor time:578; Thread count: 40; Handle count: 1092; </message>
+  <time>2022-11-29T22:58:26.9826597+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132472832; Processor time:578; Thread count: 40; Handle count: 1092; </message>
+  <time>2022-11-29T22:58:28.2194393+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132231168; Processor time:625; Thread count: 40; Handle count: 1094; </message>
+  <time>2022-11-29T22:58:29.4901426+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132231168; Processor time:625; Thread count: 40; Handle count: 1094; </message>
+  <time>2022-11-29T22:58:30.7396936+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132231168; Processor time:625; Thread count: 40; Handle count: 1094; </message>
+  <time>2022-11-29T22:58:31.992915+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132231168; Processor time:625; Thread count: 40; Handle count: 1094; </message>
+  <time>2022-11-29T22:58:33.260003+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132231168; Processor time:625; Thread count: 40; Handle count: 1094; </message>
+  <time>2022-11-29T22:58:34.522925+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132231168; Processor time:625; Thread count: 40; Handle count: 1094; </message>
+  <time>2022-11-29T22:58:35.7597406+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132231168; Processor time:625; Thread count: 40; Handle count: 1094; </message>
+  <time>2022-11-29T22:58:37.0025375+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132231168; Processor time:625; Thread count: 40; Handle count: 1094; </message>
+  <time>2022-11-29T22:58:38.2877266+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132104192; Processor time:640; Thread count: 38; Handle count: 1090; </message>
+  <time>2022-11-29T22:58:39.5027377+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 132104192; Processor time:640; Thread count: 38; Handle count: 1089; </message>
+  <time>2022-11-29T22:58:40.7051848+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 139075584; Processor time:656; Thread count: 29; Handle count: 1046; </message>
+  <time>2022-11-29T22:58:41.9189182+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 139075584; Processor time:656; Thread count: 29; Handle count: 1046; </message>
+  <time>2022-11-29T22:58:43.121308+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 139042816; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:44.3163338+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 139042816; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:45.5648926+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 139042816; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:46.820101+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 108183552; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:48.0735444+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 108183552; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:49.3119907+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 108183552; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:50.5691174+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 108183552; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:51.7526663+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 108183552; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:52.9334641+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 108183552; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:54.1486504+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 108183552; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:55.3417902+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 108187648; Processor time:656; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:56.6515837+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Memory: 108187648; Processor time:671; Thread count: 28; Handle count: 1038; </message>
+  <time>2022-11-29T22:58:57.9020573+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>14300</process_id>
+  <process>WINWORD14300</process>
+  <message>Finished</message>
+  <time>2022-11-29T22:58:58.517403+06:00</time>
+</event>

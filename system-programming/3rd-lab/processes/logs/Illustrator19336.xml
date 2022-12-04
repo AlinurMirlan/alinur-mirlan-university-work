@@ -1,0 +1,91 @@
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Started</message>
+  <time>2022-11-29T22:57:34.8816887+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Memory: 56741888; Processor time:546; Thread count: 20; Handle count: 433; </message>
+  <time>2022-11-29T22:57:36.092542+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Memory: 69488640; Processor time:890; Thread count: 21; Handle count: 529; </message>
+  <time>2022-11-29T22:57:37.3290811+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Memory: 78426112; Processor time:187; Thread count: 21; Handle count: 520; </message>
+  <time>2022-11-29T22:57:38.7286318+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Memory: 79851520; Processor time:390; Thread count: 21; Handle count: 520; </message>
+  <time>2022-11-29T22:57:40.0745296+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Memory: 99241984; Processor time:968; Thread count: 22; Handle count: 530; </message>
+  <time>2022-11-29T22:57:41.3389763+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Memory: 125800448; Processor time:656; Thread count: 22; Handle count: 543; </message>
+  <time>2022-11-29T22:57:42.9293159+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Memory: 145547264; Processor time:578; Thread count: 22; Handle count: 593; </message>
+  <time>2022-11-29T22:57:44.1328865+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Memory: 151990272; Processor time:406; Thread count: 22; Handle count: 610; </message>
+  <time>2022-11-29T22:57:45.3076772+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Memory: 163393536; Processor time:296; Thread count: 22; Handle count: 661; </message>
+  <time>2022-11-29T22:57:46.6049199+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Memory: 171597824; Processor time:171; Thread count: 22; Handle count: 681; </message>
+  <time>2022-11-29T22:57:47.8487438+06:00</time>
+</event>
+<event>
+  <type>Warning</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Warning Memory: 255774720; Processor time:921; Thread count: 29; Handle count: 821; </message>
+  <time>2022-11-29T22:57:49.1482798+06:00</time>
+</event>
+<event>
+  <type>Error</type>
+  <process_id>19336</process_id>
+  <process>Illustrator19336</process>
+  <message>Error Memory: 277327872; Processor time:406; Thread count: 30; Handle count: 840; </message>
+  <time>2022-11-29T22:57:49.3782806+06:00</time>
+</event>

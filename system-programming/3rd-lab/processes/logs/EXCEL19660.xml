@@ -1,0 +1,28 @@
+<event>
+  <type>Notification</type>
+  <process_id>19660</process_id>
+  <process>EXCEL19660</process>
+  <message>Started</message>
+  <time>2022-11-29T22:57:45.2057713+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19660</process_id>
+  <process>EXCEL19660</process>
+  <message>Memory: 60387328; Processor time:31; Thread count: 16; Handle count: 606; </message>
+  <time>2022-11-29T22:57:46.3920129+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19660</process_id>
+  <process>EXCEL19660</process>
+  <message>Memory: 61394944; Processor time:93; Thread count: 17; Handle count: 667; </message>
+  <time>2022-11-29T22:57:47.6132924+06:00</time>
+</event>
+<event>
+  <type>Notification</type>
+  <process_id>19660</process_id>
+  <process>EXCEL19660</process>
+  <message>Finished</message>
+  <time>2022-11-29T22:57:47.9364584+06:00</time>
+</event>
