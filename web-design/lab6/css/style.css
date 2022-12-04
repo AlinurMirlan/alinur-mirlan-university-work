@@ -103,17 +103,17 @@ p {
     display: flex;
     max-width: 1270px;
     width: 100%;
+    gap: 10px;
 }
 
 .introduction-left-side {
-    flex: 0 1 864px;
+    flex: 0 1 665px;
     display: flex;
-    justify-content: right;
+    justify-content: left;
 }
 
-.introduction-left-side .content-wrapper {
-    flex: 0 1 789px;
-    padding-top: 85px;
+.introduction-left-content {
+    padding-top: 155px;
 }
 
 .introduction-left-side h1 {
@@ -134,7 +134,7 @@ p {
 }
 
 .introduction-right-side {
-    flex: 0 1 576px;
+    flex: 0 1 595px;
     z-index: 2;
 }
 
@@ -144,9 +144,14 @@ p {
 }
 
 .introduction-image-block img {
+    object-fit: contain;
+}
+
+.introduction-image-block img:first-child {
     position: relative;
     filter: drop-shadow(0px 32px 24px rgba(0, 72, 109, 0.5));
     z-index: 2;
+    width: 100%;
 }
 
 .introduction-image-block img:nth-child(2) {
@@ -294,6 +299,101 @@ p {
     margin-top: 60px;
     color: #00486D;
     background-color: #fff;
+}
+/* QUOTES SECTION */
+.quotes-section {
+    min-height: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quotes-section-content {
+    max-width: 1270px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.quote {
+    max-width: 723px;
+}
+
+.quote p:first-child {
+    font-family: 'DM Serif Text', serif;
+    font-size: 32px;
+    line-height: 1.6;
+}
+
+.quote p:nth-child(2) {
+    font-size: 15px;
+    line-height: 2.3;
+}
+
+/* RECENT ARTICLES SECTION */
+.recent-articles-section {
+    padding: 155px 10px 160px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.recent-articles-content {
+    max-width: 1270px;
+    width: 100%;
+}
+
+.recent-articles-content h2 {
+    line-height: 1.2;
+    font-size: 44px;
+}
+
+.article-cards {
+    margin-top: 61px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.article-card {
+    flex: 0 1 395px;
+    border: 1px solid #E4ECF0;
+    box-shadow: 0px 24px 24px rgba(0, 72, 109, 0.2);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card img {
+    max-height: 100%;
+    flex: 0 1 260px;
+    object-fit: cover;
+}
+
+.article-card-content {
+    flex: 1 1 auto;
+    padding: 40px 33px;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+}
+
+.article-card-content p {
+    font-size: 15px;
+    line-height: 1.26;
+}
+
+.article-card-content h4 {
+    margin-top: 18px;
+    font-size: 22px;
+    line-height: 1.5;
+    font-family: 'DM Sans', sans-serif;;
+}
+
+.article-card-content a {
+    font-size: 19px;
+    line-height: 1.84;
+    margin-top: 29px;
+    display: block;
 }
 
 /* LEGAL ADVICE SECTION */
@@ -454,4 +554,25 @@ p {
     display: flex;
     gap: 16px;
     align-items: center;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1211px) {
+    .practice-cards {
+        justify-content: stretch;
+        gap: 40px 20px;
+    }
+
+    .practice-card {
+        flex-grow: 1;
+    }
+
+    .article-cards {
+        justify-content: stretch;
+        gap: 40px 20px;
+    }
+
+    .article-card {
+        flex-grow: 1;
+    }
 }
