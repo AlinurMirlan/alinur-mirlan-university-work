@@ -11,23 +11,29 @@ public class Rectangle {
         this.area = height * width;
     }
 
-    public double calculateNewArea(double height, double width) {
+    public void calculateNewArea(double height, double width) {
         this.height = height;
         this.width = width;
         this.area = height * width;
-        return this.area;
     }
 
     public Square makeSquareByHeight() {
         return new Square(this.height);
     }
+
     public Square makeSquareByWidth() {
-        Square square = makeSquareByHeight();
-        square.calculateNewArea(this.width);
+        return new Square(this.width);
+    }
+
+    public Square makeSquare(double dimension) {
+        Square square = new Square();
+        square.calculateNewArea(dimension);
         return square;
     }
 
     public class Square {
+        public Square() { }
+
         public Square(double dimension) {
             height = dimension;
             width = dimension;
@@ -35,9 +41,25 @@ public class Rectangle {
         }
 
         public void calculateNewArea(double dimension) {
-            height = dimension;
-            width = dimension;
-            area = dimension * dimension;
+            Rectangle.this.calculateNewArea(dimension, dimension);
         }
+
+        @Override
+        public String toString() {
+            return "Square{" +
+                    "height=" + height +
+                    ", width=" + width +
+                    ", area=" + area +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "height=" + height +
+                ", width=" + width +
+                ", area=" + area +
+                '}';
     }
 }
