@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Maven+Pro&family=Ubuntu:wght@400;700&display=swap');
+
+* {
+    font-family: 'Maven Pro', sans-serif;
+}
+
+p {
+    font-size: 20px;
+}
+
+.logo {
+    display: block;
+    font-family: 'Bungee', cursive;
+    color: rgba(0, 69, 7, 81%);
+    font-size: 34px;
+    cursor: pointer;
+}
+
+.button {
+    font-family: 'Ubuntu', sans-serif;
+    background: rgba(66, 190, 78, 0.81);
+    border-radius: 30px;   
+    font-size: 22px;
+    color: #fff;
+    padding: 13px 30px;
+    border: 1px solid transparent;
+}
+
+.button:active {
+    background-color: rgba(0, 69, 7, 0.81);
+    border: 1px solid rgba(66, 190, 78, 0.81);
+}
+
+.signin-button {
+    align-self: flex-end;
+}
+
+.page-header {
+    padding: 0 10px;
+    background-color: rgba(66, 190, 78, 15%);
+}
+
+.page-header-content {
+    display: flex;
+    align-items: center;
+    width: 1380px;
+    min-height: 80px;
+    margin: 0 auto;
+}
+
+.authentication-pane-section {
+    display: flex;
+    justify-content: center;
+}
+
+.authentication-pane-content {
+    max-width: 710px;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.highlight-text {
+    color: rgba(66, 190, 78, 0.81);
+}
+
+.authentication-lower-pane {
+    padding: 0 10px;
+    margin-top: 20px;
+    border-radius: 0px 0px 38px 38px;
+    min-height: 513px;
+    background: rgb(255,255,255);
+    background: linear-gradient(132deg, rgba(255,255,255,1) 0%, rgba(66,190,78,0.15) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 255, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authentication-signin-pane {
+    border-radius: 38px;
+}
+
+.authentication-lower-pane-content {
+    flex: 0 1 529px;
+}
+
+.authentication-lower-pane h2 {
+    font-size: 35px;
+}
+
+.authentication-form {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.authentication-form input {
+    font-size: 20px;
+    padding-left: 16px;
+    min-height: 60px;
+    border: 1px solid transparent;
+    background: rgba(113, 142, 248, 0.18);
+}
+
+.authentication-form input:focus {
+    outline: none;
+}
+
+.authentication-form input:first-of-type {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.authentication-form input:last-of-type {
+    border-radius: 0px 0px 8px 8px;
+}
+
+.authentication-form input::placeholder {
+    font-size: 20px;
+}
