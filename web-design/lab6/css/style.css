@@ -23,10 +23,10 @@ p {
 
 .notice {
     background-color: #00486D;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 1.94;
     text-align: center;
-    padding: 8px 0;
+    padding: 8px 10px;
 }
 
 .notice p {
@@ -35,18 +35,45 @@ p {
 
 /* HEADER */
 .main-header {
+    background-color: white;
+    scroll-snap-type: mandatory;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 24px 10px 25px 10px;
+    position: relative;
+    z-index: 10;
 }
 
-.main-header nav {
+.main-header-nav {
     max-width: 1270px;
     width: 100%;
-    font-size: 19px;
+    font-size: 1.1875rem;
     line-height: 1.84;
     display: flex;
     justify-content: space-between;
+}
+
+.main-header-mobile-nav {
+    padding-top: 15px;
+    width: 100%;
+    display: none;
+}
+
+.main-header-mobile-nav a {
+    font-size: 1.375rem;
+    line-height: 2;
+    display: block;
+    position: relative;
+}
+
+.main-header-mobile-nav a::before {
+    top: 0;
+    position: absolute;
+    content: "";
+    height: 1px;
+    background-color: #00486D;
+    width: calc(100%);
 }
 
 .main-header-left-side {
@@ -67,7 +94,7 @@ p {
     align-items: center;
 }
 
-.main-header-left-side  .subnav {
+.main-header-left-side-subnav {
     display: flex;
     gap: 32px;
     align-items: center;
@@ -78,7 +105,42 @@ p {
     background: #00486D;
     border-radius: 4px;
     padding: 12px 24px;
+    font-size: 1.125rem;
+    line-height: 1.94;
     color: #fff;
+}
+
+.burger-menu::after,
+.burger-menu::before,
+.burger-menu span {
+    position: absolute;
+    content: "";
+    background-color: #00486D;
+    width: 100%;
+    height: 15%;
+}
+
+.burger-menu::before {
+    transition: all 300ms;
+    top: 0;
+}
+
+.burger-menu::after {
+    transition: all 300ms;
+    bottom: 0;
+}
+
+.burger-menu span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-menu {
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 26px;
+    display: none;
 }
 
 /* INTRODUCTION SECTION */
@@ -117,7 +179,7 @@ p {
 }
 
 .introduction-left-side h1 {
-    font-size: 55px;
+    font-size: 3.4375rem;
     max-width: 394px;
     line-height: 1.21;
 }
@@ -125,7 +187,7 @@ p {
 .introduction-left-side p {
     margin-top: 25px;
     max-width: 563px;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 1.75;
 }
 
@@ -176,14 +238,14 @@ p {
 }
 
 .practice-section-content > h2 {
-    font-size: 44px;
+    font-size: 2.75rem;
     line-height: 1.2;
 }
 
 .practice-section-content > p {
     max-width: 605px;
     margin-top: 25px;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 1.75;
 }
 
@@ -196,7 +258,7 @@ p {
 
 .practice-card h4 {
     margin-top: 40px;
-    font-size: 22px;
+    font-size: 1.375rem;
     line-height: 1.5;
     font-family: 'DM Sans', sans-serif;;
 }
@@ -216,14 +278,14 @@ p {
 
 .practice-card p {
     margin-top: 12px;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1.75;
 }
 
 .practice-card a {
     display: block;
     margin-top: 36px;
-    font-size: 19px;
+    font-size: 1.1875rem;
     line-height: 1.84;  
 }
 
@@ -284,13 +346,13 @@ p {
 }
 
 .legal-service-block > h3 {
-    font-size: 35px;
+    font-size: 2.1875rem;
     line-height: 1.2;
 }
 
 .legal-service-block > p {
     margin-top: 23px;
-    font-size: 19px;
+    font-size: 1.1875rem;
     max-width: 309px;
     line-height: 1.84;
 }
@@ -306,28 +368,66 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 10px;
 }
 
 .quotes-section-content {
+    overflow: hidden;
+    position: relative;
     max-width: 1270px;
     width: 100%;
-    display: flex;
-    justify-content: center;
     text-align: center;
+    white-space: nowrap;
+}
+
+.slider {
+    max-width: 68px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 0;
+}
+
+.slider-previous {
+    left: 0;
+    background-image: url("../items/slider-arrow-left.svg");
+    background-position: left center;
+}
+
+.slider-next {
+    right: 0;
+    background-image: url("../items/slider-arrow-right.svg");
+    background-position: right center;
+}
+
+.quotes {
+    position: relative;
+    transition-property: left;
+    transition-duration: 300ms;
+    left: 0;
 }
 
 .quote {
+    width: 100%;
+    align-items: center;
+    white-space: normal;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.quote p {
     max-width: 723px;
 }
 
 .quote p:first-child {
     font-family: 'DM Serif Text', serif;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 1.6;
 }
 
 .quote p:nth-child(2) {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 2.3;
 }
 
@@ -345,7 +445,7 @@ p {
 
 .recent-articles-content h2 {
     line-height: 1.2;
-    font-size: 44px;
+    font-size: 2.75rem;
 }
 
 .article-cards {
@@ -378,19 +478,19 @@ p {
 }
 
 .article-card-content p {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1.26;
 }
 
 .article-card-content h4 {
     margin-top: 18px;
-    font-size: 22px;
+    font-size: 1.375rem;
     line-height: 1.5;
     font-family: 'DM Sans', sans-serif;;
 }
 
 .article-card-content a {
-    font-size: 19px;
+    font-size: 1.1875rem;
     line-height: 1.84;
     margin-top: 29px;
     display: block;
@@ -402,17 +502,17 @@ p {
     background-color: #E4ECF0;
     flex-direction: column;
     align-items: center;
-    padding: 155px 0 176px 0;
+    padding: 155px 10px 176px 10px;
 }
 
 .legal-advice-section > h2 {
-    font-size: 44px;
+    font-size: 2.75rem;
     line-height: 1.2;
 }
 
 .legal-advice-section > p {
     margin-top: 19px;
-    font-size: 23px;
+    font-size: 1.4375rem;
     line-height: 1.83;
 }
 
@@ -449,7 +549,7 @@ p {
 
 .footer-media p,
 .footer-media a {
-    font-size: 19px;
+    font-size: 1.1875rem;
     line-height: 1.84;
     color: #99B6C5;
 }
@@ -481,7 +581,7 @@ p {
 }
 
 .footer-second-column h2 {
-    font-size: 28px;
+    font-size: 1.75rem;
     line-height: 1.28;
 }
 
@@ -504,7 +604,7 @@ p {
 }
 
 .footer-email-form input[type="email"]::placeholder {
-    font-size: 19px;
+    font-size: 1.1875rem;
     line-height: 1.84;
     color: #00486D;
     padding-left: 23px;
@@ -540,12 +640,13 @@ p {
 .lower-footer-content a,
 .lower-footer-content p {
     color: #99B6C5;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 2.5;
 }
 
 .lower-footer-left-side {
-    gap: 10px;
+    gap: 0 10px;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
 }
@@ -558,6 +659,7 @@ p {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1211px) {
+    /* PRACTICE SECTION */
     .practice-cards {
         justify-content: stretch;
         gap: 40px 20px;
@@ -567,6 +669,7 @@ p {
         flex-grow: 1;
     }
 
+    /* RECENT ARTICLES SECTION */
     .article-cards {
         justify-content: stretch;
         gap: 40px 20px;
@@ -574,5 +677,68 @@ p {
 
     .article-card {
         flex-grow: 1;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    /* INTRODUCTION SECTION */
+    .introduction-section {
+        background: #E4ECF0;
+    }
+
+    .introduction-right-side {
+        display: none;
+    }
+
+    .introduction-section-content {
+        justify-content: center;
+    }
+
+    /* HEADER */
+    .main-header._open {
+        padding-bottom: 0;  
+        box-shadow: 0px 10px 20px -5px rgba(0,0,0,0.50);
+    }
+
+    .main-header-left-side-subnav {
+        display: none;
+    }
+
+    .main-header-mobile-nav._open {
+        display: block;
+    }
+
+    .main-header-right-side > a {
+        display: none;
+    }
+
+    .main-header .burger-menu {
+        display: block;
+    }
+
+    .burger-menu._open span {   
+        display: none;
+    }
+
+    .burger-menu._open::before {
+        top: 50%;
+        transform: rotate(45deg);
+    }
+    
+    .burger-menu._open::after {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+}
+
+@media screen and (max-width: 724px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .main-header-right-side .button {
+        display: none;
     }
 }

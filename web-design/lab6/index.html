@@ -13,20 +13,27 @@
         <p>We have moved into our brand new downtown office at the corner of Broadway and Bellview</p>
     </div>
     <header class="main-header">
-        <nav>
+        <nav class="main-header-nav">
             <div class="main-header-left-side">
-                <a href="#"><img src="items/logo.svg" alt="logo"></a>
-                <div class="subnav">
-                    <a href="#">Services</a>
-                    <a href="#">About</a>
-                    <a href="#">Articles</a>
-                    <a href="#">Contact</a>
-                </div>
+                <a href="#" class="header-logo"><img src="items/logo.svg" alt="logo"></a>
+                    <div class="main-header-left-side-subnav">
+                        <a href="#">Services</a>
+                        <a href="#">About</a>
+                        <a href="#">Articles</a>
+                        <a href="#">Contact</a>
+                    </div>
             </div>
             <div class="main-header-right-side">
+                <div class="burger-menu"><span></span></div>
                 <a href="tel:+1234567890">(123) 456-7890</a>
                 <button class="button">Request Consultation</button>
             </div>
+        </nav>
+        <nav class="main-header-mobile-nav">
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Articles</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
     <section class="introduction-section">
@@ -87,10 +94,22 @@
     </section>
     <section class="quotes-section">
         <div class="quotes-section-content">
-            <div class="quote">
-                <p>The team at McKinley always delivers thoughtful and professional legal services in a timely manner.</p>
-                <p>John Smith, Tax Law Client</p>
+            <div class="quotes">
+                <div class="quote">
+                    <p>The team at McKinley always delivers thoughtful and professional legal services in a timely manner.</p>
+                    <p>John Smith, Tax Law Client</p>
+                </div>
+                <div class="quote">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, consequuntur.</p>
+                    <p>Lucy Butcher, Tax Law Client</p>
+                </div>
+                <div class="quote">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero saepe obcaecati deleniti voluptatum tempore debitis cumque ut, eius dignissimos quas!</p>
+                    <p>Max Johnson, Tax Law Client</p>
+                </div>
             </div>
+            <div class="slider slider-previous"></div>
+            <div class="slider slider-next"></div>
         </div>
     </section>
     <section class="recent-articles-section">
@@ -185,5 +204,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
