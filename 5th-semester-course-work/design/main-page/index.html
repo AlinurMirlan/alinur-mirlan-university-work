@@ -12,6 +12,7 @@
     <header class="page-header">
         <div class="page-header-content">
             <span class="logo">FLASH</span>
+            <div class="burger-menu"><span></span></div>
             <nav class="page-header-nav">
                 <div class="page-header-nav-left">
                     <a href="#" class="nav-link">Rehearse</a>
@@ -33,7 +34,7 @@
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Front side</p>
-                            <div class="more-interface hidden">
+                            <div class="more-interface _hidden">
                                 <button type="submit" class="button more-interface-button">Delete</button>
                             </div>
                         </div>
@@ -43,7 +44,7 @@
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Back side</p>
-                            <div class="more-interface hidden">
+                            <div class="more-interface _hidden">
                                 <button type="submit" class="button more-interface-button">Delete</button>
                             </div>
                         </div>
@@ -59,7 +60,7 @@
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Front side</p>
-                            <div class="more-interface hidden">
+                            <div class="more-interface _hidden">
                                 <button type="submit" class="button more-interface-button">Delete</button>
                             </div>
                         </div>
@@ -69,7 +70,7 @@
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Back side</p>
-                            <div class="more-interface hidden">
+                            <div class="more-interface _hidden">
                                 <button type="submit" class="button more-interface-button">Delete</button>
                             </div>
                         </div>
@@ -85,7 +86,7 @@
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Front side</p>
-                            <div class="more-interface hidden">
+                            <div class="more-interface _hidden">
                                 <button type="submit" class="button more-interface-button">Delete</button>
                             </div>
                         </div>
@@ -95,7 +96,7 @@
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Back side</p>
-                            <div class="more-interface hidden">
+                            <div class="more-interface _hidden">
                                 <button type="submit" class="button more-interface-button">Delete</button>
                             </div>
                         </div>
@@ -111,7 +112,7 @@
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Front side</p>
-                            <div class="more-interface hidden">
+                            <div class="more-interface _hidden">
                                 <button type="submit" class="button more-interface-button">Delete</button>
                             </div>
                         </div>
@@ -121,7 +122,137 @@
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Back side</p>
-                            <div class="more-interface hidden">
+                            <div class="more-interface _hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="flashcard-back-buttons">
+                            <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard</button>
+                            <button class="button flashcard-failure-button" onclick="flipCard(this)">Again</button>
+                            <button class="button flashcard-success-button" onclick="flipCard(this)">Good</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard" id="card">
+                    <div class="flashcard-front">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Front side</p>
+                            <div class="more-interface _hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <button class="button flashcard-show-button" onclick="flipCard(this)">Show</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Back side</p>
+                            <div class="more-interface _hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="flashcard-back-buttons">
+                            <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard</button>
+                            <button class="button flashcard-failure-button" onclick="flipCard(this)">Again</button>
+                            <button class="button flashcard-success-button" onclick="flipCard(this)">Good</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard" id="card">
+                    <div class="flashcard-front">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Front side</p>
+                            <div class="more-interface _hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <button class="button flashcard-show-button" onclick="flipCard(this)">Show</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Back side</p>
+                            <div class="more-interface _hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="flashcard-back-buttons">
+                            <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard</button>
+                            <button class="button flashcard-failure-button" onclick="flipCard(this)">Again</button>
+                            <button class="button flashcard-success-button" onclick="flipCard(this)">Good</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard" id="card">
+                    <div class="flashcard-front">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Front side</p>
+                            <div class="more-interface _hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <button class="button flashcard-show-button" onclick="flipCard(this)">Show</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Back side</p>
+                            <div class="more-interface _hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="flashcard-back-buttons">
+                            <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard</button>
+                            <button class="button flashcard-failure-button" onclick="flipCard(this)">Again</button>
+                            <button class="button flashcard-success-button" onclick="flipCard(this)">Good</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard" id="card">
+                    <div class="flashcard-front">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Front side</p>
+                            <div class="more-interface _hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <button class="button flashcard-show-button" onclick="flipCard(this)">Show</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Back side</p>
+                            <div class="more-interface _hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="flashcard-back-buttons">
+                            <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard</button>
+                            <button class="button flashcard-failure-button" onclick="flipCard(this)">Again</button>
+                            <button class="button flashcard-success-button" onclick="flipCard(this)">Good</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard" id="card">
+                    <div class="flashcard-front">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Front side</p>
+                            <div class="more-interface _hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <button class="button flashcard-show-button" onclick="flipCard(this)">Show</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Back side</p>
+                            <div class="more-interface _hidden">
                                 <button type="submit" class="button more-interface-button">Delete</button>
                             </div>
                         </div>

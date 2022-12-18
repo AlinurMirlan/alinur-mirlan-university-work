@@ -5,14 +5,14 @@
 }
 
 p {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .button {
     font-family: 'Ubuntu', sans-serif;
     background: rgba(66, 190, 78, 0.81);
     border-radius: 30px;   
-    font-size: 22px;
+    font-size: 18px;
     color: #fff;
     padding: 13px 30px;
     border: 1px solid transparent;
@@ -31,13 +31,18 @@ p {
     display: block;
     font-family: 'Bungee', cursive;
     color: rgba(0, 69, 7, 81%);
-    font-size: 34px;
+    font-size: 26px;
     cursor: pointer;
     padding-right: 15px;
     align-self: center;
 }
 
 .page-header {
+    position: sticky;
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    top: 0;
+    width: 100%;
     color: rgba(0, 69, 7, 0.81);
     padding: 0 10px;
     background-color: rgba(66, 190, 78, 15%);
@@ -47,10 +52,45 @@ p {
     color: rgba(0, 69, 7, 0.81);
 }
 
+.burger-menu::after,
+.burger-menu::before,
+.burger-menu span {
+    position: absolute;
+    content: "";
+    background-color: rgba(0, 69, 7, 81%);
+    width: 100%;
+    height: 20%;
+}
+
+.burger-menu::before {
+    transition: all 300ms;
+    top: 0;
+}
+
+.burger-menu::after {
+    transition: all 300ms;
+    bottom: 0;
+}
+
+.burger-menu span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-menu {
+    z-index: 10;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 16px;
+    display: none;
+    align-self: center;
+}
+
 .page-header-content {
     display: flex;
-    width: 1380px;
-    min-height: 80px;
+    max-width: 1380px;
+    min-height: 65px;
     margin: 0 auto;
     justify-content: space-between;
 }
@@ -69,20 +109,24 @@ p {
 }
 
 .nav-link { 
+    font-size: 19px;
     display: block;
-    padding: 0 33px;
+    padding: 0 20px;
     display: flex;
     align-items: center;
 }
 
 .nav-link:hover {
     background-color: rgba(207, 234, 210, 1);
-
 }
 
 .profile-link::after {
     padding-left: 7px;
     content: url("../items/user-profile-medium.svg");
+}
+
+main {
+    overflow: auto;
 }
 
 .flashcards-section {
@@ -183,14 +227,14 @@ p {
     transform: rotateY(180deg);
 }
 
-.flashcard-flip {
+._flashcard-flip {
     transform: rotateY(180deg);
 }
 
 .more-interface {
     width: 35%;
     padding-top: 30px;
-    background-color: #EBEBEB;
+    background-color: #E3F5E5;;
     border-radius: 0 20px 0 20px;   
     position: absolute;
     top: 0;
@@ -199,17 +243,22 @@ p {
 }
 
 .more-interface-button {
-    color: #000;
-}
-
-.more-interface-button:last-of-type {
     padding: 10px 0;
     width: 100%;
     background-color: #E3F5E5;
+    color: #000;
+}
+
+
+.more-interface-button:hover {
+    background-color: rgba(207, 234, 210, 1);
+}
+
+.more-interface-button:last-of-type {
     border-radius: 0px 0px 0 20px;
 }
 
-.hidden {
+.more-interface._hidden {
     right: -35%;
 }
 
@@ -253,4 +302,72 @@ p {
 
 .more-button::before {
     left: 5.12px;
+}
+
+@media screen and (max-width: 715px) {
+    .page-header-nav._open {
+        right: 0;
+    }
+
+    .page-header-nav {
+        transition: right 0.4s, left 0s ease 0.4s;
+        position: absolute;
+        bottom: 0;
+        right: 100%;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #CFEAD2;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 62px 10px 10px 10px;
+    }
+
+
+    
+    .nav-link:hover {
+        background-color: #B9D8BC;
+    }
+
+    .page-header-nav-left {
+        flex-direction: column;
+    }
+
+    .page-header-nav-right {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        position: relative;
+        padding: 20px 0 20px 15px;
+    }
+
+    .nav-link::before {
+        content: "";
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        height: 1px;
+        background-color: rgba(0, 69, 7, 0.5);
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .burger-menu._open span {   
+        display: none;
+    }
+
+    .burger-menu._open::before {
+        top: 50%;
+        transform: rotate(45deg);
+    }
+    
+    .burger-menu._open::after {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
 }

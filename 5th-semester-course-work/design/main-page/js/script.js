@@ -1,3 +1,11 @@
+const burgerMenu = document.querySelector(".burger-menu");
+const headerNav = document.querySelector(".page-header-nav");
+burgerMenu.addEventListener("click", () => {
+    burgerMenu.classList.toggle("_open");
+    headerNav.classList.toggle("_open");
+
+});
+
 function flipCard(flashcardButton) {
     let flashcard = null;
     do {
@@ -5,7 +13,7 @@ function flipCard(flashcardButton) {
         flashcardButton = flashcard;
     } while(!flashcard.classList.contains("flashcard"))
 
-    flashcard.classList.toggle("flashcard-flip");
+    flashcard.classList.toggle("_flashcard-flip");
 }
 
 function showAdditionalFunctionality(moreButton) {
@@ -19,6 +27,6 @@ function showAdditionalFunctionality(moreButton) {
         }
     }
 
-    moreInterface.classList.toggle("hidden");
+    moreInterface.classList.toggle("_hidden");
     console.log(moreInterface);
 }
