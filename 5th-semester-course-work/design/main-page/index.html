@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <title>Main page</title>
+</head>
+<body>
+    <header class="page-header">
+        <div class="page-header-content">
+            <span class="logo">FLASH</span>
+            <nav class="page-header-nav">
+                <div class="page-header-nav-left">
+                    <a href="#" class="nav-link">Rehearse</a>
+                    <a href="#" class="nav-link">Add</a>
+                    <a href="#" class="nav-link">Randomize</a>
+                    <a href="#" class="nav-link">Browse</a>
+                </div>
+                <div class="page-header-nav-right">
+                    <a href="#" class="nav-link profile-link">Profile</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="flashcards-section">
+            <div class="flashcards-section-content">
+                <div class="flashcard" id="card">
+                    <div class="flashcard-front">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Front side</p>
+                            <div class="more-interface hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <button class="button flashcard-show-button" onclick="flipCard(this)">Show</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Back side</p>
+                            <div class="more-interface hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="flashcard-back-buttons">
+                            <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard</button>
+                            <button class="button flashcard-failure-button" onclick="flipCard(this)">Again</button>
+                            <button class="button flashcard-success-button" onclick="flipCard(this)">Good</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard" id="card">
+                    <div class="flashcard-front">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Front side</p>
+                            <div class="more-interface hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <button class="button flashcard-show-button" onclick="flipCard(this)">Show</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Back side</p>
+                            <div class="more-interface hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="flashcard-back-buttons">
+                            <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard</button>
+                            <button class="button flashcard-failure-button" onclick="flipCard(this)">Again</button>
+                            <button class="button flashcard-success-button" onclick="flipCard(this)">Good</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard" id="card">
+                    <div class="flashcard-front">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Front side</p>
+                            <div class="more-interface hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <button class="button flashcard-show-button" onclick="flipCard(this)">Show</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Back side</p>
+                            <div class="more-interface hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="flashcard-back-buttons">
+                            <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard</button>
+                            <button class="button flashcard-failure-button" onclick="flipCard(this)">Again</button>
+                            <button class="button flashcard-success-button" onclick="flipCard(this)">Good</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard" id="card">
+                    <div class="flashcard-front">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Front side</p>
+                            <div class="more-interface hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <button class="button flashcard-show-button" onclick="flipCard(this)">Show</button>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-page-content">
+                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                            <p class="flashcard-front-text">Back side</p>
+                            <div class="more-interface hidden">
+                                <button type="submit" class="button more-interface-button">Delete</button>
+                            </div>
+                        </div>
+                        <div class="flashcard-back-buttons">
+                            <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard</button>
+                            <button class="button flashcard-failure-button" onclick="flipCard(this)">Again</button>
+                            <button class="button flashcard-success-button" onclick="flipCard(this)">Good</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
