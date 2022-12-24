@@ -10,26 +10,25 @@ burgerMenu.addEventListener("click", (evetArgs) => {
 let sliderNextButton = document.querySelector(".slider-next");
 let sliderPreviousButton = document.querySelector(".slider-previous");
 let slider = document.querySelector(".quotes");
+let sliders = document.querySelector(".quotes").children;
 let sliderWindow = document.querySelector(".quotes-section-content");
 let sliderWidth = sliderWindow.getBoundingClientRect().width;
 let slidersCount = slider.childElementCount - 1;
 let minLeft = -(slidersCount * sliderWidth);
+let currentSlider = 0;
+sliders[currentSlider].style.display = "inline-flex";
+let slidersLeft = 0;
 let position = 0;
 sliderPreviousButton.addEventListener("click", (eventArgs) => {
-    sliderWidth = sliderWindow.getBoundingClientRect().width;
-    if (position < 0) {
-        position += sliderWidth;
-    } else {
-        position = minLeft;
-    }
-    slider.style.left = `${position}px`;
+
 });
 sliderNextButton.addEventListener("click", (eventArgs) => {
-    sliderWidth = sliderWindow.getBoundingClientRect().width;
-    if (position > minLeft) {
-        position -= sliderWidth;
-    } else {
-        position = 0;
-    }
+    currentSlider += 1;
+    let sliderWidth = sliderWindow.getBoundingClientRect().width;
+    position -= sliderWidth;
+    sliders[currentSlider].style.display = "inline-flex";
     slider.style.left = `${position}px`;
+    setTimeout(() => {
+        slider[currentSlider - 1].style.display = "none";
+    }, 300);
 });

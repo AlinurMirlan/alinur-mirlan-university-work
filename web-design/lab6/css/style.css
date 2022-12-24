@@ -412,7 +412,7 @@ p {
     width: 100%;
     align-items: center;
     white-space: normal;
-    display: inline-flex;
+    display: none;
     flex-direction: column;
 }
 
