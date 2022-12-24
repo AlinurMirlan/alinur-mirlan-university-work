@@ -2,13 +2,13 @@ u1ord = -2.2: .1: 2.2;
 u2ord = -2.2: .1: 2.2;
 u0 = [0, 1];
 
-% First task
+% Second task
 func = @(u) fOfTwo(u(1), u(2));
 [u, fval] = fmincon(func, u0, [], [], [], [], [], [], @constraintsOne);
 cfunc = .56 ./ u1ord;
 exam(@fOfTwo, u, fval, u1ord, u2ord, cfunc);
 
-% Second task
+% First task
 func = @(u) fOfOne(u(1), u(2));
 [u, fval] = fmincon(func, u0, [], [], [1 1], [-2]);
 cfunc = -u1ord - 2;
