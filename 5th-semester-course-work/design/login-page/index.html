@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/normalize.css">
-    <title>Registration page</title>
+    <title>Login page</title>
 </head>
 <body>
     <header class="page-header">
         <div class="page-header-content">
-            <span class="logo">FLASH</span>
+            <a class="logo" href="#">FLASH</a>
         </div>
     </header>
-    <main>
-        <section class="authentication-pane-section">
-            <div class="authentication-pane-content">
-                <div class="authentication-lower-pane authentication-signin-pane">
-                    <div class="authentication-lower-pane-content">
+    <main class="main-content">
+        <section class="authentication compact">
+            <div class="authentication-content">
+                <div class="authentication-pane">
+                    <div class="authentication-pane-content">
                         <h2>Sign <span class="highlight-text">in</span></h2>
                         <form action="" method="post" class="authentication-form">
-                            <input type="email" name="" id="" placeholder="Email">
-                            <input type="password" name="" id="" placeholder="Password">
+                            <input type="email" class="input-field" name="" id="" placeholder="Email">
+                            <input type="password" class="input-field" name="" id="" placeholder="Password">
                             <button type="submit" class="button signin-button">Sign in</button>
                         </form>
                     </div>
@@ -30,5 +30,6 @@
             </div>
         </section>
     </main>
+    <script src="js/script.js"></script>
 </body>
 </html>
