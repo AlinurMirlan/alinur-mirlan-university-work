@@ -1,0 +1,51 @@
+﻿@page
+@model Flash.Pages.BrowseFlashcardsModel
+@{
+    ViewBag.Title = "Browse cards";
+}
+
+<section class="browse-section compact pagination-container">
+    <div class="browse-section-content">
+        <form class="search-bar">
+            <input type="text" class="input-field search-field" name="" id="" placeholder="Search text">
+            <button type="submit" class="magnifying-glass"></button>
+        </form>
+        <div class="flashcards-info">
+            <div class="flashcard-info">
+                <div class="front-info">
+                    <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+                    Front
+                    <div class="more-interface more-interface-fixed _hidden">
+                        <form action="" class="deletion-form">
+                            <button type="submit" class="button more-interface-button more-inerface-browse-button">Delete</button>
+                        </form>
+                        <form action="" class="">
+                            <button type="submit" class="button more-interface-button more-inerface-browse-button">Update</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="back-info">
+                    Back
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pagination">
+        <a href="#" class="page-number">1</a>
+        <a href="#" class="page-number">2</a>
+        <a href="#" class="page-number">3</a>
+        <a href="#" class="page-number">4</a>
+        <a href="#" class="page-number">5</a>
+        <a href="#" class="page-number">6</a>
+        <a href="#" class="page-number">7</a>
+        <a href="#" class="page-number">8</a>
+        <a href="#" class="page-number">9</a>
+        <a href="#" class="page-number">10</a>
+        <a href="#" class="page-number">11</a>
+        <a href="#" class="page-number">12</a>
+        <a href="#" class="page-number">13</a>
+        <a href="#" class="page-number">14</a>
+        <a href="#" class="page-number">15</a>
+        <a href="#" class="page-number">16</a>
+    </div>
+</section>

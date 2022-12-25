@@ -1,0 +1,23 @@
+﻿@page
+@model Flash.Pages.Authentication.LoginModel
+@{
+	Layout = "_AuthenticationLayout";
+}
+
+<section class="authentication compact">
+    <div class="authentication-content">
+        <div class="authentication-pane">
+            <div class="authentication-pane-content">
+                <h2>Sign <span class="highlight-text">in</span></h2>
+                <form action="" method="post" class="authentication-form">
+                    <input type="email" class="input-field" name="" id="" placeholder="Email">
+                    <input type="password" class="input-field" name="" id="" placeholder="Password">
+                    <div class="submit-area">
+                        <p>Don't have an account?<br><a asp-page="/Authentication/Registration" class="sign-in-link highlight-text">Register</a></p>
+                        <button type="submit" class="button signin-button">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
