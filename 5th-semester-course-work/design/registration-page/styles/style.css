@@ -111,6 +111,10 @@ p {
     display: flex;
 }
 
+.page-header-nav-right {
+    position: relative;
+}
+
 .nav-link { 
     font-size: 19px;
     display: block;
@@ -123,9 +127,33 @@ p {
     background-color: rgba(207, 234, 210, 1);
 }
 
-.profile-link::after {
+.profile-button {
+    font-family: 'Maven Pro', sans-serif;
+    font-weight: bold;
+    color: rgba(0, 69, 7, 0.81);
+    background-color: transparent;
+    border: none;
+}
+
+.profile-button::after {
     padding-left: 7px;
     content: url("../items/user-profile-medium.svg");
+}
+
+.profile-interface {
+    position: absolute;
+    background-color: #E3F5E5;
+    width: 100%;
+    top: 100%;
+}
+
+.profile-interface .nav-link {
+    min-height: 65px;
+    width: 100%;
+}
+
+.profile-interface._hidden {
+    display: none;
 }
 
 /* AUTHENTICATION */    
@@ -301,8 +329,8 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    transition: right 0.4s;
     display: flex;
+    transition: right 0.4s;
     flex-direction: column;
 }
 
@@ -316,6 +344,7 @@ button.more-inerface-browse-button {
 }
 
 .more-interface-button {
+    position: relative;
     padding: 10px 0;
     width: 100%;
     background-color: #E3F5E5;
@@ -455,12 +484,12 @@ button.more-inerface-browse-button {
 }
 
 .flashcard-info {
+    overflow: hidden;
     background-color: #F3F3F3;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .front-info {
-    overflow: hidden;
     position: relative;
 }
 
@@ -502,6 +531,14 @@ button.more-inerface-browse-button {
 }
 
 .deck-selector-form {
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+}
+
+.form-row .input-field {
     width: 100%;
 }
 
@@ -578,6 +615,11 @@ button.more-inerface-browse-button {
         flex-direction: column;
     }
 
+    .profile-interface .nav-link {
+        background-color: #CFEAD2;
+        padding-left: 50px;
+    }
+
     .nav-link {
         position: relative;
         padding: 20px 0 20px 15px;
@@ -610,5 +652,10 @@ button.more-inerface-browse-button {
     .burger-menu._open::after {
         top: 50%;
         transform: rotate(-45deg);
+    }
+
+    .profile-interface {
+        width: 100%;
+        top: 100%;
     }
 }

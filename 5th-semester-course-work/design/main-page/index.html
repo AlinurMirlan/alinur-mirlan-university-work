@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/normalize.css">
-    <title>Main page</title>
+    <title>Rehearse page</title>
 </head>
 <body>
     <header class="page-header">
@@ -16,12 +16,15 @@
             <nav class="page-header-nav">
                 <div class="page-header-nav-left">
                     <a href="#" class="nav-link">Decks</a>
-                    <a href="#" class="nav-link page-chosen">Rehearse</a>
+                    <a href="#" class="nav-link">Rehearse</a>
                     <a href="#" class="nav-link">Add</a>
                     <a href="#" class="nav-link">Browse</a>
                 </div>
                 <div class="page-header-nav-right">
-                    <a href="#" class="nav-link profile-link">Profile</a>
+                    <button class="nav-link profile-button" onclick="showProfileInterface()">Profile</button>
+                    <div class="profile-interface _hidden">
+                        <a href="#" class="nav-link">Log out</a>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -35,8 +38,11 @@
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Front side</p>
                             <div class="more-interface _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button">Delete</button>
+                                <form action="" class="deletion-form">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
+                                </form>
+                                <form action="" class="">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
                                 </form>
                             </div>
                         </div>
@@ -47,7 +53,12 @@
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Back side</p>
                             <div class="more-interface _hidden">
-                                <button type="submit" class="button more-interface-button">Delete</button>
+                                <form action="" class="deletion-form">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
+                                </form>
+                                <form action="" class="">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
+                                </form>
                             </div>
                         </div>
                         <div class="flashcard-back-buttons">
@@ -57,14 +68,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="flashcard" id="card">
+                                <div class="flashcard" id="card">
                     <div class="flashcard-front">
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Front side</p>
                             <div class="more-interface _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button">Delete</button>
+                                <form action="" class="deletion-form">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
+                                </form>
+                                <form action="" class="">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
                                 </form>
                             </div>
                         </div>
@@ -75,7 +89,12 @@
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Back side</p>
                             <div class="more-interface _hidden">
-                                <button type="submit" class="button more-interface-button">Delete</button>
+                                <form action="" class="deletion-form">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
+                                </form>
+                                <form action="" class="">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
+                                </form>
                             </div>
                         </div>
                         <div class="flashcard-back-buttons">
@@ -85,14 +104,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="flashcard" id="card">
+                                <div class="flashcard" id="card">
                     <div class="flashcard-front">
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Front side</p>
                             <div class="more-interface _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button">Delete</button>
+                                <form action="" class="deletion-form">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
+                                </form>
+                                <form action="" class="">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
                                 </form>
                             </div>
                         </div>
@@ -103,7 +125,12 @@
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Back side</p>
                             <div class="more-interface _hidden">
-                                <button type="submit" class="button more-interface-button">Delete</button>
+                                <form action="" class="deletion-form">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
+                                </form>
+                                <form action="" class="">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
+                                </form>
                             </div>
                         </div>
                         <div class="flashcard-back-buttons">
@@ -113,14 +140,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="flashcard" id="card">
+                                <div class="flashcard" id="card">
                     <div class="flashcard-front">
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Front side</p>
                             <div class="more-interface _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button">Delete</button>
+                                <form action="" class="deletion-form">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
+                                </form>
+                                <form action="" class="">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
                                 </form>
                             </div>
                         </div>
@@ -131,7 +161,12 @@
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Back side</p>
                             <div class="more-interface _hidden">
-                                <button type="submit" class="button more-interface-button">Delete</button>
+                                <form action="" class="deletion-form">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
+                                </form>
+                                <form action="" class="">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
+                                </form>
                             </div>
                         </div>
                         <div class="flashcard-back-buttons">
@@ -141,14 +176,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="flashcard" id="card">
+                                <div class="flashcard" id="card">
                     <div class="flashcard-front">
                         <div class="flashcard-page-content">
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Front side</p>
                             <div class="more-interface _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button">Delete</button>
+                                <form action="" class="deletion-form">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
+                                </form>
+                                <form action="" class="">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
                                 </form>
                             </div>
                         </div>
@@ -159,7 +197,12 @@
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             <p class="flashcard-front-text">Back side</p>
                             <div class="more-interface _hidden">
-                                <button type="submit" class="button more-interface-button">Delete</button>
+                                <form action="" class="deletion-form">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
+                                </form>
+                                <form action="" class="">
+                                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
+                                </form>
                             </div>
                         </div>
                         <div class="flashcard-back-buttons">

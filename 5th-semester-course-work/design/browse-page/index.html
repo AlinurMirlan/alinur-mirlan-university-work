@@ -18,10 +18,13 @@
                     <a href="#" class="nav-link">Decks</a>
                     <a href="#" class="nav-link">Rehearse</a>
                     <a href="#" class="nav-link">Add</a>
-                    <a href="#" class="nav-link page-chosen">Browse</a>
+                    <a href="#" class="nav-link">Browse</a>
                 </div>
                 <div class="page-header-nav-right">
-                    <a href="#" class="nav-link profile-link">Profile</a>
+                    <button class="nav-link profile-button" onclick="showProfileInterface()">Profile</button>
+                    <div class="profile-interface _hidden">
+                        <a href="#" class="nav-link">Log out</a>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -39,104 +42,11 @@
                             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
                             Front
                             <div class="more-interface more-interface-fixed _hidden">
-                                <form action="">
+                                <form action="" class="deletion-form">
                                     <button type="submit" class="button more-interface-button more-inerface-browse-button">Delete</button>
                                 </form>
-                            </div>
-                        </div>
-                        <div class="back-info">
-                            Back
-                        </div>
-                    </div>
-                </div>
-                <div class="flashcards-info">
-                    <div class="flashcard-info">
-                        <div class="front-info">
-                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
-                            Front
-                            <div class="more-interface more-interface-fixed _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button more-inerface-browse-button">Delete</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="back-info">
-                            Back
-                        </div>
-                    </div>
-                </div>
-                <div class="flashcards-info">
-                    <div class="flashcard-info">
-                        <div class="front-info">
-                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
-                            Front
-                            <div class="more-interface more-interface-fixed _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button more-inerface-browse-button">Delete</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="back-info">
-                            Back
-                        </div>
-                    </div>
-                </div>
-                <div class="flashcards-info">
-                    <div class="flashcard-info">
-                        <div class="front-info">
-                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
-                            Front
-                            <div class="more-interface more-interface-fixed _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button more-inerface-browse-button">Delete</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="back-info">
-                            Back
-                        </div>
-                    </div>
-                </div>
-                <div class="flashcards-info">
-                    <div class="flashcard-info">
-                        <div class="front-info">
-                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
-                            Front
-                            <div class="more-interface more-interface-fixed _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button more-inerface-browse-button">Delete</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="back-info">
-                            Back
-                        </div>
-                    </div>
-                </div>
-                <div class="flashcards-info">
-                    <div class="flashcard-info">
-                        <div class="front-info">
-                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
-                            Front
-                            <div class="more-interface more-interface-fixed _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button more-inerface-browse-button">Delete</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="back-info">
-                            Back
-                        </div>
-                    </div>
-                </div>
-                <div class="flashcards-info">
-                    <div class="flashcard-info">
-                        <div class="front-info">
-                            <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
-                            Front
-                            <div class="more-interface more-interface-fixed _hidden">
-                                <form action="">
-                                    <button type="submit" class="button more-interface-button more-inerface-browse-button">Delete</button>
+                                <form action="" class="">
+                                    <button type="submit" class="button more-interface-button more-inerface-browse-button">Update</button>
                                 </form>
                             </div>
                         </div>
@@ -167,5 +77,6 @@
         </section>
     </main>
     <script src="js/script.js"></script>
+    <script src="js/page-chooser.js"></script>
 </body>
 </html>

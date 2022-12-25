@@ -15,13 +15,16 @@
             <div class="burger-menu"><span></span></div>
             <nav class="page-header-nav">
                 <div class="page-header-nav-left">
-                    <a href="#" class="nav-link page-chosen">Decks</a>
+                    <a href="#" class="nav-link">Decks</a>
                     <a href="#" class="nav-link">Rehearse</a>
                     <a href="#" class="nav-link">Add</a>
                     <a href="#" class="nav-link">Browse</a>
                 </div>
                 <div class="page-header-nav-right">
-                    <a href="#" class="nav-link profile-link">Profile</a>
+                    <button class="nav-link profile-button" onclick="showProfileInterface()">Profile</button>
+                    <div class="profile-interface _hidden">
+                        <a href="#" class="nav-link">Log out</a>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -35,13 +38,18 @@
                 </form>
 
                 <div class="decks">
-                    <a href="#" class="button">Add</a>
+                    <form action="" method="post" class="add-deck-form">
+                        <div class="form-row">
+                            <button type="submit" class="button">Add</button>
+                            <input type="text" name="" id="" class="input-field" placeholder="Deck name">
+                        </div>
+                    </form>
                     <div class="decks-info">
                         <div class="deck-block">
                             <form action="" method="post" class="deck-selector-form">
                                 <button type="submit" class="page-chosen">Deck name</button>
                             </form>
-                            <form action="" method="post">
+                            <form action="" method="post" class="deletion-form">
                                 <button type="submit" class="button delete-button">Delete</button>
                             </form>
                         </div>
@@ -49,7 +57,7 @@
                             <form action="" method="post" class="deck-selector-form">
                                 <button type="submit">Deck name</button>
                             </form>
-                            <form action="" method="post">
+                            <form action="" method="post" class="deletion-form">
                                 <button type="submit" class="button delete-button">Delete</button>
                             </form>
                         </div>
@@ -57,7 +65,7 @@
                             <form action="" method="post" class="deck-selector-form">
                                 <button type="submit">Deck name</button>
                             </form>
-                            <form action="" method="post">
+                            <form action="" method="post" class="deletion-form">
                                 <button type="submit" class="button delete-button">Delete</button>
                             </form>
                         </div>
@@ -65,7 +73,31 @@
                             <form action="" method="post" class="deck-selector-form">
                                 <button type="submit">Deck name</button>
                             </form>
-                            <form action="" method="post">
+                            <form action="" method="post" class="deletion-form">
+                                <button type="submit" class="button delete-button">Delete</button>
+                            </form>
+                        </div>
+                        <div class="deck-block">
+                            <form action="" method="post" class="deck-selector-form">
+                                <button type="submit">Deck name</button>
+                            </form>
+                            <form action="" method="post" class="deletion-form">
+                                <button type="submit" class="button delete-button">Delete</button>
+                            </form>
+                        </div>
+                        <div class="deck-block">
+                            <form action="" method="post" class="deck-selector-form">
+                                <button type="submit">Deck name</button>
+                            </form>
+                            <form action="" method="post" class="deletion-form">
+                                <button type="submit" class="button delete-button">Delete</button>
+                            </form>
+                        </div>
+                        <div class="deck-block">
+                            <form action="" method="post" class="deck-selector-form">
+                                <button type="submit">Deck name</button>
+                            </form>
+                            <form action="" method="post" class="deletion-form">
                                 <button type="submit" class="button delete-button">Delete</button>
                             </form>
                         </div>
@@ -79,5 +111,6 @@
         </section>
     </main>
     <script src="js/script.js"></script>
+    <script src="js/page-chooser.js"></script>
 </body>
 </html>

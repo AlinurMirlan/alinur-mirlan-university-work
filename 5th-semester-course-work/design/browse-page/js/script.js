@@ -6,6 +6,18 @@ burgerMenu.addEventListener("click", () => {
 
 });
 
+const deletionForms = document.getElementsByClassName("deletion-form");
+for (let i = 0; i < deletionForms.length; i++) {
+    deletionForms[i].addEventListener(
+        "submit",
+        function(event) {
+            let confirmed = window.confirm("Confirm the deletion.");
+            if (!confirmed) {
+                event.preventDefault();
+            }
+        }, false);
+}
+
 function flipCard(flashcardButton) {
     let flashcard = null;
     do {
@@ -28,5 +40,9 @@ function showAdditionalFunctionality(moreButton) {
     }
 
     moreInterface.classList.toggle("_hidden");
-    console.log(moreInterface);
+}
+
+function showProfileInterface() {
+    const profileInterface = document.querySelector(".profile-interface");
+    profileInterface.classList.toggle("_hidden");
 }
