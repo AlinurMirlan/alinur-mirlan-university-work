@@ -29,6 +29,12 @@ p {
     background-color: rgba(149, 176, 153, 1);
 }
 
+.validation-fail {
+    display: none;
+    color: #FF4747;
+    font-family: 'Ubuntu', sans-serif;
+}
+
 /* HEADER */
 .logo {
     display: block;
@@ -188,6 +194,7 @@ p {
 }
 
 .authentication-pane h2 {
+    font-family: 'Ubuntu', sans-serif;
     font-size: 35px;
 }
 
