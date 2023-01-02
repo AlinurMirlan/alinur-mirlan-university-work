@@ -1,0 +1,26 @@
+﻿@page
+@model Flash.Areas.Identity.Pages.LoginModel
+
+<section class="authentication compact">
+    <div class="authentication-content">
+        <div class="authentication-pane">
+            <div class="authentication-pane-content">
+                <h2>Sign <span class="highlight-text">in</span></h2>
+                <form method="post" class="authentication-form">
+                    <span class="validation-fail" ></span>
+                    <input  type="email" class="input-field" placeholder="Email">
+                    <span class="validation-fail" ></span>
+                    <input  type="password" class="input-field" placeholder="Password">
+                    <div class="submit-area">
+                        <p>Don't have an account?<br><a asp-area="Identity" asp-page="/Register" class="sign-in-link highlight-text">Register</a></p>
+                        <button type="submit" class="button signin-button">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}

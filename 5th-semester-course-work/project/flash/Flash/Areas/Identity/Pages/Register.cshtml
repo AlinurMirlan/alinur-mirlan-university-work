@@ -1,0 +1,31 @@
+﻿@page
+@model Flash.Areas.Identity.Pages.RegisterModel
+
+<section class="authentication compact">
+    <div class="authentication-content">
+        <div class="authentication-pane authentication-upper-pane">
+            <div class="authentication-pane-content">
+                <h1>Flashcards for <span class="highlight-text">everyone</span>!</h1>
+                <p>Having a trouble memorizing something? Try out capturing the information you need in our flashcards to make sure you won’t ever forget anything of consequence!</p>
+            </div>
+        </div>
+        <div class="authentication-pane authentication-lower-pane">
+            <div class="authentication-pane-content">
+                <h2>Have a go with <span class="highlight-text">us</span>!</h2>
+                <form method="post" class="authentication-form">
+                    <input  type="email" class="input-field" placeholder="Email">
+                    <input  type="password" class="input-field" placeholder="Password">
+                    <input type="password" class="input-field" placeholder="Confirm password">
+                    <div class="submit-area">
+                        <p>Have an account?<br><a asp-area="Identity" asp-page="/Login" class="sign-in-link highlight-text">Sign in</a></p>
+                        <button type="submit" class="button">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
