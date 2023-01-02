@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Collections exhibition");
         ArrayList<Car> cars = getCars();
+        // 1st task
         HashSet<Car> set = new HashSet<>(cars);
         displayEntrails(set);
 
@@ -21,13 +22,53 @@ public class Main {
         }
         displayEntrails(hashMap.entrySet());
 
+        // 2nd task
+        HashSet<Car> anotherSet = new HashSet<>(cars);
+        anotherSet.add(new Car("Dodge", "Challenger", 2022));
+        anotherSet.add(new Car("Dodge", "Viper", 2003));
+        HashSet<Car> result = SetOperations.intersection(set, anotherSet);
+        // Intersection of 'set' and 'anotherSet' should output all entries except
+        // those two we've added above.
+        System.out.println("Intersection of 'set' and 'anotherSet':");
+        displayEntrails(result);
+
+        result = SetOperations.except(anotherSet, set);
+        // Except of 'anotherSet' and 'set' should output entries present
+        // only in 'anotherSet' and absent in 'set'.
+        System.out.println("Except of 'anotherSet' and 'set':");
+        displayEntrails(result);
+
+        result = SetOperations.except(set, anotherSet);
+        System.out.println("Except of 'set' and 'anotherSet':");
+        displayEntrails(result);
+
+        result = SetOperations.union(set, anotherSet);
+        // Union of sets represents unique elements present in both sets.
+        System.out.println("Union of 'anotherSet' and 'set':");
+        displayEntrails(result);
+
+        // 3rd task
         TreeMap<Car, String> sortedMap = new TreeMap<>(hashMap);
         displayEntrails(sortedMap.entrySet());
 
         TreeSet<Car> sortedSet = new TreeSet<>(set);
         displayEntrails(sortedSet);
+
+        // 5th task
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+        List<Integer> numbersReverse = new ArrayList<>();
+        push(numbers, numbersReverse);
+        // This should output 1 2 3 4 5 in reverse order.
+        // Hence: 5 4 3 2 1.
+        displayEntrails(numbersReverse);
     }
 
+    // 4th task
     private static <T> void displayEntrails(Iterable<T> collection) throws IllegalArgumentException {
         if (collection == null)
             throw new IllegalArgumentException();
@@ -37,11 +78,17 @@ public class Main {
         while (iterator.hasNext()) {
             System.out.println(iterator.next().toString());
         }
+        System.out.println();
     }
 
+    // 5th task
     private static <T> void push(List<T> pushFrom, List<T> pushTo) {
         Stack<T> stack = new Stack<>();
-        stack.addAll(pushFrom);
+        Iterator<T> iterator = pushFrom.iterator();
+        while (iterator.hasNext()) {
+            stack.add(iterator.next());
+        }
+
         while (!stack.isEmpty()) {
             pushTo.add(stack.pop());
         }

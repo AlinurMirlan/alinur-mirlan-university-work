@@ -1,24 +1,13 @@
 import first.*;
-import fourth.NameThread;
 import second.*;
 import third.CounterThread;
-
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
     private static long counter = 40000000;
 
     public static void main(String[] args) {
-        // 4th task
-        Scanner scanner = new Scanner(System.in);
-        int threadCount = scanner.nextInt();
-        int repeatCount = scanner.nextInt();
-        Object lock = new Object();
-        for (int i = 0; i < threadCount; i++) {
-            new NameThread(lock, "Thread " + i, repeatCount).start();
-        }
-/*        // 1st task
+        // 1st task
         var messageThread1 = new MessageThread();
         var garbageThread1 = new Thread(new GarbageCollection());
         var messageThread2 = new MessageThread();
@@ -48,7 +37,7 @@ public class Main {
         counterThreads.add(new CounterThread(getThreadId()));
         for (var counterThread : counterThreads) {
             counterThread.start();
-        }*/
+        }
     }
 
     private static long getThreadId() {

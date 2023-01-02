@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String filePath = "C:\\Alinur\\university-work\\java\\8th-lab\\src\\file.txt";
+        String filePath = args[0];
         StreamDecorator decorator = null;
         try {
             decorator = new StreamDecorator(new FileReader(filePath));
@@ -21,6 +21,7 @@ public class Main {
                 System.out.println(line);
         }
 
+        // 2nd method. Using streams and regular expressions.
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         Stream<String> linesStream = reader.lines();
         Stream<String> filteredStream = linesStream.filter((row) ->

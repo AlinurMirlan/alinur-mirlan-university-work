@@ -6,7 +6,7 @@ public class Student implements Serializable {
         setFullName(fullName);
     }
     private String fullName;
-    private int id;
+    private transient int id;
 
     public String getFullName() {
         return fullName;

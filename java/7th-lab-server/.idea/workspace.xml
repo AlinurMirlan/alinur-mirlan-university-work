@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fd7bb7e7-61e5-4dfc-9c7b-9175859e6440" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../7th-lab-client/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../7th-lab-client/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../7th-lab-client/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../7th-lab-client/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../7th-lab-client/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../7th-lab-client/7th-lab-client.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../7th-lab-client/src/ClientSide.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../7th-lab-client/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7th-lab-server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerSide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/FileContentIndex/569eb928-22d9-4e27-aa8d-32c85385b462.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/FileContentIndex/bb51176a-3f45-4154-86b1-325fe93d722c.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/FileContentIndex/ca0e27d9-bb01-4e83-8b4d-9671646571c8.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/ProjectEvaluation/flash.metadata.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/ProjectEvaluation/flash.metadata.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/ProjectEvaluation/flash.projects.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/ProjectEvaluation/flash.projects.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/bin/Debug/net6.0/Flash.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/bin/Debug/net6.0/Flash.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/bin/Debug/net6.0/Flash.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/bin/Debug/net6.0/Flash.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/Debug/net6.0/Flash.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/Debug/net6.0/Flash.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/Debug/net6.0/Flash.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/Debug/net6.0/Flash.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5th-lab/out/production/5th-lab/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../5th-lab/out/production/5th-lab/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5th-lab/out/production/5th-lab/SetOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/../5th-lab/out/production/5th-lab/SetOperations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5th-lab/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../5th-lab/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5th-lab/src/SetOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../5th-lab/src/SetOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6th-lab/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../6th-lab/src/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2JXVDTb6CVHpXhKaFcWoyHIflmA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd7bb7e7-61e5-4dfc-9c7b-9175859e6440" name="Changes" comment="" />
+      <created>1672224296744</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672224296744</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

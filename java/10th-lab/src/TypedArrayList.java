@@ -17,7 +17,6 @@ public class TypedArrayList {
         } else {
             throw new ClassCastException();
         }
-
     }
 
     public void add(int index, Object object) throws IndexOutOfBoundsException {
