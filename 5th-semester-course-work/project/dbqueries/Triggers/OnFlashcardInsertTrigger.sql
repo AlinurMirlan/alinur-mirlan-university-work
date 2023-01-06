@@ -2,10 +2,36 @@ USE Flashcards
 GO
 
 CREATE OR ALTER TRIGGER OnFlashcardInsert ON Flashcard
-	AFTER INSERT
+	INSTEAD OF INSERT
 	AS
 	BEGIN
-	DECLARE @deckId int = (SELECT inserted.DeckId FROM inserted)
+	DECLARE @deckId int,
+		@front nvarchar(max),
+		@back nvarchar(max),
+		@creationDate date,
+		@repetitionDate date,
+		@interval int;
+
+	SELECT @deckId = inserted.DeckId,
+		@front = inserted.Front,
+		@back = inserted.Back,
+		@creationDate = inserted.CreationDate,
+		@repetitionDate = inserted.RepetitionDate,
+		@interval = inserted.RepetitionInterval
+		FROM inserted;
+
+	IF (@repetitionDate IS NULL)
+		SET @repetitionDate = DATEADD(DAY, @interval, GETDATE());
+
+	INSERT INTO Flashcard VALUES
+	(
+		@deckId,
+		@front,
+		@back,
+		@creationDate,
+		@repetitionDate,
+		@interval
+	);
 
 	UPDATE Deck
 		SET FlashcardsCount += 1

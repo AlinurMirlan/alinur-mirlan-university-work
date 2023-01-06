@@ -7,10 +7,10 @@
             <div class="authentication-pane-content">
                 <h2>Sign <span class="highlight-text">in</span></h2>
                 <form method="post" class="authentication-form">
-                    <span class="validation-fail" ></span>
-                    <input  type="email" class="input-field" placeholder="Email">
-                    <span class="validation-fail" ></span>
-                    <input  type="password" class="input-field" placeholder="Password">
+                    <span class="validation-fail" asp-validation-for="UserCredentials.EmailAddress"></span>
+                    <input asp-for="UserCredentials.EmailAddress" class="input-field" placeholder="Email">
+                    <span class="validation-fail" asp-validation-for="UserCredentials.Password"></span>
+                    <input asp-for="UserCredentials.Password" class="input-field" placeholder="Password">
                     <div class="submit-area">
                         <p>Don't have an account?<br><a asp-area="Identity" asp-page="/Register" class="sign-in-link highlight-text">Register</a></p>
                         <button type="submit" class="button signin-button">Sign in</button>

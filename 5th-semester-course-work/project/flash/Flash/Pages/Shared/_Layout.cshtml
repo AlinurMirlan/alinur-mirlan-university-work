@@ -11,7 +11,7 @@
 <body>
     <header class="page-header">
         <div class="page-header-content">
-            <a class="logo" href="#">FLASH</a>
+            <a class="logo" asp-page="/Index">FLASH</a>
             <div class="burger-menu"><span></span></div>
             <nav class="page-header-nav">
                 <div class="page-header-nav-left">
@@ -23,7 +23,7 @@
                 <div class="page-header-nav-right">
                     <button class="nav-link profile-button" onclick="showProfileInterface()">Profile</button>
                     <div class="profile-interface _hidden">
-                        <a href="#" class="nav-link">Log out</a>
+                        <a asp-area="Identity" asp-page="Logout" class="nav-link">Log out</a>
                     </div>
                 </div>
             </nav>

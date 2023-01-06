@@ -5,28 +5,19 @@ CREATE OR ALTER TRIGGER OnFlashcardUpdate ON Flashcard
 	AFTER UPDATE
 	AS
 	BEGIN
-	DECLARE @interval int,
-		@repetitionDateBefore date,
-		@flashcardId int,
-		@boxIdBefore int,
-		@boxIdAfter int;
+	DECLARE @repetitionIntervalBefore int,
+		@repetitionIntervalAfter int,
+		@flashcardId int;
 
-	SET @boxIdBefore = (SELECT deleted.BoxId FROM deleted);
-
-	SELECT @interval = Box.RepetitionInterval,
-		@repetitionDateBefore = inserted.RepetitionDate,
-		@flashcardId = inserted.id,
-		@boxIdAfter = inserted.BoxId FROM inserted
-		INNER JOIN Box ON inserted.BoxId = Box.Id;
-
-	IF (@boxIdBefore = @boxIdAfter)
+	SELECT @repetitionIntervalBefore = deleted.RepetitionInterval,
+		@flashcardId = deleted.Id FROM deleted;
+	SET @repetitionIntervalAfter = 
+		(SELECT inserted.RepetitionInterval FROM inserted);
+	IF (@repetitionIntervalBefore = @repetitionIntervalAfter)
 		RETURN;
 
-	DECLARE @repetitionDate date = 
-		DATEADD(DAY, @interval, @repetitionDateBefore);
-
 	UPDATE Flashcard
-		SET RepetitionDate = @repetitionDate
+		SET RepetitionDate = DATEADD(DAY, RepetitionInterval, RepetitionDate)
 		WHERE Id = @flashcardId;
 	END
 GO

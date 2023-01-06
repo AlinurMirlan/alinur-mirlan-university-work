@@ -1,37 +1,43 @@
-using Microsoft.AspNetCore.Authentication;
+using Flash.Models.Identity;
+using Flash.Services;
+using Flash.Services.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel.DataAnnotations;
-using System.Security.Claims;
 
 namespace Flash.Areas.Identity.Pages
 {
     public class LoginModel : PageModel
     {
-        public void OnGet()
+        private readonly IUserRepository _userRepo;
+        private readonly IUserAuthentication _userAuth;
+
+        [BindProperty]
+        public User UserCredentials { get; set; } = default!;
+
+        public LoginModel(IUserRepository userRepo, IUserAuthentication userAuth)
         {
+            _userRepo = userRepo;
+            _userAuth = userAuth;
         }
 
-        /*        public async Task<IActionResult> OnPostAsync()
-                {
-                    if (!ModelState.IsValid) 
-                        return Page();
+        public void OnGet()
+        {
+            ViewData["PageTitle"] = "Login page";
+        }
 
-                    if (Credential.Email == "alinur@gmail.com" && Credential.Password == "password")
-                    {
-                        List<Claim> claims = new()
-                        {
-                            new Claim(ClaimTypes.Email, "alinur@gmail.com"),
-                            new Claim("User", "user")
-                        };
-                        ClaimsIdentity identity = new(claims, "MyCookieAuth");
-                        ClaimsPrincipal claimsPrincipal = new(identity);
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+                return Page();
 
-                        await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
-                        return RedirectToPage("/Index");
-                    }
+            User? user = await _userRepo.GetAsync(UserCredentials.EmailAddress, UserCredentials.Password);
+            if (user is not null)
+            {
+                await _userAuth.SignUserInAsync(HttpContext, user);
+                return RedirectToPage("/Index");
+            }
 
-                    return Page();
-                }*/
+            return Page();
+        }
     }
 }

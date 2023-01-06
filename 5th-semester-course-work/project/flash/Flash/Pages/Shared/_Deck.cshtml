@@ -1,0 +1,11 @@
+﻿@using Flash.Models
+@model Deck
+
+<div class="deck-block">
+    <form method="post" asp-page-handler="select" asp-route-deckId="@Model.Id" class="deck-selector-form">
+        <button type="submit">@Model.Name</button>
+    </form>
+    <form method="post" asp-page-handler="delete" asp-route-deckId="@Model.Id">
+        <button type="submit" class="button delete-button">Delete</button>
+    </form> 
+</div>

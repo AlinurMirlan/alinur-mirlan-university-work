@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Flash.Models.Identity;
 using Microsoft.EntityFrameworkCore;
+using Flash.Models.Identity;
 
 namespace Flash.Models;
 
 [Table("Deck")]
-[Index("Name", Name = "IX_Deck_Name", IsUnique = true)]
+[Index("Name", Name = "IX_Deck_Name", IsUnique = false)]
+[Index("UserId", "Name", Name = "IX_Deck_UserId_Name", IsUnique = true)]
 public partial class Deck
 {
     [Key]
@@ -18,20 +17,21 @@ public partial class Deck
 
     [Required]
     [StringLength(255)]
-    public string Name { get; set; }
+    public string Name { get; set; } = default!;
 
-    public int FlashcardsCount { get; set; }
+    public int? FlashcardsCount { get; set; }
+
+    public float? SuccessRetentionRate { get; set; }
+
+    public float? DifficultyRetentionRate { get; set; }
+
+    [Column(TypeName = "date")]
+    public DateTime CreationDate { get; set; }
 
     [InverseProperty("Deck")]
     public virtual ICollection<Flashcard> Flashcards { get; } = new List<Flashcard>();
 
     [ForeignKey("UserId")]
     [InverseProperty("Decks")]
-    public virtual User User { get; set; }
-
-    public Deck(User user, string name)
-    {
-        this.Name = name;
-        this.User = user;
-    }
+    public virtual User User { get; set; } = default!;
 }

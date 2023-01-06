@@ -6,80 +6,37 @@
 
 <section class="decks-section compact pagination-container">
     <div class="browse-section-content">
-        <form class="search-bar">
-            <input type="text" class="input-field search-field" name="" id="" placeholder="Search deck">
+        <form method="get" class="search-bar">
+            <input type="text" name="searchTerm" asp-route-searchTerm class="input-field search-field" placeholder="Search deck">
             <button type="submit" class="magnifying-glass"></button>
         </form>
 
         <div class="decks">
-            <form action="" method="post" class="add-deck-form">
+            <form method="post" class="add-deck-form">
                 <div class="form-row">
                     <button type="submit" class="button">Add</button>
-                    <input type="text" name="" id="" class="input-field" placeholder="Deck name">
+                    <input asp-for="PostedDeck.UserId" value="@Model.UserId" type="hidden" />
+                    <input asp-for="PostedDeck.CreationDate" value="@DateTime.Now" type="hidden" />
+                    <input asp-for="PostedDeck.Name" class="input-field" placeholder="Deck name" />
                 </div>
             </form>
             <div class="decks-info">
-                <div class="deck-block">
-                    <form action="" method="post" class="deck-selector-form">
-                        <button type="submit" class="page-chosen">Deck name</button>
-                    </form>
-                    <form action="" method="post" class="deletion-form">
-                        <button type="submit" class="button delete-button">Delete</button>
-                    </form>
-                </div>
-                <div class="deck-block">
-                    <form action="" method="post" class="deck-selector-form">
-                        <button type="submit">Deck name</button>
-                    </form>
-                    <form action="" method="post" class="deletion-form">
-                        <button type="submit" class="button delete-button">Delete</button>
-                    </form>
-                </div>
-                <div class="deck-block">
-                    <form action="" method="post" class="deck-selector-form">
-                        <button type="submit">Deck name</button>
-                    </form>
-                    <form action="" method="post" class="deletion-form">
-                        <button type="submit" class="button delete-button">Delete</button>
-                    </form>
-                </div>
-                <div class="deck-block">
-                    <form action="" method="post" class="deck-selector-form">
-                        <button type="submit">Deck name</button>
-                    </form>
-                    <form action="" method="post" class="deletion-form">
-                        <button type="submit" class="button delete-button">Delete</button>
-                    </form>
-                </div>
-                <div class="deck-block">
-                    <form action="" method="post" class="deck-selector-form">
-                        <button type="submit">Deck name</button>
-                    </form>
-                    <form action="" method="post" class="deletion-form">
-                        <button type="submit" class="button delete-button">Delete</button>
-                    </form>
-                </div>
-                <div class="deck-block">
-                    <form action="" method="post" class="deck-selector-form">
-                        <button type="submit">Deck name</button>
-                    </form>
-                    <form action="" method="post" class="deletion-form">
-                        <button type="submit" class="button delete-button">Delete</button>
-                    </form>
-                </div>
-                <div class="deck-block">
-                    <form action="" method="post" class="deck-selector-form">
-                        <button type="submit">Deck name</button>
-                    </form>
-                    <form action="" method="post" class="deletion-form">
-                        <button type="submit" class="button delete-button">Delete</button>
-                    </form>
-                </div>
+                @foreach (var deck in Model.Decks)
+                {
+                    if (deck.Id == Model.SelectedDeckId)
+                    {
+                        <partial name="_SelectedDeck" model="deck" />
+                    }
+                    else
+                    {
+                        <partial name="_Deck" model="deck" />
+                    }
+                }
             </div>
         </div>
     </div>
     <div class="pagination">
         <a href="#" class="page-number page-chosen">1</a>
-        <a href="#" class="page-number">2</a>
+        <a href="#" class="page-number" bold>2</a>
     </div>
 </section>

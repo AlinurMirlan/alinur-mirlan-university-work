@@ -8,12 +8,14 @@ namespace Flash.Data;
 
 public partial class FlashcardsContext : DbContext
 {
-    public FlashcardsContext() { }
+    public FlashcardsContext()
+    {
+    }
 
     public FlashcardsContext(DbContextOptions<FlashcardsContext> options)
-        : base(options) { }
-
-    public virtual DbSet<Box> Boxes { get; set; }
+        : base(options)
+    {
+    }
 
     public virtual DbSet<Deck> Decks { get; set; }
 
@@ -21,13 +23,14 @@ public partial class FlashcardsContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Name=ConnectionStrings:DefaultConnection");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Deck>(entity =>
         {
+            entity.Property(e => e.DifficultyRetentionRate).HasDefaultValueSql("((1.2))");
+            entity.Property(e => e.FlashcardsCount).HasDefaultValueSql("((0))");
+            entity.Property(e => e.SuccessRetentionRate).HasDefaultValueSql("((1))");
+
             entity.HasOne(d => d.User).WithMany(p => p.Decks).HasConstraintName("FK_Deck_User");
         });
 
@@ -35,13 +38,12 @@ public partial class FlashcardsContext : DbContext
         {
             entity.ToTable("Flashcard", tb =>
                 {
+                    tb.HasTrigger("OnFlashcardDelete");
                     tb.HasTrigger("OnFlashcardInsert");
                     tb.HasTrigger("OnFlashcardUpdate");
                 });
 
-            entity.HasOne(d => d.Box).WithMany(p => p.Flashcards)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Flashcard_Box");
+            entity.Property(e => e.RepetitionInterval).HasDefaultValueSql("((0))");
 
             entity.HasOne(d => d.Deck).WithMany(p => p.Flashcards).HasConstraintName("FK_Flashcard_Deck");
         });

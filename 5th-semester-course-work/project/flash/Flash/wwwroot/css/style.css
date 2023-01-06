@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Maven+Pro&family=Monda:wght@400;700&family=Ubuntu:wght@400;700&display=swap');
 
+/* GENERAL */
 p {
     font-size: 18px;
     font-family: 'Maven Pro', sans-serif;
@@ -9,14 +10,13 @@ h1, h2, h3, h4 {
     font-family: 'Ubuntu', sans-serif;
 }
 
-/* GENERAL */
 .button {
     display: block;
     width: max-content;
-    font-family: 'Ubuntu', sans-serif;
     background: rgba(66, 190, 78, 0.81);
     font-size: 18px;
     color: #fff;
+    font-family: 'Ubuntu', sans-serif;
     padding: 13px 30px;
     border: 1px solid transparent;
 }
@@ -62,9 +62,9 @@ h1, h2, h3, h4 {
     background-color: rgba(66, 190, 78, 15%);
 }
 
-.page-header a {
-    color: rgba(0, 69, 7, 0.81);
-}
+    .page-header a {
+        color: rgba(0, 69, 7, 0.81);
+    }
 
 .burger-menu::after,
 .burger-menu::before,
@@ -127,7 +127,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-link {
-    font-size: 19px;
+    font-size: 17px;
     display: block;
     padding: 0 20px;
     display: flex;
@@ -135,9 +135,9 @@ h1, h2, h3, h4 {
     font-family: 'Monda', sans-serif;
 }
 
-.nav-link:hover {
-    background-color: rgba(207, 234, 210, 1);
-}
+    .nav-link:hover {
+        background-color: rgba(207, 234, 210, 1);
+    }
 
 .profile-button {
     font-weight: bold;
@@ -146,10 +146,10 @@ h1, h2, h3, h4 {
     border: none;
 }
 
-.profile-button::after {
-    padding-left: 7px;
-    content: url("../items/user-profile-medium.svg");
-}
+    .profile-button::after {
+        padding-left: 7px;
+        content: url("../items/user-profile-medium.svg");
+    }
 
 .profile-interface {
     position: absolute;
@@ -158,16 +158,16 @@ h1, h2, h3, h4 {
     top: 100%;
 }
 
-.profile-interface .nav-link {
-    min-height: 65px;
-    width: 100%;
-}
+    .profile-interface .nav-link {
+        min-height: 65px;
+        width: 100%;
+    }
 
-.profile-interface._hidden {
-    display: none;
-}
+    .profile-interface._hidden {
+        display: none;
+    }
 
-/* AUTHENTICATION */    
+/* AUTHENTICATION */
 .authentication-pane {
     padding: 40px 10px;
     background: linear-gradient(132deg, rgba(255,255,255,1) 0%, rgba(66,190,78,0.15) 100%);
@@ -185,9 +185,9 @@ h1, h2, h3, h4 {
     flex: 0 1 550px;
 }
 
-.authentication-pane-content p {
-    line-height: 1.5;
-}
+    .authentication-pane-content p {
+        line-height: 1.5;
+    }
 
 .authentication-upper-pane p {
     margin-top: 30px;
@@ -302,7 +302,8 @@ h1, h2, h3, h4 {
 
 .flashcard-success-button:hover,
 .flashcard-success-button:active {
-    background-color:#23C53A;;
+    background-color: #23C53A;
+    ;
 }
 
 .flashcard-failure-button {
@@ -310,7 +311,7 @@ h1, h2, h3, h4 {
 }
 
 .flashcard-success-button {
-    background-color:  #51F268;
+    background-color: #51F268;
 }
 
 .flashcard-difficulty-button {
@@ -335,7 +336,8 @@ h1, h2, h3, h4 {
 .more-interface {
     width: 35%;
     padding-top: 30px;
-    background-color: #E3F5E5;; 
+    background-color: #E3F5E5;
+    ;
     position: absolute;
     top: 0;
     right: 0;
@@ -362,9 +364,9 @@ button.more-inerface-browse-button {
 }
 
 
-.more-interface-button:hover {
-    background-color: rgba(207, 234, 210, 1);
-}
+    .more-interface-button:hover {
+        background-color: rgba(207, 234, 210, 1);
+    }
 
 .more-interface._hidden {
     right: -35%;
@@ -380,36 +382,36 @@ button.more-inerface-browse-button {
     margin-left: auto;
 }
 
-.more-button span,
-.more-button::after,
-.more-button::before {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: #fff;
-}
+    .more-button span,
+    .more-button::after,
+    .more-button::before {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
 
-.more-button span {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+    .more-button span {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-.more-button::after,
-.more-button::before {
-    content: "";
-    top: 50%;
-    transform: translateY(-50%);
-}
+    .more-button::after,
+    .more-button::before {
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
-.more-button::after {
-    right: 5.12px;
-}
+    .more-button::after {
+        right: 5.12px;
+    }
 
-.more-button::before {
-    left: 5.12px;
-}
+    .more-button::before {
+        left: 5.12px;
+    }
 
 /* PAGINATION */
 .pagination {
@@ -434,9 +436,10 @@ button.more-inerface-browse-button {
     align-items: center;
 }
 
-.page-number:hover {
-    background-color: rgba(207, 234, 210, 1);;
-}
+    .page-number:hover {
+        background-color: rgba(207, 234, 210, 1);
+        ;
+    }
 
 .page-chosen {
     background-color: rgba(207, 234, 210, 1) !important;
@@ -505,6 +508,7 @@ button.more-inerface-browse-button {
 }
 
 .front-info, .back-info {
+    font-family: "Maven Pro", sans-serif;
     padding: 15px;
     min-height: 60px;
     background-color: #E5EBFE;
@@ -554,12 +558,14 @@ button.more-inerface-browse-button {
 }
 
 .deck-selector-form button {
+    cursor: pointer;
     width: 100%;
     height: 100%;
     border: none;
     background-color: #E5EBFE;
     text-align: left;
     padding: 15px;
+    font-family: 'Maven Pro', sans-serif
 }
 
 .delete-button {
@@ -581,28 +587,28 @@ button.more-inerface-browse-button {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.flashcard-addition-content form {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+    .flashcard-addition-content form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
 
-.flashcard-addition-content form textarea {
-    resize: none;
-}
+        .flashcard-addition-content form textarea {
+            resize: none;
+        }
 
-.flashcard-addition-content button {
-    align-self: flex-end;
-}
+    .flashcard-addition-content button {
+        align-self: flex-end;
+    }
 
 @media screen and (max-width: 715px) {
     .page-header-nav._open {
         right: 0;
     }
 
-    .page-header-nav._open .nav-link:hover {
-        background-color: #B9D8BC;
-    }
+        .page-header-nav._open .nav-link:hover {
+            background-color: #B9D8BC;
+        }
 
     .page-header-nav {
         transition: right 0.4s, left 0s ease 0.4s;
@@ -636,34 +642,34 @@ button.more-inerface-browse-button {
         padding: 20px 0 20px 15px;
     }
 
-    .nav-link::before {
-        content: "";
-        width: 100%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        position: absolute;
-        height: 1px;
-        background-color: rgba(0, 69, 7, 0.5);
-    }
+        .nav-link::before {
+            content: "";
+            width: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            height: 1px;
+            background-color: rgba(0, 69, 7, 0.5);
+        }
 
     .burger-menu {
         display: block;
     }
 
-    .burger-menu._open span {   
-        display: none;
-    }
+        .burger-menu._open span {
+            display: none;
+        }
 
-    .burger-menu._open::before {
-        top: 50%;
-        transform: rotate(45deg);
-    }
-    
-    .burger-menu._open::after {
-        top: 50%;
-        transform: rotate(-45deg);
-    }
+        .burger-menu._open::before {
+            top: 50%;
+            transform: rotate(45deg);
+        }
+
+        .burger-menu._open::after {
+            top: 50%;
+            transform: rotate(-45deg);
+        }
 
     .profile-interface {
         width: 100%;

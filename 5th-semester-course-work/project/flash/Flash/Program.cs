@@ -1,18 +1,30 @@
+using Flash.Data;
+using Flash.Services;
+using Flash.Services.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+IConfiguration config = builder.Configuration;
 
 // Add services to the container.
-builder.Services.AddRazorPages()
-    .AddRazorPagesOptions(options =>
-    {
-        options.Conventions.AddPageRoute("/Index", "/Rehearse");
-    })
+builder
+    .Services
+    .AddRazorPages()
+    .AddRazorPagesOptions(options => options.Conventions.AddPageRoute("/Index", "/Rehearse"))
     .Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
     {
         options.Cookie.Name = "CookieAuthentication";
         options.LoginPath = "/Identity/Login";
-    });
+    })
+    .Services
+    .AddDbContext<FlashcardsContext>(options => options.UseSqlServer(config.GetConnectionString("DefaultConnection")))
+    .AddSession()
+    .AddDistributedMemoryCache()
+    .AddScoped<IUserRepository, UserRepository>()
+    .AddScoped<IDeckRepository, DeckRepository>()
+    .AddScoped<ISessionManagement, SessionManagement>()
+    .AddScoped<IUserAuthentication, UserAuthentication>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,6 +37,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseSession();
 
 app.UseRouting();
 

@@ -19,6 +19,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -63,8 +67,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_Deck.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9EZWNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_Flashcard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9GbGFzaGNhcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_SelectedDeck.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TZWxlY3RlZERlY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/_ViewImports.cshtml]
