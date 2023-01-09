@@ -1,0 +1,19 @@
+﻿@page
+@model Flash.Pages.Card.EditModel
+@{
+    ViewBag.Title = "Edit card page";
+}
+
+<section class="flashcard-addition-section compact">
+    <div class="selected-deck">
+        <span>@(Model.Deck.Name)</span>
+    </div>
+    <div class="flashcard-addition-content">
+        <form method="post" >
+            <input type="hidden" asp-for="Flashcard.Id" value="@Model.Flashcard.Id" />
+            <textarea asp-for="Flashcard.Front" cols="30" rows="5" class="input-field" placeholder="Front">@Model.Flashcard.Front</textarea>
+            <textarea asp-for="Flashcard.Back" cols="30" rows="5" class="input-field" placeholder="Back">@Model.Flashcard.Back</textarea>
+            <button type="submit" class="button">Edit</button>
+        </form>
+    </div>
+</section>

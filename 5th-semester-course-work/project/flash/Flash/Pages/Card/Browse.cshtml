@@ -1,0 +1,26 @@
+﻿@page
+@using Flash.Models.ViewModels
+@model Flash.Pages.Card.BrowseModel
+@{
+    ViewBag.Title = "Browse cards";
+}
+
+<section class="browse-section compact pagination-container">
+    <div class="browse-section-content">
+        <div class="selected-deck">
+            <span>@(Model.Deck is null ? "No Deck" : Model.Deck.Name)</span>
+        </div>
+        <form method="get" class="search-bar">
+            <input type="text" name="searchTerm" asp-route-searchTerm class="input-field search-field" placeholder="Search text">
+            <button type="submit" class="magnifying-glass"></button>
+        </form>
+        <div class="flashcards-info">
+            @foreach (var flashcard in Model.Flashcards)
+            {
+                CardOnBrowsePage card = new(flashcard, Model.Pagination!.CurrentPage, Model.SearchTerm);
+                <partial name="_CompactFlashcard" model="card" />
+            }
+        </div>
+    </div>
+    <div class="pagination" pagination="Model.Pagination" search-term="@Model.SearchTerm"></div>
+</section>

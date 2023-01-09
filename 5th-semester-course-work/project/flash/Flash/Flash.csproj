@@ -12,12 +12,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Infrastructure\TagHelpers\" />
-    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
 
 </Project>

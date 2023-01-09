@@ -1,34 +1,59 @@
-﻿using Flash.Models;
+﻿using Flash.Infrastructure;
+using Flash.Models;
+using Flash.Services.Repositories;
 
 namespace Flash.Services
 {
     public class SessionManagement : ISessionManagement
     {
+        private readonly IDeckRepository _deckRepo;
         private readonly IConfiguration _config;
 
-        public SessionManagement(IConfiguration config)
+        public SessionManagement(IConfiguration config, IDeckRepository deckRepo)
         {
+            _deckRepo = deckRepo;
             _config = config;
         }
 
-        public int? SetDefaultDeck(ISession session, IEnumerable<Deck>? decks)
+        public Deck? SetDefaultDeck(ISession session, IEnumerable<Deck> decks)
         {
-            int? deckId;
-            string deckIdKey = _config["SessionKeys:DeckId"] ?? throw new InvalidOperationException();
-            if (!session.Keys.Contains(deckIdKey))
+            Deck? deck;
+            string deckKey = _config["SessionKeys:Deck"] ?? throw new InvalidOperationException();
+            if (!session.Keys.Contains(deckKey))
             {
-                deckId = decks?.FirstOrDefault()?.Id;
-                if (deckId is not null)
+                deck = decks.FirstOrDefault();
+                if (deck is not null)
                 {
-                    session.SetInt32(deckIdKey, deckId.Value);
+                    session.Set(deckKey, deck);
                 }
             }
             else
             {
-                deckId = session.GetInt32(deckIdKey);
+                deck = session.Get<Deck>(deckKey);
             }
 
-            return deckId;
+            return deck;
+        }
+
+        public async Task<Deck?> SetDefaultDeckAsync(HttpContext httpContext)
+        {
+            Deck? deck;
+            string deckKey = _config["SessionKeys:Deck"] ?? throw new InvalidOperationException();
+            int userId = httpContext.User.GetClaimIntValue(_config["UserClaims:UserId"]);
+            if (!httpContext.Session.Keys.Contains(deckKey))
+            {
+                deck = (await _deckRepo.GetDecksAsync(userId)).FirstOrDefault();
+                if (deck is not null)
+                {
+                    httpContext.Session.Set(deckKey, deck);
+                }
+            }
+            else
+            {
+                deck = httpContext.Session.Get<Deck>(deckKey);
+            }
+
+            return deck;
         }
     }
 }

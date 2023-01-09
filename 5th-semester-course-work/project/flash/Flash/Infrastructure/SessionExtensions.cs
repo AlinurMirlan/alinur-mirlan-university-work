@@ -1,24 +1,19 @@
-﻿namespace Flash.Infrastructure
+﻿using System.Text.Json;
+
+namespace Flash.Infrastructure
 {
     public static class SessionExtensions
     {
-/*        public int GetSelectedDeckId(ISession session)
+        public static T? Get<T>(this ISession session, string key)
         {
-            string deckIdKey = _config["CookieKeys:DeckId"] ?? throw new InvalidOperationException();
-            int deckId = session.GetInt32(deckIdKey)!.Value;
-            return deckId;
+            string? json = session.GetString(key);
+            T? value = json is null ? default : JsonSerializer.Deserialize<T>(json);
+            return value;
         }
 
-        public void RemoveCurrentDeckId(ISession session)
+        public static void Set<T>(this ISession session, string key, T value)
         {
-            string deckIdKey = _config["CookieKeys:DeckId"] ?? throw new InvalidOperationException();
-            session.Remove(deckIdKey);
+            session.SetString(key, JsonSerializer.Serialize(value));
         }
-
-        public void UpdateCurrentDeckId(ISession session, int deckId)
-        {
-            string deckIdKey = _config["CookieKeys:DeckId"] ?? throw new InvalidOperationException();
-            session.SetInt32(deckIdKey, deckId);
-        }*/
     }
 }

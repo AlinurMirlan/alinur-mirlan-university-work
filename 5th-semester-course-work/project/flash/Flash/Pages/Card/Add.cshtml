@@ -1,0 +1,33 @@
+﻿@page
+@model Flash.Pages.Card.AddModel
+@{
+    ViewBag.Title = "Add card page";
+}
+
+<section class="flashcard-addition-section compact">
+    <div class="selected-deck">
+        <span>@(Model.Deck is null ? "No Deck" : Model.Deck.Name)</span>
+    </div>
+    @if (Model.Deck is null)
+    {
+        <div class="flashcard-addition-content">
+            <form>
+                <textarea cols="30" rows="5" class="input-field" placeholder="Front" disabled></textarea>
+                <textarea cols="30" rows="5" class="input-field" placeholder="Back" disabled></textarea>
+                <button type="submit" class="button disabled-button" disabled>Add</button>
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class="flashcard-addition-content">
+            <form method="post">
+                <input type="hidden" asp-for="PostedFlashcard.CreationDate" value="@DateTime.Today" />
+                <input type="hidden" asp-for="PostedFlashcard.DeckId" value="@Model.Deck.Id" />
+                <textarea asp-for="PostedFlashcard.Front" cols="30" rows="5" class="input-field" placeholder="Front"></textarea>
+                <textarea asp-for="PostedFlashcard.Back" cols="30" rows="5" class="input-field" placeholder="Back"></textarea>
+                <button type="submit" class="button">Add</button>
+            </form>
+        </div>
+    }
+</section>

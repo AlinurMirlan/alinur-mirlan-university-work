@@ -1,11 +1,22 @@
-﻿@using Flash.Models
-@model Deck
-
+﻿@using Flash.Models.ViewModels
+@model DeckOnPage
+@{
+    string? returnUrl = Url.Page("/Decks", new 
+    {
+        pageNumber = Model.Page,
+        searchTerm = Model.SearchTerm
+    });
+    Dictionary<string, string?> routeValues = new()
+    {
+        { "deckId", Model.Deck.Id.ToString() },
+        { "returnUrl", returnUrl }
+    };
+}
 <div class="deck-block">
-    <form method="post" asp-page-handler="select" asp-route-deckId="@Model.Id" class="deck-selector-form">
-        <button type="submit">@Model.Name</button>
+    <form method="post" asp-page-handler="select" asp-all-route-data="routeValues" class="deck-selector-form">
+        <button type="submit">@Model.Deck.Name</button>
     </form>
-    <form method="post" asp-page-handler="delete" asp-route-deckId="@Model.Id">
+    <form method="post" asp-page-handler="delete" asp-all-route-data="routeValues">
         <button type="submit" class="button delete-button">Delete</button>
     </form> 
 </div>

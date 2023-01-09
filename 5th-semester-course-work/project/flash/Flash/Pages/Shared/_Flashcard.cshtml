@@ -1,16 +1,41 @@
-﻿<div class="flashcard">
+﻿@using Flash.Models.ViewModels
+@using Flash.Models
+@using Flash.Services
+@model CardOnRehearsePage
+@inject ITimeInterval Interval
+@{
+    int hardInterval = Interval.GetNewInterval
+    (
+        RetentionDifficulty.Hard,
+        Model.Deck.DifficultyRetentionRate!.Value,
+        Model.Flashcard.RepetitionInterval!.Value
+    );
+
+    int goodInterval = Interval.GetNewInterval
+    (
+        RetentionDifficulty.Good,
+        Model.Deck.SuccessRetentionRate!.Value,
+        Model.Flashcard.RepetitionInterval!.Value
+    );
+
+    string? returnUrl = Url.Page("/Index", new { pageNumber = Model.Page });
+}
+
+<div class="flashcard">
     <div class="flashcard-front">
         <div class="flashcard-page-content">
             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
-            <p class="flashcard-front-text"></p>
+            <p class="flashcard-front-text">@Model.Flashcard.Front</p>
             <div class="more-interface _hidden">
-                <form class="deletion-form">
-                    <input type="hidden" />
+                <form asp-page="/Card/Delete" class="deletion-form" method="post">
+                    <input type="hidden" name="flashcardId" value="@Model.Flashcard.Id" />
+                    <input type="hidden" name="returnUrl" value="@returnUrl" />
                     <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
                 </form>
-                <form>
-                    <input type="hidden" />
-                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
+                <form asp-page="/Card/Edit" method="get">
+                    <input type="hidden" name="flashcardId" value="@Model.Flashcard.Id" />
+                    <input type="hidden" name="returnUrl" value="@returnUrl" />
+                    <button tabindex="-1" type="submit" class="button more-interface-button">Edit</button>
                 </form>
             </div>
         </div>
@@ -19,22 +44,43 @@
     <div class="flashcard-back">
         <div class="flashcard-page-content">
             <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
-            <p class="flashcard-front-text"></p>
+            <p class="flashcard-back-text">@Model.Flashcard.Back</p>
             <div class="more-interface _hidden">
-                <form class="deletion-form">
-                    <input type="hidden" />
+                <form asp-page="/Card/Delete" class="deletion-form" method="post">
+                    <input type="hidden" name="flashcardId" value="@Model.Flashcard.Id" />
+                    <input type="hidden" name="returnUrl" value="@returnUrl" />
                     <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
                 </form>
-                <form>
-                    <input type="hidden" />
-                    <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
+                <form asp-page="/Card/Edit" method="get">
+                    <input type="hidden" name="flashcardId" value="@Model.Flashcard.Id" />
+                    <input type="hidden" name="returnUrl" value="@returnUrl" />
+                    <button tabindex="-1" type="submit" class="button more-interface-button">Edit</button>
                 </form>
+                <button class="button more-interface-button" onclick="flipCard(this)">Flip</button>
             </div>
         </div>
         <div class="flashcard-back-buttons">
-            <button class="button flashcard-failure-button" onclick="flipCard(this)">Again()</button>
-            <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard()</button>
-            <button class="button flashcard-success-button" onclick="flipCard(this)">Good()</button>
+            <form asp-route-newInterval="0" method="post">
+                <input type="hidden" name="flashcardId" value="@Model.Flashcard.Id" />
+                <button class="button flashcard-failure-button">
+                    Again<br />
+                    <span class="repetition-interval">(0d.)</span>
+                </button>
+            </form>
+            <form asp-route-newInterval="@hardInterval" method="post">
+                <input type="hidden" name="flashcardId" value="@Model.Flashcard.Id" />
+                <button class="button flashcard-difficulty-button">
+                    Hard<br />
+                    <span class="repetition-interval">(@Interval.GetTimeInterval(hardInterval))</span>
+                </button>
+            </form>
+            <form asp-route-newInterval="@goodInterval" method="post">
+                <input type="hidden" name="flashcardId" value="@Model.Flashcard.Id" />
+                <button class="button flashcard-success-button">
+                    Good<br />
+                    <span class="repetition-interval">(@Interval.GetTimeInterval(goodInterval))</span>
+                </button>
+            </form>
         </div>
     </div>
 </div>

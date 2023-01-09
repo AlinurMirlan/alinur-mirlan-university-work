@@ -1,11 +1,11 @@
 using Flash.Infrastructure;
 using Flash.Models;
+using Flash.Models.ViewModels;
 using Flash.Services;
 using Flash.Services.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Security.Claims;
 
 namespace Flash.Pages
 {
@@ -16,13 +16,17 @@ namespace Flash.Pages
         private readonly IDeckRepository _deckRepo;
         private readonly ISessionManagement _session;
 
+        public Pagination Pagination { get; set; } = default!;
+
         public string DeckIdKey { get; set; }
 
-        public int UserId { get; set; }
+        public static int UserId { get; set; }
 
         public int SelectedDeckId { get; set; }
 
-        public IEnumerable<Deck> Decks { get; set; } = default!;
+        public string? SearchTerm { get; set; }
+
+        public IEnumerable<Deck> Decks { get; set; } = Enumerable.Empty<Deck>();
 
         [BindProperty]
         public Deck PostedDeck { get; set; } = default!;
@@ -32,46 +36,48 @@ namespace Flash.Pages
             _config = config;
             _deckRepo = deckRepo;
             _session = session;
-            DeckIdKey = _config["SessionKeys:DeckId"] ?? throw new InvalidOperationException();
+            DeckIdKey = _config["SessionKeys:Deck"] ?? throw new InvalidOperationException();
         }
 
-        public async Task OnGetAsync(string? searchTerm = null)
+        public IActionResult OnGet(int pageNumber = 1, string? searchTerm = null)
         {
-            int userId = HttpContext.User.GetClaimIntValue(_config["UserClaims:UserId"]);
-            UserId = userId;
-            if (searchTerm is null)
+            UserId = HttpContext.User.GetClaimIntValue(_config["UserClaims:UserId"]);
+            Decks = _deckRepo.GetDecksPartitioned(UserId, pageNumber, searchTerm, out int pageCount);
+            if (!Decks.Any() && pageCount != 0)
             {
-                Decks = await _deckRepo.GetUserDecksAsync(userId);
-            }
-            else
-            {
-                Decks = await _deckRepo.GetUserDecksAsync(userId, searchTerm);
+                return RedirectToPage(new { pageNumber = pageCount, searchTerm });
             }
 
-            int? deckId = _session.SetDefaultDeck(HttpContext.Session, Decks);
-            SelectedDeckId = deckId ?? 0;
+            SearchTerm = searchTerm;
+            Pagination = new(pageNumber, pageCount, "/Decks");
+            Deck? deck = _session.SetDefaultDeck(HttpContext.Session, Decks);
+            SelectedDeckId = deck?.Id ?? 0;
+            return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string returnUrl)
         {
             await _deckRepo.AddAsync(PostedDeck);
-            return RedirectToPage("/Decks", null);
+            return Redirect(returnUrl);
         }
 
-        public async Task<IActionResult> OnPostDeleteAsync(int deckId)
+        public async Task<IActionResult> OnPostDeleteAsync(int deckId, string returnUrl)
         {
             await _deckRepo.DeleteAsync(deckId);
-            if (HttpContext.Session.GetInt32(DeckIdKey) == deckId)
+            Deck? deck = HttpContext.Session.Get<Deck>(DeckIdKey);
+            if (deck?.Id == deckId)
             {
                 HttpContext.Session.Remove(DeckIdKey);
             }
-            return RedirectToPage("/Decks", null);
+
+            return Redirect(returnUrl);
         }
 
-        public IActionResult OnPostSelect(int deckId)
+        public async Task<IActionResult> OnPostSelect(int deckId, string returnUrl)
         {
-            HttpContext.Session.SetInt32(DeckIdKey, deckId);
-            return RedirectToPage("/Decks", null);
+            Deck? deck = await _deckRepo.GetAsync(deckId);
+            HttpContext.Session.Set(DeckIdKey, deck);
+            return Redirect(returnUrl);
         }
     }
 }

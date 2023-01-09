@@ -254,6 +254,18 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Configuration.Binder/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {}
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -1329,6 +1341,25 @@
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
         "microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
         "microsoft.extensions.configuration.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Binder/6.0.0": {
+      "sha512": "b3ErKzND8LIC7o08QAVlKfaEIYEvLJbtmVbFZVBRXeu9YkKfSSzLZfR1SUfQPBIy9mKLhEtJgGYImkcMNaKE0A==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.binder/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -3260,7 +3291,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore.Design >= 7.0.1",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.1"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.1",
+      "Microsoft.Extensions.Configuration.Binder >= 6.0.0"
     ]
   },
   "packageFolders": {
@@ -3311,6 +3343,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[7.0.1, )"
+          },
+          "Microsoft.Extensions.Configuration.Binder": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           }
         },
         "imports": [

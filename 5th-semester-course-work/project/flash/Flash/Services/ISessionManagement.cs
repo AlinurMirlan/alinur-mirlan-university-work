@@ -4,6 +4,7 @@ namespace Flash.Services
 {
     public interface ISessionManagement
     {
-        public int? SetDefaultDeck(ISession session, IEnumerable<Deck>? decks);
+        public Deck? SetDefaultDeck(ISession session, IEnumerable<Deck> decks);
+        public Task<Deck?> SetDefaultDeckAsync(HttpContext httpContext);
     }
 }

@@ -1,4 +1,5 @@
 ﻿@page
+@using Flash.Models.ViewModels
 @model IndexModel
 @{
     ViewBag.Title = "Rehearse page";
@@ -6,46 +7,15 @@
 
 <section class="flashcards-section pagination-container">
     <div class="flashcards-section-content">
-        <div class="flashcard" id="card">
-            <div class="flashcard-front">
-                <div class="flashcard-page-content">
-                    <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
-                    <p class="flashcard-front-text">Front side</p>
-                    <div class="more-interface _hidden">
-                        <form action="" class="deletion-form">
-                            <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
-                        </form>
-                        <form action="" class="">
-                            <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
-                        </form>
-                    </div>
-                </div>
-                <button class="button flashcard-show-button" onclick="flipCard(this)">Show</button>
-            </div>
-            <div class="flashcard-back">
-                <div class="flashcard-page-content">
-                    <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
-                    <p class="flashcard-front-text">Back side</p>
-                    <div class="more-interface _hidden">
-                        <form action="" class="deletion-form">
-                            <button tabindex="-1" type="submit" class="button more-interface-button">Delete</button>
-                        </form>
-                        <form action="" class="">
-                            <button tabindex="-1" type="submit" class="button more-interface-button">Update</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="flashcard-back-buttons">
-                    <button class="button flashcard-failure-button" onclick="flipCard(this)">Again</button>
-                    <button class="button flashcard-difficulty-button" onclick="flipCard(this)">Hard</button>
-                    <button class="button flashcard-success-button" onclick="flipCard(this)">Good</button>
-                </div>
-            </div>
+        <div class="selected-deck">
+            <span>@(Model.Deck is null ? "No Deck" : Model.Deck.Name)</span>
+        </div>
+        <div class="flashcards">
+            @foreach (var flashcard in Model.DueFlashcards)
+            {    CardOnRehearsePage card = new(flashcard, Model.Deck!, Model.Pagination!.CurrentPage);
+                <partial name="_Flashcard" model="card"/>
+            }
         </div>
     </div>
-    <div class="pagination">
-        <a href="#" class="page-number page-chosen">1</a>
-        <a href="#" class="page-number">2</a>
-        <a href="#" class="page-number">3</a>
-    </div>
+    <div class="pagination" pagination="Model.Pagination"></div>
 </section>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IwltxLSVbHmkF3gHNBrhpKVoFyu0uAoxhY6F/33hIu2JNAoAWdlAT3BOwFenSLGEp2m/lzuZFSywfRBcVfO3Hw==",
+  "dgSpecHash": "DbbPoYTOaNKAuxyhw9GVjZqfhRBIC94NdMZAhzVj9wHSIcWDfOwEF0UyTOm0v/p32q0osDLxib4u+Kbu/tcRdQ==",
   "success": true,
   "projectFilePath": "C:\\Alinur\\university-work\\5th-semester-course-work\\project\\flash\\Flash\\Flash.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Notnik_kg\\.nuget\\packages\\microsoft.extensions.dependencymodel\\7.0.0\\microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",

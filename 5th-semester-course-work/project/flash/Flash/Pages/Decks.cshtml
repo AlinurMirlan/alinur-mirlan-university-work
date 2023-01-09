@@ -1,42 +1,46 @@
 ﻿@page
+@using Flash.Models.ViewModels
 @model Flash.Pages.DecksModel
 @{
     ViewBag.Title = "Decks page";
+    string? addReturnUrl = Url.Page("/Decks", new 
+    {
+        pageNumber = Model.Pagination.CurrentPage,
+        searchTerm = Model.SearchTerm
+    });
 }
 
 <section class="decks-section compact pagination-container">
     <div class="browse-section-content">
         <form method="get" class="search-bar">
-            <input type="text" name="searchTerm" asp-route-searchTerm class="input-field search-field" placeholder="Search deck">
+            <input type="text" name="searchTerm" value="@Model.SearchTerm" asp-route-searchTerm class="input-field search-field" placeholder="Search deck">
             <button type="submit" class="magnifying-glass"></button>
         </form>
 
         <div class="decks">
-            <form method="post" class="add-deck-form">
+            <form method="post" asp-route-returnUrl="@addReturnUrl" class="add-deck-form">
                 <div class="form-row">
                     <button type="submit" class="button">Add</button>
-                    <input asp-for="PostedDeck.UserId" value="@Model.UserId" type="hidden" />
-                    <input asp-for="PostedDeck.CreationDate" value="@DateTime.Now" type="hidden" />
+                    <input asp-for="PostedDeck.UserId" value="@DecksModel.UserId" type="hidden" />
+                    <input asp-for="PostedDeck.CreationDate" value="@DateTime.Today" type="hidden" />
                     <input asp-for="PostedDeck.Name" class="input-field" placeholder="Deck name" />
                 </div>
             </form>
             <div class="decks-info">
                 @foreach (var deck in Model.Decks)
                 {
+                    DeckOnPage deckOnPage = new(deck, Model.Pagination.CurrentPage, Model.SearchTerm);
                     if (deck.Id == Model.SelectedDeckId)
                     {
-                        <partial name="_SelectedDeck" model="deck" />
+                        <partial name="_SelectedDeck" model="deckOnPage" />
                     }
                     else
                     {
-                        <partial name="_Deck" model="deck" />
+                        <partial name="_Deck" model="deckOnPage" />
                     }
                 }
             </div>
         </div>
     </div>
-    <div class="pagination">
-        <a href="#" class="page-number page-chosen">1</a>
-        <a href="#" class="page-number" bold>2</a>
-    </div>
+    <div class="pagination" pagination="Model.Pagination" search-term="@Model.SearchTerm"></div>
 </section>

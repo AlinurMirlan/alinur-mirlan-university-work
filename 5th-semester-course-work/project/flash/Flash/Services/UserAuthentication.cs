@@ -30,6 +30,7 @@ namespace Flash.Services
         public async Task SignUserOutAsync(HttpContext httpContext)
         {
             await httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            httpContext.Session.Clear();
         }
     }
 }

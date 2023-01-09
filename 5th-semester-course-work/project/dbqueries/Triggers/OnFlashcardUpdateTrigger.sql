@@ -17,7 +17,7 @@ CREATE OR ALTER TRIGGER OnFlashcardUpdate ON Flashcard
 		RETURN;
 
 	UPDATE Flashcard
-		SET RepetitionDate = DATEADD(DAY, RepetitionInterval, RepetitionDate)
+		SET RepetitionDate = DATEADD(DAY, RepetitionInterval, GETDATE())
 		WHERE Id = @flashcardId;
 	END
 GO

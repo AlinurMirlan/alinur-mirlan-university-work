@@ -49,7 +49,7 @@ public partial class FlashcardsContext : DbContext
         });
 
         OnModelCreatingPartial(modelBuilder);
-    }
+    }   
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

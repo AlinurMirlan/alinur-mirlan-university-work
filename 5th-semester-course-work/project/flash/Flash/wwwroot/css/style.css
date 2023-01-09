@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Maven+Pro&family=Monda:wght@400;700&family=Ubuntu:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Monda:wght@400;700&family=Rubik&family=Ubuntu:wght@400;700&display=swap');
 
 /* GENERAL */
 p {
     font-size: 18px;
-    font-family: 'Maven Pro', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 h1, h2, h3, h4 {
     font-family: 'Ubuntu', sans-serif;
+}
+
+.notice-text {
+    color: rgba(0, 69, 7, 20%);
 }
 
 .button {
@@ -24,6 +28,14 @@ h1, h2, h3, h4 {
 .button:active {
     background-color: rgba(0, 69, 7, 0.81);
     border: 1px solid rgba(66, 190, 78, 0.81);
+}
+
+.disabled-button {
+    background-color: gray;
+}
+
+.disabled-button:active {
+    background-color: gray;
 }
 
 .show-button {
@@ -62,9 +74,9 @@ h1, h2, h3, h4 {
     background-color: rgba(66, 190, 78, 15%);
 }
 
-    .page-header a {
-        color: rgba(0, 69, 7, 0.81);
-    }
+.page-header a {
+    color: rgba(0, 69, 7, 0.81);
+}
 
 .burger-menu::after,
 .burger-menu::before,
@@ -231,8 +243,9 @@ h1, h2, h3, h4 {
 
 /* FLASHCARDS */
 .flashcards-section {
-    max-width: 1380px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 .pagination-container {
@@ -241,7 +254,7 @@ h1, h2, h3, h4 {
     grid-template-rows: 1fr max-content;
 }
 
-.flashcards-section-content {
+.flashcards {
     margin-top: 44px;
     display: flex;
     height: 100%;
@@ -264,6 +277,7 @@ h1, h2, h3, h4 {
 .flashcard-front,
 .flashcard-back {
     overflow: hidden;
+    color: #2D2D2D;
 }
 
 .flashcard > div {
@@ -285,6 +299,10 @@ h1, h2, h3, h4 {
     justify-content: stretch;
 }
 
+.flashcard-back-buttons form {
+    width: 100%;
+}
+
 .flashcard-show-button {
     width: 100%;
     background-color: #95B099;
@@ -303,7 +321,6 @@ h1, h2, h3, h4 {
 .flashcard-success-button:hover,
 .flashcard-success-button:active {
     background-color: #23C53A;
-    ;
 }
 
 .flashcard-failure-button {
@@ -316,12 +333,19 @@ h1, h2, h3, h4 {
 
 .flashcard-difficulty-button {
     background-color: #FFE03F;
+    color: #000;
 }
 
 .flashcard-failure-button,
 .flashcard-success-button,
 .flashcard-difficulty-button {
     width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+.repetition-interval {
+    font-size: 12px;
 }
 
 .flashcard-back {
@@ -332,12 +356,38 @@ h1, h2, h3, h4 {
     transform: rotateY(180deg);
 }
 
+.selected-deck {
+    background: #66CA70;
+    padding: 14px 30px 14px 50px;
+    width: max-content;
+    height: min-content;
+    font-family: 'Rubik', sans-serif;
+    color: #2D2D2D;
+    position: relative;
+    z-index: -1;
+    margin-top: 5px;
+}
+
+.selected-deck span {
+    z-index: 10;
+}
+
+.selected-deck::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    background-color: rgba(207, 234, 210, 1);
+    width: calc(100% - 20px);
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
 /* ADDITIONAL BUTTON */
 .more-interface {
     width: 35%;
     padding-top: 30px;
     background-color: #E3F5E5;
-    ;
     position: absolute;
     top: 0;
     right: 0;
@@ -363,13 +413,16 @@ button.more-inerface-browse-button {
     color: rgba(0, 69, 7, 0.81);
 }
 
-
-    .more-interface-button:hover {
-        background-color: rgba(207, 234, 210, 1);
-    }
+.more-interface-button:hover {
+    background-color: rgba(207, 234, 210, 1);
+}
 
 .more-interface._hidden {
     right: -35%;
+}
+
+.more-interface > *:not(:first-child) {
+    border-top: 2px solid #B9D8BC;
 }
 
 .more-button {
@@ -382,36 +435,36 @@ button.more-inerface-browse-button {
     margin-left: auto;
 }
 
-    .more-button span,
-    .more-button::after,
-    .more-button::before {
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background-color: #fff;
-    }
+.more-button span,
+.more-button::after,
+.more-button::before {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+}
 
-    .more-button span {
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
+.more-button span {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 
-    .more-button::after,
-    .more-button::before {
-        content: "";
-        top: 50%;
-        transform: translateY(-50%);
-    }
+.more-button::after,
+.more-button::before {
+    content: "";
+    top: 50%;
+    transform: translateY(-50%);
+}
 
-    .more-button::after {
-        right: 5.12px;
-    }
+.more-button::after {
+    right: 5.12px;
+}
 
-    .more-button::before {
-        left: 5.12px;
-    }
+.more-button::before {
+    left: 5.12px;
+}
 
 /* PAGINATION */
 .pagination {
@@ -419,7 +472,7 @@ button.more-inerface-browse-button {
     max-width: 685px;
     font-size: 14px;
     font-family: 'Ubuntu', sans-serif;
-    margin: 61px 0 40px 0;
+    margin: 100px 0 40px 0;
     background-color: #D9D9D9;
     display: flex;
     flex-wrap: wrap;
@@ -436,10 +489,9 @@ button.more-inerface-browse-button {
     align-items: center;
 }
 
-    .page-number:hover {
-        background-color: rgba(207, 234, 210, 1);
-        ;
-    }
+.page-number:hover {
+    background-color: rgba(207, 234, 210, 1);
+}
 
 .page-chosen {
     background-color: rgba(207, 234, 210, 1) !important;
@@ -459,7 +511,7 @@ button.more-inerface-browse-button {
 }
 
 .input-field {
-    font-family: 'Maven Pro', sans-serif;
+    font-family: 'Rubik', sans-serif;
     padding: 16px;
     min-height: 60px;
     border: 1px solid transparent;
@@ -499,8 +551,8 @@ button.more-inerface-browse-button {
 
 .flashcard-info {
     overflow: hidden;
-    background-color: #F3F3F3;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #E3F5E5;
+    box-shadow: -1.5px 4px 3px rgba(0, 0, 0, 0.25);
 }
 
 .front-info {
@@ -508,14 +560,28 @@ button.more-inerface-browse-button {
 }
 
 .front-info, .back-info {
-    font-family: "Maven Pro", sans-serif;
+    font-family: "Rubik", sans-serif;
     padding: 15px;
     min-height: 60px;
-    background-color: #E5EBFE;
+    background-color: #F1F9F8;
+    margin-left: 4px;
+    color: #2D2D2D;
 }
 
 .back-info {
     margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.flashcard-dates {
+    display: flex;
+    padding-top: 18px;
+    justify-content: space-between;
+}
+
+.flashcard-dates span {
+    font-size: 16px;
+    color: #B7BCCB;
 }
 
 /* DECKS SECTION */
@@ -524,12 +590,12 @@ button.more-inerface-browse-button {
 }
 
 .decks-info {
-    background-color: #F3F3F3;
+    background-color: #E3F5E5;
     margin-top: 10px;
     font-size: 20px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: -1.5px 4px 3px rgba(0, 0, 0, 0.25);
     gap: 2px;
 }
 
@@ -562,10 +628,11 @@ button.more-inerface-browse-button {
     width: 100%;
     height: 100%;
     border: none;
-    background-color: #E5EBFE;
+    background-color: #F1F9F8;
     text-align: left;
+    color: #2D2D2D;
     padding: 15px;
-    font-family: 'Maven Pro', sans-serif
+    font-family: 'Rubik', sans-serif
 }
 
 .delete-button {

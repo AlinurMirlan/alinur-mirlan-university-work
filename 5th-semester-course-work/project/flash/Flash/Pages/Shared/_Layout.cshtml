@@ -17,13 +17,13 @@
                 <div class="page-header-nav-left">
                     <a asp-page="/Decks" class="nav-link">Decks</a>
                     <a asp-page="/Index" class="nav-link">Rehearse</a>
-                    <a asp-page="/AddFlashcard" class="nav-link">Add</a>
-                    <a asp-page="/BrowseFlashcards" class="nav-link">Browse</a>
+                    <a asp-page="/Card/Add" class="nav-link">Add</a>
+                    <a asp-page="/Card/Browse" class="nav-link">Browse</a>
                 </div>
                 <div class="page-header-nav-right">
                     <button class="nav-link profile-button" onclick="showProfileInterface()">Profile</button>
                     <div class="profile-interface _hidden">
-                        <a asp-area="Identity" asp-page="Logout" class="nav-link">Log out</a>
+                        <a asp-area="Identity" asp-page="/Logout" class="nav-link">Log out</a>
                     </div>
                 </div>
             </nav>
@@ -32,7 +32,7 @@
     <main class="main-content">
         @RenderBody()
     </main>
-    <script src="js/script.js"></script>
+    <script src="~/js/script.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

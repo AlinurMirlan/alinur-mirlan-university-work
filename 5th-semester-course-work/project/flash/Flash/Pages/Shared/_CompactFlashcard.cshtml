@@ -1,0 +1,35 @@
+﻿@using Flash.Models.ViewModels
+@model CardOnBrowsePage
+@{
+    string? returnUrl = Url.Page("/Card/Browse", new 
+    {
+        pageNumber = Model.Page,
+        searchTerm = Model.SearchTerm
+    });
+}
+
+<div class="flashcard-info">
+    <div class="front-info">
+        <div class="more-button" onclick="showAdditionalFunctionality(this)"><span></span></div>
+        @Model.Flashcard.Front
+        <div class="more-interface more-interface-fixed _hidden">
+            <form asp-page="/Card/Delete" class="deletion-form" method="post">
+                <input type="hidden" name="flashcardId" value="@Model.Flashcard.Id" />
+                <input type="hidden" name="returnUrl" value="@returnUrl" />
+                <button tabindex="-1" type="submit" class="button more-interface-button more-inerface-browse-button">Delete</button>
+            </form>
+            <form asp-page="/Card/Edit" method="get">
+                <input type="hidden" name="flashcardId" value="@Model.Flashcard.Id" />
+                <input type="hidden" name="returnUrl" value="@returnUrl" />
+                <button tabindex="-1" type="submit" class="button more-interface-button more-inerface-browse-button">Edit</button>
+            </form>
+        </div>
+    </div>
+    <div class="back-info">
+        @Model.Flashcard.Back
+        <div class="flashcard-dates">
+            <span>Creation date: @($"{Model.Flashcard.CreationDate:d}")</span>
+            <span>Due date: @($"{Model.Flashcard.RepetitionDate:d}")</span>
+        </div>
+    </div>
+</div>

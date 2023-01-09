@@ -6,18 +6,31 @@ namespace Flash.Services.Repositories
 {
     public class DeckRepository : IDeckRepository
     {
-        private readonly FlashcardsContext _databaseContext;
+        private readonly FlashcardsContext _repository;
+        private readonly IConfiguration _config;
 
-        public DeckRepository(FlashcardsContext context)
+        public DeckRepository(FlashcardsContext context, IConfiguration config)
         {
-            _databaseContext = context;
+            _repository = context;
+            _config = config;
         }
 
-        public async Task<Deck?> GetAsync(int deckId) => await _databaseContext.Decks.FindAsync(deckId);
+        public int GetDecksCountOnPage(int userId, int page, string? searchTerm)
+        {
+            int itemsPerPage = int.Parse(_config["Pagination:ItemsPerPage:Decks"] ?? throw new InvalidOperationException());
+            int decksCount = 
+                _repository.Decks.
+                Where(d => d.UserId == userId && (string.IsNullOrEmpty(searchTerm) || d.Name.Contains(searchTerm)))
+                .Skip(itemsPerPage * (page - 1))
+                .Take(itemsPerPage).Count();
+            return decksCount;
+        }
+
+        public async Task<Deck?> GetAsync(int deckId) => await _repository.Decks.FindAsync(deckId);
 
         public Task<Deck> AddAsync(Deck deck)
         {
-            if (_databaseContext.Decks.Any(d => d.Name == deck.Name && d.UserId == deck.UserId))
+            if (_repository.Decks.Any(d => d.Name == deck.Name && d.UserId == deck.UserId))
                 throw new InvalidOperationException("Deck with the same name already exists in the database.");
 
             return AddAsyncInternal(deck);
@@ -25,43 +38,39 @@ namespace Flash.Services.Repositories
 
         private async Task<Deck> AddAsyncInternal(Deck deck)
         {
-            deck = (await _databaseContext.Decks.AddAsync(deck)).Entity;
-            await _databaseContext.SaveChangesAsync();
+            deck = (await _repository.Decks.AddAsync(deck)).Entity;
+            await _repository.SaveChangesAsync();
             return deck;
         }
 
         public async Task DeleteAsync(int deckId)
         {
-            Deck? deck = await _databaseContext.Decks.FindAsync(deckId);
+            Deck? deck = await _repository.Decks.FindAsync(deckId);
             if (deck is not null)
             {
-                _databaseContext.Remove(deck);
-                await _databaseContext.SaveChangesAsync();
+                _repository.Remove(deck);
+                await _repository.SaveChangesAsync();
             }
         }
 
-        public async Task<IEnumerable<Deck>> GetUserDecksAsync(int userId, string? deckNameSearchTerm = null)
+        public async Task<IEnumerable<Deck>> GetDecksAsync(int userId)
         {
-            IEnumerable<Deck> matchingDecks;
-            if (deckNameSearchTerm is null)
-            {
-                matchingDecks = await (
-                        from deck in _databaseContext.Decks
-                        where deck.UserId == userId
-                        orderby deck.CreationDate
-                        select deck
-                        ).ToArrayAsync();
-            }
-            else
-            {
-                matchingDecks = await (
-                        from deck in _databaseContext.Decks
-                        where deck.Name.Contains(deckNameSearchTerm) && deck.UserId == userId
-                        orderby deck.CreationDate
-                        select deck
-                        ).ToArrayAsync();
-            }
+            IEnumerable<Deck> matchingDecks = await (
+                    from deck in _repository.Decks
+                    where deck.UserId == userId
+                    orderby deck.CreationDate
+                    select deck
+                    ).ToArrayAsync();
+            return matchingDecks;
+        }
 
+        public IEnumerable<Deck> GetDecksPartitioned(int userId, int page, string? searchTerm, out int pageCount)
+        {
+            int itemsPerPage = int.Parse(_config["Pagination:ItemsPerPage:Decks"] ?? throw new InvalidOperationException());
+            IEnumerable<Deck> matchingDecks = _repository.Decks
+                .Where(d => d.UserId == userId && (string.IsNullOrEmpty(searchTerm) || d.Name.Contains(searchTerm)));
+            pageCount = (int)Math.Ceiling((double)matchingDecks.Count() / itemsPerPage);
+            matchingDecks = matchingDecks.Skip(itemsPerPage * (page - 1)).Take(itemsPerPage);
             return matchingDecks;
         }
     }
