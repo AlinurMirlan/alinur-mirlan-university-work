@@ -32,10 +32,10 @@ namespace Flash.Services
                     newInterval = 0;
                     break;
                 case RetentionDifficulty.Hard:
-                    newInterval = (int)Math.Ceiling(interval * difficultyRate);
+                    newInterval = (int)Math.Round(interval * difficultyRate);
                     break;
                 case RetentionDifficulty.Good:
-                    newInterval += (int)Math.Ceiling(interval * difficultyRate);
+                    newInterval += (int)Math.Round(interval * difficultyRate);
                     break;
             }
 

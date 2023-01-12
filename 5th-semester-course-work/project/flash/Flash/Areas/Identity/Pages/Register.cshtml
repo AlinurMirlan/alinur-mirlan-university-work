@@ -13,12 +13,16 @@
             <div class="authentication-pane-content">
                 <h2>Have a go with <span class="highlight-text">us</span>!</h2>
                 <form method="post" class="authentication-form">
-                    <span asp-validation-for="UserCredentials.EmailAddress" class="validation-fail"></span>
-                    <input asp-for="UserCredentials.EmailAddress" class="input-field" placeholder="Email">
-                    <span asp-validation-for="UserCredentials.Password" class="validation-fail"></span>
-                    <input asp-for="UserCredentials.Password" class="input-field" placeholder="Password">
-                    <span asp-validation-for="UserCredentials.ConfirmPassword"></span>
-                    <input asp-for="UserCredentials.ConfirmPassword" class="input-field" placeholder="Confirm password">
+                    <span asp-validation-for="AccountConfirm.EmailAddress" class="validation-fail"></span>
+                    <input asp-for="AccountConfirm.EmailAddress" class="input-field" placeholder="Email">
+                    <span asp-validation-for="AccountConfirm.Password" class="validation-fail"></span>
+                    <input asp-for="AccountConfirm.Password" class="input-field" placeholder="Password">
+                    <span asp-validation-for="AccountConfirm.ConfirmPassword"></span>
+                    <input asp-for="AccountConfirm.ConfirmPassword" class="input-field" placeholder="Confirm password">
+                    <div class="check-box-field">
+                        <input type="checkbox" id="rememberMe" asp-for="IsPersistent">
+                        <label class="check-box" for="rememberMe"><span></span>Remember me</label>
+                    </div>
                     <div class="submit-area">
                         <p>Have an account?<br><a asp-area="Identity" asp-page="/Login" class="sign-in-link highlight-text">Sign in</a></p>
                         <button type="submit" class="button">Register</button>

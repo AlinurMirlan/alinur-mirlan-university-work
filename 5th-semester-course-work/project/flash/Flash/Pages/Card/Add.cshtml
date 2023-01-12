@@ -24,6 +24,11 @@
             <form method="post">
                 <input type="hidden" asp-for="PostedFlashcard.CreationDate" value="@DateTime.Today" />
                 <input type="hidden" asp-for="PostedFlashcard.DeckId" value="@Model.Deck.Id" />
+                @if (AddModel.IsInvalidInput)
+                {
+                    <span class="error-text">Both fields, front and back, must be filled.</span>
+                    AddModel.IsInvalidInput = false;
+                }
                 <textarea asp-for="PostedFlashcard.Front" cols="30" rows="5" class="input-field" placeholder="Front"></textarea>
                 <textarea asp-for="PostedFlashcard.Back" cols="30" rows="5" class="input-field" placeholder="Back"></textarea>
                 <button type="submit" class="button">Add</button>

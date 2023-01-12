@@ -31,11 +31,14 @@
     </header>
     <main class="main-content">
         <section class="flashcard-addition-section compact">
+            <div class="selected-deck">
+                <span>Deck</span>
+            </div>
             <div class="flashcard-addition-content">
                 <form action="">
-                    <textarea name="D" id="" cols="30" rows="5" class="input-field" placeholder="Front"></textarea>
-                    <textarea name="" id="" cols="30" rows="5" class="input-field" placeholder="Back"></textarea>
-                    <button type="submit" class="button">Add</button>
+                    <textarea disabled name="D" id="" cols="30" rows="5" class="input-field" placeholder="Front"></textarea>
+                    <textarea disabled name="" id="" cols="30" rows="5" class="input-field" placeholder="Back"></textarea>
+                    <button type="submit" class="button disabled-button" disabled>Add</button>
                 </form>
             </div>
         </section>

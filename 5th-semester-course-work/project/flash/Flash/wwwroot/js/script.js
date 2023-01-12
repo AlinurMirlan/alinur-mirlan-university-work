@@ -48,13 +48,21 @@ function showProfileInterface() {
 }
 
 const pageTitle = document.getElementsByTagName("title")[0].innerText;
-const pageHeader = document.querySelector(".page-header-nav-left");
-const pageHeaderTitles = pageHeader.children;
-for (const element of pageHeaderTitles) {
-    let pageHeaderTitle = element.innerText.toLowerCase();
-    if (pageTitle.toLowerCase().includes(pageHeaderTitle)) {
-        element.classList.add("page-chosen");
-    } else {
-        element.classList.remove("page-chosen");
+let pageHeader = document.querySelector(".page-header-nav-left");
+let pageHeaderTitles = pageHeader.children;
+highlightChosenPage(pageHeaderTitles);
+
+pageHeader = document.querySelector(".header-nav");
+pageHeaderTitles = pageHeader.children;
+highlightChosenPage(pageHeaderTitles);
+
+function highlightChosenPage(elements) {
+    for (const element of elements) {
+        let pageHeaderTitle = element.innerText.toLowerCase();
+        if (pageTitle.toLowerCase().includes(pageHeaderTitle)) {
+            element.classList.add("page-chosen");
+        } else {
+            element.classList.remove("page-chosen");
+        }
     }
 }

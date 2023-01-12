@@ -45,7 +45,7 @@ namespace Flash.Pages
         public async Task<IActionResult> OnPostAsync(int flashcardId, int newInterval)
         {   
             await _flashcardRepo.UpdateFlashcardAsync(flashcardId, newInterval);
-            return RedirectToPage("/Index");
+            return RedirectToPage();
         }
     } 
 }

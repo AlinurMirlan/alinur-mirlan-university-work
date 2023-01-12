@@ -29,6 +29,12 @@ p {
     background-color: rgba(149, 176, 153, 1);
 }
 
+.error-notice {
+    padding: 10px 0;
+    color: #FF4747;
+    font-family: 'Ubuntu', sans-serif;
+}
+
 /* HEADER */
 .logo {
     display: block;
@@ -552,7 +558,8 @@ button.more-inerface-browse-button {
 }
 
 .delete-button {
-    height: 100%;
+    display: flex;
+    align-items: center;
     background-color: #FF7171;
 }
 

@@ -15,17 +15,6 @@ namespace Flash.Services.Repositories
             _config = config;
         }
 
-        public int GetDecksCountOnPage(int userId, int page, string? searchTerm)
-        {
-            int itemsPerPage = int.Parse(_config["Pagination:ItemsPerPage:Decks"] ?? throw new InvalidOperationException());
-            int decksCount = 
-                _repository.Decks.
-                Where(d => d.UserId == userId && (string.IsNullOrEmpty(searchTerm) || d.Name.Contains(searchTerm)))
-                .Skip(itemsPerPage * (page - 1))
-                .Take(itemsPerPage).Count();
-            return decksCount;
-        }
-
         public async Task<Deck?> GetAsync(int deckId) => await _repository.Decks.FindAsync(deckId);
 
         public Task<Deck> AddAsync(Deck deck)

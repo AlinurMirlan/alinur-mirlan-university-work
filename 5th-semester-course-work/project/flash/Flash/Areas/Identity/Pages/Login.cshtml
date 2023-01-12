@@ -7,10 +7,18 @@
             <div class="authentication-pane-content">
                 <h2>Sign <span class="highlight-text">in</span></h2>
                 <form method="post" class="authentication-form">
-                    <span class="validation-fail" asp-validation-for="UserCredentials.EmailAddress"></span>
-                    <input asp-for="UserCredentials.EmailAddress" class="input-field" placeholder="Email">
-                    <span class="validation-fail" asp-validation-for="UserCredentials.Password"></span>
-                    <input asp-for="UserCredentials.Password" class="input-field" placeholder="Password">
+                    @if(Model.LoginFailed)
+                    {
+                        <span class="error-text">User is not recognized. Either the email address or the password is not correct.</span>
+                    }
+                    <span class="validation-fail" asp-validation-for="Account.EmailAddress"></span>
+                    <input asp-for="Account.EmailAddress" class="input-field" placeholder="Email">
+                    <span class="validation-fail" asp-validation-for="Account.Password"></span>
+                    <input asp-for="Account.Password" class="input-field" placeholder="Password">
+                    <div class="check-box-field">
+                        <input type="checkbox" id="rememberMe" asp-for="IsPersistent">
+                        <label class="check-box" for="rememberMe"><span></span>Remember me</label>
+                    </div>
                     <div class="submit-area">
                         <p>Don't have an account?<br><a asp-area="Identity" asp-page="/Register" class="sign-in-link highlight-text">Register</a></p>
                         <button type="submit" class="button signin-button">Sign in</button>

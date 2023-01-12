@@ -12,7 +12,10 @@ namespace Flash.Areas.Identity.Pages
         private readonly IUserAuthentication _userAuth;
 
         [BindProperty]
-        public ConfirmedUser UserCredentials { get; set; } = default!;
+        public UserConfirm AccountConfirm { get; set; } = default!;
+
+        [BindProperty]
+        public bool IsPersistent { get; set; }
 
         public RegisterModel(IUserRepository userRepo, IUserAuthentication userAuth)
         {
@@ -33,14 +36,14 @@ namespace Flash.Areas.Identity.Pages
             User user;
             try
             {
-                user = await _userRepo.AddAsync(UserCredentials);
+                user = await _userRepo.AddAsync(AccountConfirm);
             }
             catch (InvalidOperationException)
             {
                 return Page();
             }
 
-            await _userAuth.SignUserInAsync(HttpContext, user);
+            await _userAuth.SignUserInAsync(HttpContext, user, IsPersistent);
             return RedirectToPage("/Decks");
         }
     }

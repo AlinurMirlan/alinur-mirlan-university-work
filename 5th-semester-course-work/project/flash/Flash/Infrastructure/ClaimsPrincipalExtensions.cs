@@ -1,6 +1,4 @@
-﻿using Flash.Models.Identity;
-using Flash.Services.Repositories;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 
 namespace Flash.Infrastructure
 {

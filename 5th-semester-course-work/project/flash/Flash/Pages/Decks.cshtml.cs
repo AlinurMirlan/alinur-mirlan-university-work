@@ -16,11 +16,13 @@ namespace Flash.Pages
         private readonly IDeckRepository _deckRepo;
         private readonly ISessionManagement _session;
 
+        public static int UserId { get; set; }
+
+        public static bool DeckExists { get; set; }
+
         public Pagination Pagination { get; set; } = default!;
 
         public string DeckIdKey { get; set; }
-
-        public static int UserId { get; set; }
 
         public int SelectedDeckId { get; set; }
 
@@ -29,7 +31,7 @@ namespace Flash.Pages
         public IEnumerable<Deck> Decks { get; set; } = Enumerable.Empty<Deck>();
 
         [BindProperty]
-        public Deck PostedDeck { get; set; } = default!;
+        public Deck DeckPost { get; set; } = default!;
 
         public DecksModel(IConfiguration config, IDeckRepository deckRepo, ISessionManagement session)
         {
@@ -44,7 +46,7 @@ namespace Flash.Pages
             UserId = HttpContext.User.GetClaimIntValue(_config["UserClaims:UserId"]);
             Decks = _deckRepo.GetDecksPartitioned(UserId, pageNumber, searchTerm, out int pageCount);
             if (!Decks.Any() && pageCount != 0)
-            {
+            {   
                 return RedirectToPage(new { pageNumber = pageCount, searchTerm });
             }
 
@@ -57,7 +59,20 @@ namespace Flash.Pages
 
         public async Task<IActionResult> OnPostAsync(string returnUrl)
         {
-            await _deckRepo.AddAsync(PostedDeck);
+            if (string.IsNullOrEmpty(DeckPost.Name))
+            {
+                return Redirect(returnUrl);
+            }
+
+            try
+            {
+                await _deckRepo.AddAsync(DeckPost);
+            }
+            catch (InvalidOperationException)
+            {
+                DeckExists = true;
+            }
+
             return Redirect(returnUrl);
         }
 

@@ -12,7 +12,12 @@ namespace Flash.Areas.Identity.Pages
         private readonly IUserAuthentication _userAuth;
 
         [BindProperty]
-        public User UserCredentials { get; set; } = default!;
+        public User Account { get; set; } = default!;
+
+        public bool LoginFailed { get; set; }
+
+        [BindProperty]
+        public bool IsPersistent { get; set; }
 
         public LoginModel(IUserRepository userRepo, IUserAuthentication userAuth)
         {
@@ -30,13 +35,14 @@ namespace Flash.Areas.Identity.Pages
             if (!ModelState.IsValid)
                 return Page();
 
-            User? user = await _userRepo.GetAsync(UserCredentials.EmailAddress, UserCredentials.Password);
+            User? user = await _userRepo.GetAsync(Account.EmailAddress, Account.Password);
             if (user is not null)
             {
-                await _userAuth.SignUserInAsync(HttpContext, user);
+                await _userAuth.SignUserInAsync(HttpContext, user, IsPersistent);
                 return RedirectToPage("/Index");
             }
 
+            LoginFailed = true;
             return Page();
         }
     }

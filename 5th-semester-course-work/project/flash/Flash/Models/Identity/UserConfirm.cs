@@ -2,7 +2,7 @@
 
 namespace Flash.Models.Identity
 {
-    public class ConfirmedUser : User
+    public class UserConfirm : User
     {
         [Compare(nameof(Password), ErrorMessage = "Passwords do not match.")]
         [DataType(DataType.Password)]

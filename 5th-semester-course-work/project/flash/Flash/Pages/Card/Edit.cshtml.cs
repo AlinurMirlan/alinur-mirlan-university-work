@@ -14,6 +14,8 @@ namespace Flash.Pages.Card
 
         public static string ReturnUrlPage { get; set; } = string.Empty;
 
+        public static bool IsInvalidInput { get; set; }
+
         public Deck Deck { get; set; } = default!;
 
         [BindProperty]
@@ -35,6 +37,12 @@ namespace Flash.Pages.Card
 
         public async Task<IActionResult> OnPostAsync()
         {
+            if (string.IsNullOrEmpty(Flashcard.Front) || string.IsNullOrEmpty(Flashcard.Back))
+            {
+                IsInvalidInput = true;
+                return RedirectToPage(new { flashcardId = Flashcard.Id, returnUrl = ReturnUrlPage });
+            }
+
             await _flashcardRepo.UpdateFlashcardAsync(Flashcard.Id, Flashcard.Front, Flashcard.Back);
             return Redirect(ReturnUrlPage);
         }

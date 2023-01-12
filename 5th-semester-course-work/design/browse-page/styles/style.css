@@ -321,6 +321,32 @@ p {
     transform: rotateY(180deg);
 }
 
+.selected-deck {
+    background: #66CA70;
+    padding: 10px 30px 10px 50px;
+    width: max-content;
+    height: min-content;
+    margin-top: 10px;
+    font-family: "Ubuntu", sans-serif;
+    position: relative;
+    z-index: -1;
+}
+
+.selected-deck span {
+    z-index: 10;
+}
+
+.selected-deck::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    background-color: #E3F5E5;
+    width: calc(100% - 20px);
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
 /* ADDITIONAL BUTTON */
 .more-interface {
     width: 35%;
@@ -501,6 +527,17 @@ button.more-inerface-browse-button {
 
 .back-info {
     margin-top: 4px;
+}
+
+.flashcard-dates {
+    display: flex;
+    padding-top: 18px;
+    justify-content: space-between;
+}
+
+.flashcard-dates span {
+    font-size: 16px;
+    color: #B7BCCB;
 }
 
 /* DECKS SECTION */

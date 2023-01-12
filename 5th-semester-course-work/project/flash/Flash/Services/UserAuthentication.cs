@@ -14,17 +14,16 @@ namespace Flash.Services
             _config = config;
         }
 
-        public async Task SignUserInAsync(HttpContext httpContext, User user)
+        public async Task SignUserInAsync(HttpContext httpContext, User user, bool isPersistent)
         {
             string userIdClaimType = _config["UserClaims:UserId"] ?? throw new NullReferenceException();
             List<Claim> userClaims = new()
             {
-                new Claim(ClaimTypes.Email, user.EmailAddress),
                 new Claim(userIdClaimType, user.Id.ToString())
             };
             ClaimsIdentity claimsIdentity = new(userClaims, CookieAuthenticationDefaults.AuthenticationScheme);
             ClaimsPrincipal claimsPrincipal = new(claimsIdentity);
-            await httpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
+            await httpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal, new AuthenticationProperties() { IsPersistent = isPersistent });
         }
         
         public async Task SignUserOutAsync(HttpContext httpContext)

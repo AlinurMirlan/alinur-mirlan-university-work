@@ -94,8 +94,17 @@ function flipCard(flashcardButton) {
 function showAdditionalFunctionality(moreButton) {
     const moreButtonParent = moreButton.parentElement;
     const moreButtonParentChildren = moreButtonParent.children;
-    let moreInterface = null;
+    let flashcardPageContent = null;
     for (const child of moreButtonParentChildren) {
+        if (child.classList.contains("flashcard-page-content")) {
+            flashcardPageContent = child;
+            break;
+        }
+    }
+
+    const flashcardPageContentChildren = flashcardPageContent.children;
+    let moreInterface = null;
+    for (const child of flashcardPageContentChildren) {
         if (child.classList.contains("more-interface")) {
             moreInterface = child;
             break;

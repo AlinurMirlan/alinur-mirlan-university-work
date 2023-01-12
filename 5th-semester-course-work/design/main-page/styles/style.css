@@ -81,10 +81,10 @@ p {
 }
 
 .burger-menu {
+    flex: 0 0 30px;
     z-index: 10;
     cursor: pointer;
     position: relative;
-    width: 30px;
     height: 16px;
     display: none;
     align-self: center;
@@ -95,14 +95,12 @@ p {
     max-width: 1380px;
     min-height: 65px;
     margin: 0 auto;
+    align-items: stretch;
     justify-content: space-between;
 }
 
 .page-header-nav {
-    flex: 0 1 1140px;
-    font-family: 'Monda', sans-serif;
-    font-weight: bold;
-    font-size: 23px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -154,6 +152,14 @@ p {
 
 .profile-interface._hidden {
     display: none;
+}
+
+.header-nav {
+    flex: 0 1 1140px;
+    font-family: 'Monda', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    display: flex;
 }
 
 /* AUTHENTICATION */    
@@ -221,8 +227,9 @@ p {
 
 /* FLASHCARDS */
 .flashcards-section {
-    max-width: 1380px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 .pagination-container {
@@ -231,7 +238,7 @@ p {
     grid-template-rows: 1fr max-content;
 }
 
-.flashcards-section-content {
+.flashcards {
     margin-top: 44px;
     display: flex;
     height: 100%;
@@ -267,6 +274,7 @@ p {
 }
 
 .flashcard-page-content {
+    overflow: auto;
     padding: 9px;
 }
 
@@ -321,6 +329,32 @@ p {
     transform: rotateY(180deg);
 }
 
+.selected-deck {
+    background: #66CA70;
+    padding: 15px 25px 29px 25px;
+    width: max-content;
+    margin-top: 10px;
+    font-family: "Ubuntu", sans-serif;
+    position: relative;
+    z-index: -1;
+    filter: drop-shadow(-1.5px 4px 2px rgba(0, 0, 0, 0.25));
+}
+
+.selected-deck span {
+    z-index: 10;
+}
+
+.selected-deck::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    background-color: #E3F5E5;
+    height: calc(100% - 14px);
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
 /* ADDITIONAL BUTTON */
 .more-interface {
     width: 35%;
@@ -341,6 +375,10 @@ p {
 
 button.more-inerface-browse-button {
     padding: 8px 0;
+}
+
+.more-interface *:not(:first-child) {
+    border-top: 2px solid #B9D8BC;
 }
 
 .more-interface-button {
@@ -366,8 +404,9 @@ button.more-inerface-browse-button {
     position: relative;
     width: 32px;
     height: 20px;
+    flex: 0 0 20px;
     background: #606060;
-    margin-left: auto;
+    margin: 9px 9px 0 auto;
 }
 
 .more-button span,
@@ -615,17 +654,17 @@ button.more-inerface-browse-button {
         flex-direction: column;
     }
 
-    .profile-interface .nav-link {
+    .page-header-nav .profile-interface .nav-link {
         background-color: #CFEAD2;
         padding-left: 50px;
     }
 
-    .nav-link {
+    .page-header-nav .nav-link {
         position: relative;
         padding: 20px 0 20px 15px;
     }
 
-    .nav-link::before {
+    .page-header-nav .nav-link::before {
         content: "";
         width: 100%;
         left: 0;

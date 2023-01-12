@@ -1,0 +1,43 @@
+﻿@page
+@model Flash.Pages.SettingsModel
+@{
+    ViewBag.Title = "Settings page";
+}
+
+<section class="authentication compact">
+    <div class="authentication-content">
+        <div class="settings-page">
+            <div class="settings-pane-title">
+                Settings
+            </div>
+            <div class="authentication-pane authentication-lower-pane settings-pane">
+                <div class="email-information">
+                    <h2><span class="highlight-text">Email</span> address</h2>
+                    <input class="input-field" placeholder="Email" value="@Model.Account.EmailAddress" disabled>
+                </div>
+                <div class="authentication-pane-content settings-pane-content">
+                    <h2>Change <span class="highlight-text">password</span></h2>
+                    <form method="post" class="authentication-form password-update">
+                        @if (SettingsModel.PasswordIsWrong)
+                        {
+                            <span class="error-text">Password is wrong.</span>
+                            SettingsModel.PasswordIsWrong = false;
+                        }
+                        <input type="hidden" asp-for="AccountEdit.EmailAddress" value="@Model.Account.EmailAddress">
+                        <span asp-validation-for="AccountEdit.Password" class="validation-fail"></span>
+                        <input asp-for="AccountEdit.Password" class="input-field" placeholder="Old password">
+                        <span asp-validation-for="AccountEdit.NewPassword"></span>
+                        <input asp-for="AccountEdit.NewPassword" class="input-field" placeholder="New password">
+                        <div class="submit-area">
+                            <button type="submit" class="button">Edit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="/Areas/Identity/Pages/Shared/_ValidationScriptsPartial.cshtml" />
+}

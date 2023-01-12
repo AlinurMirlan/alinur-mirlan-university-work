@@ -21,10 +21,17 @@
             <form method="post" asp-route-returnUrl="@addReturnUrl" class="add-deck-form">
                 <div class="form-row">
                     <button type="submit" class="button">Add</button>
-                    <input asp-for="PostedDeck.UserId" value="@DecksModel.UserId" type="hidden" />
-                    <input asp-for="PostedDeck.CreationDate" value="@DateTime.Today" type="hidden" />
-                    <input asp-for="PostedDeck.Name" class="input-field" placeholder="Deck name" />
+                    <input asp-for="DeckPost.UserId" value="@DecksModel.UserId" type="hidden" />
+                    <input asp-for="DeckPost.CreationDate" value="@DateTime.Today" type="hidden" />
+                    <input asp-for="DeckPost.Name" class="input-field" placeholder="Deck name" />
                 </div>
+                @if (DecksModel.DeckExists)
+                {
+                    <div class="form-row">
+                        <p class="error-text">There's already a deck with the given name.</p>
+                    </div>
+                    DecksModel.DeckExists = false;
+                }
             </form>
             <div class="decks-info">
                 @foreach (var deck in Model.Decks)
@@ -44,3 +51,8 @@
     </div>
     <div class="pagination" pagination="Model.Pagination" search-term="@Model.SearchTerm"></div>
 </section>
+
+                    
+@section Scripts {
+    <partial name="/Areas/Identity/Pages/Shared/_ValidationScriptsPartial.cshtml" />
+}

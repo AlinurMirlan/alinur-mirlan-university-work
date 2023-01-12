@@ -211,12 +211,47 @@ p {
 }
 
 .submit-area {
+    margin-top: 5px;
     display: flex;
     justify-content: space-between;
 }
 
 .signin-button {
     align-self: flex-end;
+}
+
+/* CHECKBOX */
+input[type="checkbox"] {
+    display: none;
+}
+
+.check-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.check-box span {
+    background: rgba(113, 142, 248, 0.18);
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-box span::before {
+    transition: background-color .3s;
+    position: absolute;
+    content: "";
+    background-color: rgba(113, 142, 248, 0.18);
+    width: 12px;
+    height: 12px;
+}
+
+input[type="checkbox"]:checked + .check-box span::before {
+    background-color: rgba(66, 190, 78, 0.81);
 }
 
 /* FLASHCARDS */

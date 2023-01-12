@@ -11,6 +11,11 @@
     <div class="flashcard-addition-content">
         <form method="post" >
             <input type="hidden" asp-for="Flashcard.Id" value="@Model.Flashcard.Id" />
+            @if (EditModel.IsInvalidInput)
+            {
+                <span class="error-text">Both fields, front and back, must be filled.</span>
+                AddModel.IsInvalidInput = false;
+            }
             <textarea asp-for="Flashcard.Front" cols="30" rows="5" class="input-field" placeholder="Front">@Model.Flashcard.Front</textarea>
             <textarea asp-for="Flashcard.Back" cols="30" rows="5" class="input-field" placeholder="Back">@Model.Flashcard.Back</textarea>
             <button type="submit" class="button">Edit</button>

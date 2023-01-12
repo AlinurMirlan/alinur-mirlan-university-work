@@ -12,6 +12,59 @@
     <header class="page-header">
         <div class="page-header-content">
             <a class="logo" asp-page="/Index">FLASH</a>
+            <nav class="header-nav">
+                <a asp-page="/Decks" class="nav-link">Decks</a>
+                <a asp-page="/Card/Add" class="nav-link">Add</a>
+                <div class="page-header-nav">
+                    <div class="page-header-nav-left">
+                        <a asp-page="/Index" class="nav-link">Rehearse</a>
+                        <a asp-page="/Card/Browse" class="nav-link">Browse</a>
+                    </div>
+                    <div class="page-header-nav-right">
+                        <button class="nav-link profile-button" onclick="showProfileInterface()">Profile</button>
+                        <div class="profile-interface _hidden">
+                            <a asp-page="/Settings" class="nav-link">Settings</a>
+                            <a asp-area="Identity" asp-page="/Logout" class="nav-link">Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="burger-menu"><span></span></div>
+        </div>
+    </header>
+    <main class="main-content">
+        @RenderBody()
+    </main>
+    <script src="~/js/script.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+@*
+
+                        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/normalize.css">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header class="page-header">
+        <div class="page-header-content">
+            <a class="logo" asp-page="/Index">FLASH</a>
             <div class="burger-menu"><span></span></div>
             <nav class="page-header-nav">
                 <div class="page-header-nav-left">
@@ -23,6 +76,7 @@
                 <div class="page-header-nav-right">
                     <button class="nav-link profile-button" onclick="showProfileInterface()">Profile</button>
                     <div class="profile-interface _hidden">
+                        <a asp-page="/Settings" class="nav-link">Settings</a>
                         <a asp-area="Identity" asp-page="/Logout" class="nav-link">Log out</a>
                     </div>
                 </div>
@@ -36,4 +90,4 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-</html>
+</html>*@

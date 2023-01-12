@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Flash.Models;
+﻿using Flash.Models;
 using Flash.Models.Identity;
 using Microsoft.EntityFrameworkCore;
 
