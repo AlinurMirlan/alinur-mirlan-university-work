@@ -1,23 +1,22 @@
 package fourth;
 
 public class NameThread extends Thread {
-    private final Object _lock;
-    private final String _name;
-    private final int _repeatCounter;
+    private final String title;
+    private final int threadsCount;
+    private final int order;
 
-    public NameThread(Object lock, String name, int repeatCounter)
-    {
-        this._lock = lock;
-        this._name = name;
-        this._repeatCounter = repeatCounter;
+    public NameThread(String title, int order, int threadsCount) {
+        this.title = title;
+        this.threadsCount = threadsCount;
+        this.order = order;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < this._repeatCounter; i++) {
-            synchronized (this._lock) {
-                System.out.println(this._name);
-            }
+        String name = title + " #" + order;
+        System.out.print(name + " ");
+        if (order == threadsCount) {
+            System.out.println();
         }
     }
 }

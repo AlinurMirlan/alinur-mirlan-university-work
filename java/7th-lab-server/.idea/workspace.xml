@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="fd7bb7e7-61e5-4dfc-9c7b-9175859e6440" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../7th-lab-client/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../7th-lab-client/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../7th-lab-client/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../7th-lab-client/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../7th-lab-client/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../7th-lab-client/7th-lab-client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../7th-lab-client/src/ClientSide.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../7th-lab-client/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/7th-lab-server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ServerSide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/FileContentIndex/569eb928-22d9-4e27-aa8d-32c85385b462.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/FileContentIndex/bb51176a-3f45-4154-86b1-325fe93d722c.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/FileContentIndex/ca0e27d9-bb01-4e83-8b4d-9671646571c8.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/Flash/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/ProjectEvaluation/flash.metadata.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/ProjectEvaluation/flash.metadata.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/ProjectEvaluation/flash.projects.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/.vs/ProjectEvaluation/flash.projects.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/bin/Debug/net6.0/Flash.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/bin/Debug/net6.0/Flash.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/bin/Debug/net6.0/Flash.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/bin/Debug/net6.0/Flash.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/Debug/net6.0/Flash.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/Debug/net6.0/Flash.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/Debug/net6.0/Flash.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/Debug/net6.0/Flash.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/Flash/obj/staticwebassets.pack.sentinel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../5th-lab/out/production/5th-lab/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../5th-lab/out/production/5th-lab/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../5th-lab/out/production/5th-lab/SetOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/../5th-lab/out/production/5th-lab/SetOperations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../5th-lab/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../5th-lab/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../5th-lab/src/SetOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../5th-lab/src/SetOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/Flash/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/Flash/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/Flash/FileContentIndex/919bd385-a523-457c-94d0-ba7d0c58c423.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/Flash/FileContentIndex/a1662609-b82a-4c59-adb6-bbb07a54fa0c.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/Flash/v17/.futdcache.v1" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/Flash/v17/.futdcache.v1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/Flash/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/Flash/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/ProjectEvaluation/flash.metadata.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/ProjectEvaluation/flash.metadata.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/ProjectEvaluation/flash.projects.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/.vs/ProjectEvaluation/flash.projects.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/bin/Debug/net6.0/Flash.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/bin/Debug/net6.0/Flash.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/bin/Debug/net6.0/Flash.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/bin/Debug/net6.0/Flash.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/bin/Debug/net6.0/Flash.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/bin/Debug/net6.0/Flash.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/Flash.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/Flash.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/Flash.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/Flash.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/Flash.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/Flash.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/Flash.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/Flash.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/project.razor.vs.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Debug/net6.0/project.razor.vs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Flash.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/Flash.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/project/flash/Flash/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../5th-semester-course-work/report.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../5th-semester-course-work/report.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6th-lab/out/production/6th-lab/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../6th-lab/out/production/6th-lab/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6th-lab/out/production/6th-lab/first/MessageThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../6th-lab/out/production/6th-lab/first/MessageThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6th-lab/out/production/6th-lab/fourth/NameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../6th-lab/out/production/6th-lab/fourth/NameThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../6th-lab/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../6th-lab/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6th-lab/src/first/MessageThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../6th-lab/src/first/MessageThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6th-lab/src/fourth/NameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../6th-lab/src/fourth/NameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7th-lab-client/src/ClientSide.java" beforeDir="false" afterPath="$PROJECT_DIR$/../7th-lab-client/src/ClientSide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7th-lab-client/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../7th-lab-client/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerSide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerSide.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +64,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="7th-lab-server" />
+      <option name="PROGRAM_PARAMETERS" value="5500" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,5 +100,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
