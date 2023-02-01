@@ -471,10 +471,14 @@ import { Person, City, Product, Employee } from "./dataTypes";
 // let prices = processArray(products, selectPrice);
 // names.forEach(name => console.log(`Name: ${name}`));
 
-function makeObject<T extends new (...args: any) => any>(constructor: T, ...args: ConstructorParameters<T>): InstanceType<T> {
-    return new constructor(...args as any[]);
-}
+// function makeObject<T extends new (...args: any) => any>(constructor: T, ...args: ConstructorParameters<T>): InstanceType<T> {
+//     return new constructor(...args as any[]);
+// }
 
-let prod: Product = makeObject(Product, "Kayak", 275);
-let city: City = makeObject(City, "London", 8136000);
-[prod, city].forEach(item => console.log(`Name: ${item.name}`));
+// let prod: Product = makeObject(Product, "Kayak", 275);
+// let city: City = makeObject(City, "London", 8136000);
+// [prod, city].forEach(item => console.log(`Name: ${item.name}`));
+
+export interface Hello {
+    name: number;
+}

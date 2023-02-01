@@ -1,8 +1,12 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const product_1 = require("./product");
 const cart_1 = require("./cart");
 const formatters_1 = require("./formatters");
+const chalk_1 = __importDefault(require("chalk"));
 let kayak = new product_1.SportsProduct(1, "Kayak", 275, product_1.Sport.Watersports);
 let hat = new product_1.SportsProduct(2, "Hat", 22, product_1.Sport.Running, product_1.Sport.Watersports);
 let ball = new product_1.SportsProduct(3, "Soccer Ball", 19.50, product_1.Sport.Soccer);
@@ -14,4 +18,8 @@ console.log(`Cart has ${cart.itemCount} products`);
 console.log(`Cart value is $${cart.totalPrice.toFixed(2)}`);
 formatters_1.sizeFormatter("Cart", cart.itemCount);
 formatters_1.costFormatter("Cart", `${cart.totalPrice}`);
-formatters_1.writeMessage("Test message");
+// writeMessage("Test message");
+// let db = debug("Example App");
+// db.enabled = true;
+// db("Message: %0", "Test Message");
+console.log(chalk_1.default.greenBright("Formatted message"));

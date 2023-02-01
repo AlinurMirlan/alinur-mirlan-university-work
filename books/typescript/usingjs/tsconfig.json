@@ -5,6 +5,11 @@
         "rootDir": "./src",
         "module": "CommonJS",
         "allowJs": true,
-        "checkJs": true
+        "checkJs": true,
+        // "baseUrl": ".",
+        // "paths": {
+        //     "*": ["types/*"]
+        // }
     }
 }
+
