@@ -1,0 +1,12 @@
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\bin\Debug\net6.0\CookBook.Library.deps.json
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\bin\Debug\net6.0\CookBook.Library.dll
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\bin\Debug\net6.0\CookBook.Library.pdb
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\obj\Debug\net6.0\CookBook.Library.csproj.AssemblyReference.cache
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\obj\Debug\net6.0\CookBook.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\obj\Debug\net6.0\CookBook.Library.AssemblyInfoInputs.cache
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\obj\Debug\net6.0\CookBook.Library.AssemblyInfo.cs
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\obj\Debug\net6.0\CookBook.Library.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\obj\Debug\net6.0\CookBook.Library.dll
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\obj\Debug\net6.0\refint\CookBook.Library.dll
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\obj\Debug\net6.0\CookBook.Library.pdb
+C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook.Library\obj\Debug\net6.0\ref\CookBook.Library.dll

@@ -1,0 +1,3 @@
+{
+    "ConnectionString": "Server=(LocalDB)\\MSSQLLocalDB;Database=CookBook;Trusted_Connection=True;"
+}

@@ -1,0 +1,5 @@
+CREATE PROC GetAllDishes
+AS
+BEGIN
+	SELECT * FROM CookBook.dbo.Dish;
+END
