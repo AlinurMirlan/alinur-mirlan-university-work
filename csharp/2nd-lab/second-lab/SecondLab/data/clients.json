@@ -1,0 +1,62 @@
+[
+    {
+        "Id": 1,
+        "Year": 2022,
+        "Month": 11,
+        "LessonDuration": 1
+    },
+    {
+        "Id": 2,
+        "Year": 2022,
+        "Month": 11,
+        "LessonDuration": 2
+    },
+    {
+        "Id": 3,
+        "Year": 2022,
+        "Month": 10,
+        "LessonDuration": 1
+    },
+    {
+        "Id": 4,
+        "Year": 2022,
+        "Month": 10,
+        "LessonDuration": 1
+    },
+    {
+        "Id": 5,
+        "Year": 2022,
+        "Month": 9,
+        "LessonDuration": 3
+    },
+    {
+        "Id": 6,
+        "Year": 2022,
+        "Month": 8,
+        "LessonDuration": 2
+    },
+    {
+        "Id": 7,
+        "Year": 2022,
+        "Month": 9,
+        "LessonDuration": 2
+    },
+    {
+        "Id": 8,
+        "Year": 2022,
+        "Month": 1,
+        "LessonDuration": 2
+    },
+    {
+        "Id": 9,
+        "Year": 2022,
+        "Month": 2,
+        "LessonDuration": 3
+    },
+    {
+        "Id": 10,
+        "Year": 2022,
+        "Month": 1,
+        "LessonDuration": 2
+    }
+]

@@ -1,0 +1,72 @@
+[
+    {
+        "ProductCode": "AA123-1234",
+        "ShopName": "Eagle",
+        "Cost": 112
+    },
+    {
+        "ProductCode": "EV11-1101",
+        "ShopName": "Eagle",
+        "Cost": 22
+    },
+    {
+        "ProductCode": "AZ123-4444",
+        "ShopName": "Eagle",
+        "Cost": 99
+    },
+    {
+        "ProductCode": "AA123-1234",
+        "ShopName": "Arrow",
+        "Cost": 100
+    },
+    {
+        "ProductCode": "AB123-1234",
+        "ShopName": "Arrow",
+        "Cost": 11
+    },
+    {
+        "ProductCode": "AZ123-4444",
+        "ShopName": "Arrow",
+        "Cost": 87
+    },
+    {
+        "ProductCode": "EL23-7182",
+        "ShopName": "Arrow",
+        "Cost": 20
+    },
+    {
+        "ProductCode": "AA123-1234",
+        "ShopName": "Mustache",
+        "Cost": 99
+    },
+    {
+        "ProductCode": "AA111-1111",
+        "ShopName": "Mustache",
+        "Cost": 4
+    },
+    {
+        "ProductCode": "EL23-7182",
+        "ShopName": "Mustache",
+        "Cost": 10
+    },
+    {
+        "ProductCode": "GG32-3311",
+        "ShopName": "Hugo",
+        "Cost": 1
+    },
+    {
+        "ProductCode": "BB122-1234",
+        "ShopName": "Hugo",
+        "Cost": 10
+    },
+    {
+        "ProductCode": "ZA123-1234",
+        "ShopName": "Hugo",
+        "Cost": 100
+    },
+    {
+        "ProductCode": "AZ123-4444",
+        "ShopName": "Hugo",
+        "Cost": 100
+    }
+]

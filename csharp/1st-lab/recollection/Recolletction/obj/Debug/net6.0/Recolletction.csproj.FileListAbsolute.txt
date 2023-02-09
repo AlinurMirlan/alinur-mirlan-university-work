@@ -1,0 +1,15 @@
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\obj\Debug\net6.0\Recolletction.csproj.AssemblyReference.cache
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\obj\Debug\net6.0\Recolletction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\obj\Debug\net6.0\Recolletction.AssemblyInfoInputs.cache
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\obj\Debug\net6.0\Recolletction.AssemblyInfo.cs
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\obj\Debug\net6.0\Recolletction.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\bin\Debug\net6.0\Recolletction.exe
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\bin\Debug\net6.0\Recolletction.deps.json
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\bin\Debug\net6.0\Recolletction.runtimeconfig.json
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\bin\Debug\net6.0\Recolletction.dll
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\bin\Debug\net6.0\Recolletction.pdb
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\obj\Debug\net6.0\Recolletction.dll
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\obj\Debug\net6.0\refint\Recolletction.dll
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\obj\Debug\net6.0\Recolletction.pdb
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\obj\Debug\net6.0\Recolletction.genruntimeconfig.cache
+C:\Alinur\university-work\csharp\1st-lab\recollection\Recolletction\obj\Debug\net6.0\ref\Recolletction.dll

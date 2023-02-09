@@ -1,0 +1,7 @@
+{
+    "clientsFilePath": "C:\\Alinur\\university-work\\csharp\\2nd-lab\\second-lab\\SecondLab\\data\\clients.json",
+    "productsFilePath": "C:\\Alinur\\university-work\\csharp\\2nd-lab\\second-lab\\SecondLab\\data\\products.json",
+    "productsCostFilePath": "C:\\Alinur\\university-work\\csharp\\2nd-lab\\second-lab\\SecondLab\\data\\productsCost.json",
+    "purchasesCostFilePath": "C:\\Alinur\\university-work\\csharp\\2nd-lab\\second-lab\\SecondLab\\data\\purchases.json",
+    "sequenceLength":  10
+}

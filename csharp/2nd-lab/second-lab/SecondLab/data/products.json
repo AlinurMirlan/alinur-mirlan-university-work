@@ -1,0 +1,57 @@
+[
+    {
+        "Code": "AA123-1234",
+        "Category": "bakery",
+        "Country": "USA"
+    },
+    {
+        "Code": "AB123-1234",
+        "Category": "bakery",
+        "Country": "USA"
+    },
+    {
+        "Code": "BB122-1234",
+        "Category": "dairy",
+        "Country": "Canada"
+    },
+    {
+        "Code": "ZA123-1234",
+        "Category": "meat",
+        "Country": "Canada"
+    },
+    {
+        "Code": "AZ123-4444",
+        "Category": "meat",
+        "Country": "USA"
+    },
+    {
+        "Code": "AA111-1111",
+        "Category": "vegetable",
+        "Country": "Germany"
+    },
+    {
+        "Code": "GG12-3311",
+        "Category": "vegetable",
+        "Country": "Russia"
+    },
+    {
+        "Code": "GG22-3311",
+        "Category": "fruit",
+        "Country": "Russia"
+    },
+    {
+        "Code": "GG32-3311",
+        "Category": "fruit",
+        "Country": "Canada"
+    },
+    {
+        "Code": "EV11-1101",
+        "Category": "condiment",
+        "Country": "Russia"
+    },
+    {
+        "Code": "EL23-7182",
+        "Category": "condiment",
+        "Country": "Ukraine"
+    }
+]
