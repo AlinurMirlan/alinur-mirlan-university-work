@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageFilter", "ImageFilter\ImageFilter.csproj", "{97DA1B3E-C38A-44B9-9983-4038D6789157}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97DA1B3E-C38A-44B9-9983-4038D6789157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97DA1B3E-C38A-44B9-9983-4038D6789157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97DA1B3E-C38A-44B9-9983-4038D6789157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97DA1B3E-C38A-44B9-9983-4038D6789157}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B69FE03-E2DD-45E9-95A2-C64FA01C05BA}
+	EndGlobalSection
+EndGlobal

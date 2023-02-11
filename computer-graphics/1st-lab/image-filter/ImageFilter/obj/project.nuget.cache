@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vj86ZOK2AZb3thaC6Lv7kVR/EKflJDZHX6Ed8lyiLFdXIM2nz/UbMtObYkc3379M8FDgUjOfsOB6P1E9cLcxOA==",
+  "success": true,
+  "projectFilePath": "C:\\Alinur\\university-work\\computer-graphics\\1st-lab\\image-filter\\ImageFilter\\ImageFilter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Notnik_kg\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
