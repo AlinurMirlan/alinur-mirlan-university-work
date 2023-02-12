@@ -1,3 +1,6 @@
+using ImageFilter.Abstractions;
+using ImageFilter.Converters;
+
 namespace ImageFilter
 {
     public partial class FocalForm : System.Windows.Forms.Form
@@ -20,10 +23,11 @@ namespace ImageFilter
             if (openTargetImageDialog.ShowDialog() == DialogResult.OK)
             {
                 targetPictureBox.Load(openTargetImageDialog.FileName);
-                ImageColorSpace sourceColorSpace = new(sourcePictureBox.Image);
-                ImageColorSpace targetColorSpace = new(targetPictureBox.Image);
-                Bitmap resultPicture = ImageColorMerger.Merge(sourceColorSpace, targetColorSpace);
-                resultPictureBox.Image = resultPicture;
+                IColorSpace sourceColorSpace = new LabColorSpace(sourcePictureBox.Image);
+                IColorSpace targetColorSpace = new LabColorSpace(targetPictureBox.Image);
+                ImageTransformer transformer = new(sourceColorSpace, targetColorSpace);
+                Bitmap bitmap = transformer.MergeTargetColorSpace(new LabConvertable());
+                resultPictureBox.Image = bitmap;
             }
         }
 
