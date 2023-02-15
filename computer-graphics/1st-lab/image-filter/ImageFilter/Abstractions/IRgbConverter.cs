@@ -8,6 +8,6 @@ namespace ImageFilter.Abstractions
 {
     public interface IRgbConverter
     {
-        public void ConvertToRgb(in double[,,] source, out double[,,] rgbValues);
+        public void ConvertToRgb(in double[,,] source, out int[,,] rgbValues);
     }
 }

@@ -18,10 +18,10 @@ namespace ImageFilter
             this.Target = target;
         }
 
-        public Bitmap MergeTargetColorSpace(IRgbConverter converter)
+        public Bitmap MergeTargetColorSpace(IRgbConverter converter, bool persistContrast = true)
         {
-            MergeColorSpaces(out double[,,] colorSpace);
-            converter.ConvertToRgb(colorSpace, out double[,,] rgbValues);
+            MergeColorSpaces(out double[,,] colorSpace, persistContrast);
+            converter.ConvertToRgb(colorSpace, out int[,,] rgbValues);
             int width = rgbValues.GetLength(0);
             int height = rgbValues.GetLength(1);
             Bitmap bitmap = new(width, height);
@@ -29,13 +29,10 @@ namespace ImageFilter
             {
                 for (int j = 0; j < height; j++)
                 {
-                    int r = (int)Math.Round((rgbValues[i, j, 0] < 0 ? 0 : rgbValues[i, j, 0]) * 255);
-                    int g = (int)Math.Round((rgbValues[i, j, 1] < 0 ? 0 : rgbValues[i, j, 1]) * 255);
-                    int b = (int)Math.Round((rgbValues[i, j, 2] < 0 ? 0 : rgbValues[i, j, 2]) * 255);
                     Color color = Color.FromArgb(255,
-                        r > 255 ? 255 : r,
-                        g > 255 ? 255 : g,
-                        b > 255 ? 255 : b
+                        rgbValues[i, j, 0],
+                        rgbValues[i, j, 1],
+                        rgbValues[i, j, 2]
                     );
 
                     bitmap.SetPixel(i, j, color);
@@ -45,7 +42,7 @@ namespace ImageFilter
             return bitmap;
         }
 
-        private void MergeColorSpaces(out double[,,] colorSpace)
+        private void MergeColorSpaces(out double[,,] colorSpace, bool persistContrast = true)
         {
             double[] Es = CalculateMatExpectations(Source);
             double[] Ds = CalculateDispersions(Source, Es);
@@ -60,9 +57,10 @@ namespace ImageFilter
             {
                 for (int j = 0; j < height; j++)
                 {
-                    colorSpace[i, j, 0] = Et[0] + (Source[i, j, 0] - Es[0]) * (Dt[0] / Ds[0]);
-                    colorSpace[i, j, 1] = Et[1] + (Source[i, j, 1] - Es[1]) * (Dt[1] / Ds[1]);
-                    colorSpace[i, j, 2] = Et[2] + (Source[i, j, 2] - Es[2]) * (Dt[2] / Ds[2]);
+                    for (int k = 0; k < 3; k++)
+                    {
+                        colorSpace[i, j, k] = Et[k] + (Source[i, j, k] - Es[k]) * (persistContrast ? (Dt[k] / Ds[k]) : 1);
+                    }
                 }
             }
         }

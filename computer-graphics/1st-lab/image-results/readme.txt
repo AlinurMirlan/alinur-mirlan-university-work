@@ -1,0 +1,1 @@
+it's just a folder for storing the output images :D

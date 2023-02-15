@@ -37,10 +37,10 @@ namespace ImageFilter.Converters
             }
         }
 
-        public void ConvertToRgb(in double[,,] source, out double[,,] rgbValues)
+        public void ConvertToRgb(in double[,,] source, out int[,,] rgbValues)
         {
             GetLmsColorSpace(in source, out double[,,] lmsValues);
-            rgbValues = new double[imageWidth, imageHeight, 3];
+            rgbValues = new int[imageWidth, imageHeight, 3];
             var transfMatrix = matrixBuilder.DenseOfArray(new double[3, 3]
             {
                 { 4.4679, -3.5873, .1193 },
@@ -55,9 +55,14 @@ namespace ImageFilter.Converters
                     double[] lmsValue = new[] { lmsValues[i, j, 0], lmsValues[i, j, 1], lmsValues[i, j, 2] };
                     var labMatrix = matrixBuilder.DenseOfColumnMajor(3, 1, lmsValue);
                     var rgbValue = transfMatrix * labMatrix;
-                    rgbValues[i, j, 0] = rgbValue[0, 0];
-                    rgbValues[i, j, 1] = rgbValue[1, 0];
-                    rgbValues[i, j, 2] = rgbValue[2, 0];
+                    for (int k = 0; k < 3; k++)
+                    {
+                        rgbValue[k, 0] = (rgbValue[k, 0] < 0 ? 0 : rgbValue[k, 0]) * 255;
+                        if (rgbValue[k, 0] > 255)
+                            rgbValue[k, 0] = 255;
+
+                        rgbValues[i, j, k] = (int)Math.Round(rgbValue[k, 0]);
+                    }
                 }
             }
         }

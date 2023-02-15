@@ -9,8 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="articles\" />
-    <Folder Include="original-files\" />
+    <Compile Remove="articles\**" />
+    <EmbeddedResource Remove="articles\**" />
+    <None Remove="articles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
 
   <ItemGroup>

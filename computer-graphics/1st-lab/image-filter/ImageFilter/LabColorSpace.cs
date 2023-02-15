@@ -32,7 +32,7 @@ namespace ImageFilter
             var transfTwo = matrixBuilder.DenseOfArray(new double[3, 3]
             {
                 { 1, 1, 1 },
-                { 1, 1, -2 },
+                { 1, 1, -2 } ,
                 { 1, -1, 0 }
             });
 
