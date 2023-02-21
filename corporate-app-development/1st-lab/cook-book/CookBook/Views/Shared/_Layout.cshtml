@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <nav class="container max-w-screen-xl mx-auto p-4">
+        <div class="flex space-x-6 text-xl">
+            <a asp-controller="Store" asp-action="Index" class="text-slate-600 relative
+            after:content-[''] after:absolute after:h-0.5 after:bg-slate-400 after:w-full after:-bottom-1
+            after:left-0 after:hover:bg-slate-700">Store</a>
+            <a asp-controller="Kitchen" asp-action="Index" class="text-slate-600 relative
+            after:content-[''] after:absolute after:h-0.5 after:bg-slate-400 after:w-full after:-bottom-1
+            after:left-0 after:hover:bg-slate-700">Kitchen</a>
+        </div>
+    </nav>
+    <header class="container max-w-screen-xl mx-auto">
+        <h1 class="text-3xl mt-5 mb-3 text-slate-600">@ViewData["HeaderTitle"]</h1>
+    </header>
+    <main class="container max-w-screen-xl mx-auto">
+        @RenderBody()
+    </main>
+</body>
+</html>

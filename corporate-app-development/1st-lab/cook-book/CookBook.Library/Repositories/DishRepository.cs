@@ -85,7 +85,7 @@ namespace CookBook.Library.Repositories
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
             List<Dish> dishes = new();
-            IngredientRepository ingredientRepo = new(connectionString);
+            IIngredientRepository ingredientRepo = new IngredientRepository(connectionString);
             while (reader.Read())
             {
                 Dish dish = new
@@ -101,6 +101,30 @@ namespace CookBook.Library.Repositories
             }
 
             return dishes;
+        }
+
+        public Dish? GetDish(int dishId)
+        {
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new("GetDish", connection) { CommandType = CommandType.StoredProcedure };
+            command.Parameters.Add(new SqlParameter("@dishId", dishId) { SqlDbType = SqlDbType.Int });
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                Dish dish = new
+                (
+                    name: reader.GetFieldValue<string>("Name"),
+                    price: reader.GetFieldValue<decimal>("Price"),
+                    dishTypeId: reader.GetFieldValue<int>("DishTypeId")
+                )
+                { Id = reader.GetFieldValue<int>("Id") };
+                IIngredientRepository ingredientRepo = new IngredientRepository(connectionString);
+                dish.Ingredients = (List<Ingredient>)ingredientRepo.GetDishIngredients(dish.Id);
+                return dish;
+            }
+
+            return null;
         }
     }
 }

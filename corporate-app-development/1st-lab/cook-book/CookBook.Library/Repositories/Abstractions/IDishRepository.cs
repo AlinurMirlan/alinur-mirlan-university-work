@@ -13,5 +13,6 @@ namespace CookBook.Library.Repositories.Abstractions
         public int AddDish(Dish dish, params (Ingredient ingredient, float amount)[] ingredients);
         public void DeleteDish(int dishId);
         public IList<Dish> GetDishes();
+        public Dish? GetDish(int dishId);
     }
 }

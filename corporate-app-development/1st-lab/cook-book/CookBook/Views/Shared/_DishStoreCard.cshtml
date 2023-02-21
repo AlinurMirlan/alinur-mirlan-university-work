@@ -1,0 +1,12 @@
+﻿@model Dish
+
+<div class="max-w-xs rounded-md p-2 text-slate-800 h-full min-w-[200px]">
+    <span class="block border-b border-r border-l border-t rounded-t py-3 px-12 bg-slate-50 text-center">@Model.Name</span>
+    <ul>
+        @foreach (Ingredient ingredient in Model.Ingredients)
+        {
+            <li class="border-b  border-l border-r py-2 text-left px-2">@ingredient.Name</li>
+        }
+    </ul>
+    <button class="w-full bg-blue-400 hover:bg-blue-500 text-white py-2 rounded-b-sm">Order</button>
+</div>

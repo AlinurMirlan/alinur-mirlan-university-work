@@ -53,6 +53,7 @@ namespace CookBook.Library.Repositories
         {
             using SqlConnection connection = new(connectionString);
             using SqlCommand command = new("GetDishIngredients", connection) { CommandType = CommandType.StoredProcedure };
+            command.Parameters.Add(new SqlParameter("@dishId", dishId) { SqlDbType = SqlDbType.Int });
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
             List<Ingredient> ingredients = new();
