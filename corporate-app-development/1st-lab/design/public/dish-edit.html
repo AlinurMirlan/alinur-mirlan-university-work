@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cook Book Edit Dish</title>
+</head>
+<body>
+    <nav class="container max-w-screen-xl mx-auto p-4">
+        <div class="flex space-x-6 text-xl">
+            <a href="#" class="text-slate-600 relative
+            after:content-[''] after:absolute after:h-0.5 after:bg-slate-400 after:w-full after:-bottom-1
+            after:left-0 after:hover:bg-slate-700">Store</a>
+            <a href="#" class="text-slate-600 relative
+            after:content-[''] after:absolute after:h-0.5 after:bg-slate-400 after:w-full after:-bottom-1
+            after:left-0 after:hover:bg-slate-700">Kitchen</a>
+        </div>
+    </nav>
+    <header class="container max-w-screen-xl mx-auto">
+        <h1 class="text-3xl mt-5 mb-3 text-slate-600">Edit Dish</h1>
+    </header>
+    <main class="container max-w-screen-xl mx-auto">
+        <form action="" class="grid grid-cols-3 max-w-max border text-slate-800">
+            <label for="name" class="p-3 bg-slate-50">Dish</label>
+            <input type="text" id="name" value="Dish Name" class="p-3 px-4 col-span-2 border-b focus:outline-blue-200">
+            <span class="p-3 bg-slate-50 border-t">Ingredients</span>
+            <div class="flex flex-col col-span-2">
+                <input type="text" value="Ingredient 1" class="border-b p-3 px-4 focus:outline-blue-200">
+                <input type="text" value="Ingredient 2" class="border-b p-3 px-4 focus:outline-blue-200">
+                <input type="text" value="Ingredient 3" class="border-b p-3 px-4 focus:outline-blue-200">
+                <input type="text" value="Ingredient 4" class="border-b p-3 px-4 focus:outline-blue-200">
+            </div>
+            <button class="col-span-3 bg-blue-400 hover:bg-blue-500 text-white py-2 rounded-bl-sm">Edit</button>
+        </form>
+    </main>
+</body>
+</html>
