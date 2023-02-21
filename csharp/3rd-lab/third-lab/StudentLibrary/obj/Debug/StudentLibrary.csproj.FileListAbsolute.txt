@@ -1,0 +1,9 @@
+C:\Alinur\university-work\csharp\3rd-lab\third-lab\StudentLibrary\bin\Debug\StudentLibrary.dll
+C:\Alinur\university-work\csharp\3rd-lab\third-lab\StudentLibrary\bin\Debug\StudentLibrary.pdb
+C:\Alinur\university-work\csharp\3rd-lab\third-lab\StudentLibrary\bin\Debug\PersonLibrary.dll
+C:\Alinur\university-work\csharp\3rd-lab\third-lab\StudentLibrary\bin\Debug\PersonLibrary.pdb
+C:\Alinur\university-work\csharp\3rd-lab\third-lab\StudentLibrary\obj\Debug\StudentLibrary.csproj.AssemblyReference.cache
+C:\Alinur\university-work\csharp\3rd-lab\third-lab\StudentLibrary\obj\Debug\StudentLibrary.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\csharp\3rd-lab\third-lab\StudentLibrary\obj\Debug\StudentLibrary.csproj.CopyComplete
+C:\Alinur\university-work\csharp\3rd-lab\third-lab\StudentLibrary\obj\Debug\StudentLibrary.dll
+C:\Alinur\university-work\csharp\3rd-lab\third-lab\StudentLibrary\obj\Debug\StudentLibrary.pdb

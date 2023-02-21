@@ -1,4 +1,8 @@
-﻿namespace PersonLibrary
+﻿using System;
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
+
+namespace PersonLibrary
 {
     [Serializable]
     public class Person
@@ -12,22 +16,27 @@
             new Person("Eleanor", "Michel", new DateTime(2002, 11, 18)),
             new Person("Daniel", "Honan", new DateTime(2002, 11, 18)),
         };
-        protected string? name;
-        protected string? surname;
+        protected string name;
+        protected string surname;
+        [DataMember(Name = "BirthDate")]
         protected DateTime birthDate;
 
+        [XmlAttribute("name")]
+        [DataMember]
         public string Name
         {
-            get => name!;
+            get => name;
             set => name = value ?? throw new ArgumentNullException(nameof(value));
         }
 
+        [XmlAttribute("surname")]
         public string Surname
         {
-            get => surname!;
+            get => surname;
             set => surname = value ?? throw new ArgumentNullException(nameof(value));
         }
 
+        [XmlAttribute("birth-year")]
         public int BirthYear
         {
             get => birthDate.Year;
@@ -40,6 +49,7 @@
             }
         }
 
+        [XmlAttribute("birth-date")]
         public DateTime Date
         {
             get => birthDate;
@@ -59,11 +69,14 @@
             Date = birthDate;
         }
 
-        public override bool Equals(object? obj)
+        public Person() { }
+
+        public override bool Equals(object obj)
         {
-            if (obj is not Person person)
+            if (!(obj is Person))
                 return false;
 
+            Person person = obj as Person;
             return birthDate == person.birthDate
                 && person.Name == Name
                 && person.Surname == Surname;
@@ -72,7 +85,7 @@
 #pragma warning disable S2328 // "GetHashCode" should not reference mutable fields
         public override int GetHashCode()
         {
-            int a = HashCode.Combine(Name, Surname);
+            int a = Name.GetHashCode() + Surname.GetHashCode();
             int b = birthDate.GetHashCode();
             return a + b;
         }
@@ -85,7 +98,7 @@
 
         public static Person RandomPerson()
         {
-            Random random = new();
+            var random = new Random();
             return People[random.Next(People.Length)];
         }
     }
