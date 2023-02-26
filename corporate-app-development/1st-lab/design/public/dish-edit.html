@@ -8,31 +8,49 @@
     <title>Cook Book Edit Dish</title>
 </head>
 <body>
-    <nav class="container max-w-screen-xl mx-auto p-4">
-        <div class="flex space-x-6 text-xl">
-            <a href="#" class="text-slate-600 relative
-            after:content-[''] after:absolute after:h-0.5 after:bg-slate-400 after:w-full after:-bottom-1
-            after:left-0 after:hover:bg-slate-700">Store</a>
-            <a href="#" class="text-slate-600 relative
-            after:content-[''] after:absolute after:h-0.5 after:bg-slate-400 after:w-full after:-bottom-1
-            after:left-0 after:hover:bg-slate-700">Kitchen</a>
-        </div>
-    </nav>
+    <div class="bg-sur-var py-2">
+        <nav class="container max-w-screen-xl mx-auto p-4">
+            <div class="flex space-x-6 text-xl justify-between">
+                <a href="#" class="text-on-sur-var relative
+                after:content-[''] after:absolute after:h-0.5 after:bg-sec after:w-full after:-bottom-1
+                after:left-0">Store</a>
+                <div class="space-x-6">
+                    <a href="#" class="text-on-sur-var relative
+                    after:content-[''] after:absolute after:h-0.5 after:bg-sec after:w-full after:-bottom-1
+                    after:left-0">Dishes</a>
+                    <a href="#" class="text-on-sur-var relative
+                    after:content-[''] after:absolute after:h-0.5 after:bg-sec after:w-full after:-bottom-1
+                    after:left-0">Ingredients</a>
+                </div>
+            </div>
+        </nav>
+    </div>
     <header class="container max-w-screen-xl mx-auto">
-        <h1 class="text-3xl mt-5 mb-3 text-slate-600">Edit Dish</h1>
+        <h1 class="text-3xl mt-5 mb-3 text-prim">Edit Dish</h1>
     </header>
     <main class="container max-w-screen-xl mx-auto">
-        <form action="" class="grid grid-cols-3 max-w-max border text-slate-800">
-            <label for="name" class="p-3 bg-slate-50">Dish</label>
-            <input type="text" id="name" value="Dish Name" class="p-3 px-4 col-span-2 border-b focus:outline-blue-200">
-            <span class="p-3 bg-slate-50 border-t">Ingredients</span>
-            <div class="flex flex-col col-span-2">
-                <input type="text" value="Ingredient 1" class="border-b p-3 px-4 focus:outline-blue-200">
-                <input type="text" value="Ingredient 2" class="border-b p-3 px-4 focus:outline-blue-200">
-                <input type="text" value="Ingredient 3" class="border-b p-3 px-4 focus:outline-blue-200">
-                <input type="text" value="Ingredient 4" class="border-b p-3 px-4 focus:outline-blue-200">
+        <form action="">
+            <div class="grid grid-cols-6 max-w-3xl mx-auto border-x border-t border-outline rounded-t-md">
+                <label for="dish" class="rounded-tl-md p-2 border-outline col-span-1 bg-sec-cont text-on-sec-cont">Dish</label>
+                <input type="text" class="focus:outline-none px-2 bg-sur border-outline border-b border-r col-span-4" id="dish">
+                <input type="text" class="rounded-tr-md focus:outline-none px-2 bg-sur border-outline border-b col-span-1">
+                
+                <span class="col-span-1 border-b border-outline bg-sec-cont text-on-sec-cont p-2">Ingredients</span>
+                <div class="grid grid-cols-5 col-span-5">
+                    <input type="text" class="focus:outline-none text-on-sur p-2 bg-sur border-outline border-b border-r col-span-4" id="Ingredient">
+                    <input type="text" class="focus:outline-none text-on-sur p-2 bg-sur border-outline border-b col-span-1">
+
+                    <input type="text" class="focus:outline-none text-on-sur p-2 bg-sur border-outline border-b border-r col-span-4" id="Ingredient">
+                    <input type="text" class="focus:outline-none text-on-sur p-2 bg-sur border-outline border-b col-span-1">
+                    
+                    <input type="text" class="focus:outline-none text-on-sur p-2 bg-sur border-outline border-b border-r col-span-4" id="Ingredient">
+                    <input type="text" class="focus:outline-none text-on-sur p-2 bg-sur border-outline border-b col-span-1">
+                </div>              
             </div>
-            <button class="col-span-3 bg-blue-400 hover:bg-blue-500 text-white py-2 rounded-bl-sm">Edit</button>
+            <div class="max-w-3xl mx-auto mt-3 space-x-2">
+                <button class="bg-prim border rounded-full py-2 px-6 text-on-prim">Add Ingredient</button>
+                <button class="bg-prim border rounded-full py-2 px-6 text-on-prim">Add Dish</button>
+            </div>
         </form>
     </main>
 </body>
