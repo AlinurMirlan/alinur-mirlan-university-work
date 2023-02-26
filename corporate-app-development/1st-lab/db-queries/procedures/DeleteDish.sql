@@ -1,7 +1,11 @@
+USE CookBook
+GO
+
 CREATE OR ALTER PROC DeleteDish
 	@dishId int
 AS
 BEGIN
-	DELETE FROM CookBook.dbo.Dish WHERE Id = @dishId;
+	EXEC DeleteDishIngredients @dishId;
+	DELETE FROM Dish WHERE Dish.Id = @dishId;
 END
 GO

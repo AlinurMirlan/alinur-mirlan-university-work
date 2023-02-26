@@ -1,0 +1,5 @@
+CREATE OR ALTER PROC GetAllUnits
+AS
+BEGIN
+	SELECT Name FROM CookBook.dbo.Unit;
+END
