@@ -1,0 +1,18 @@
+﻿@using System.Globalization;
+@model Cart
+@{
+    ViewData["Title"] = "Cook Book Order";
+    ViewData["HeaderTitle"] = "Your Tab";
+}
+
+<section>
+    <div class="bg-sur border rounded-full border-outline sticky top-0">
+        <a asp-action="FinishOrder" asp-route-itemsOrdered="@Model.ItemsCount" class="block text-xl text-center py-5 text-sec">Order @Model.ComputeTotalValue().ToString("C", CultureInfo.CurrentCulture)</a>
+    </div>
+    <div class="flex flex-wrap gap-x-2 gap-y-5 justify-around">
+        @for (int i = 0; i < Model.Lines.Count; i++)
+        {
+            <partial name="_DishOrderCard" model="Model.Lines[i]"/>
+        }
+    </div>
+</section>

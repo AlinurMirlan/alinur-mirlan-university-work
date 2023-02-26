@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Ingredient>
+@{
+    ViewData["Title"] = "Cook Book Kitchen Ingredients";
+    ViewData["HeaderTitle"] = "Kitchen Ingredients";
+}
+
+<section>
+    <div class="bg-sur border rounded-full border-outline sticky top-0">
+        <a asp-action="Add" class="block text-xl text-center py-5 text-sec">Add Ingredient</a>
+    </div>
+    <div class="flex flex-wrap items-center mt-6 gap-y-12">
+        @foreach (Ingredient ingredient in Model)
+        {
+            <partial name="_IngredientCard" model="ingredient" />
+        }
+    </div>
+</section>

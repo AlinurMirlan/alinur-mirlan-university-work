@@ -13,6 +13,9 @@ namespace CookBook.Library.Repositories.Abstractions
     {
         public int AddIngredient(Ingredient ingredient);
         public void DeleteIngredient(int ingredientId);
-        public IList<Ingredient> GetDishIngredients(int dishId);
+        public IList<DishIngredient> GetDishIngredients(int dishId);
+        public IList<Ingredient> GetIngredients();
+        public Ingredient? GetIngredient(int ingredientId);
+        public void EditIngredient(Ingredient oldIngredient, Ingredient newIngredient);
     }
 }

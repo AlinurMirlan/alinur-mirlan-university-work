@@ -1,12 +1,36 @@
-﻿@model Dish
+﻿@using System.Globalization;
+@model Dish
 
 <div class="max-w-xs rounded-md p-2 text-slate-800 h-full min-w-[200px]">
-    <span class="block border-b border-r border-l border-t rounded-t py-3 px-12 bg-slate-50 text-center">@Model.Name</span>
-    <ul>
-        @foreach (Ingredient ingredient in Model.Ingredients)
+    <div class="border border-outline rounded-t-md">
+        <div class="flex rounded-t-md px-3 bg-sec-cont items-stretch justify-evenly">
+            <span class="py-3 text-on-sec-cont">@Model.Name</span>
+            <div class="w-[3px] flex bg-white mx-2"></div>
+            <span class="py-3 text-on-sec-cont">@Model.DishType</span>
+        </div>
+        <ul>
+            @foreach (DishIngredient ingredient in Model.Ingredients)
+            {
+                <li class="flex">
+                    <span class="grow text-on-sur bg-sur py-2 text-left pl-3">@ingredient.Name</span>
+                    <span class="px-3 py-2 text-on-sur bg-sur">@($"{ingredient.Amount.ToString("0.00")}{ingredient.Unit}")</span>
+                </li>
+            }
+        </ul>
+    </div>
+    <form method="post">
+        <input type="hidden" asp-for="Id" value="@Model.Id" />
+        <input type="hidden" asp-for="Name" value="@Model.Name" />
+        <input type="hidden" asp-for="DishType" value="@Model.DishType" />
+        <input type="hidden" asp-for="Price" value="@Model.Price" />
+        @for (int i = 0; i < Model.Ingredients.Count; i++)
         {
-            <li class="border-b  border-l border-r py-2 text-left px-2">@ingredient.Name</li>
+            <input type="hidden" asp-for="Ingredients[i].Name" value="@Model.Ingredients[i].Name" />
+            <input type="hidden" asp-for="Ingredients[i].Amount" value="@Model.Ingredients[i].Amount" />
+            <input type="hidden" asp-for="Ingredients[i].Unit" value="@Model.Ingredients[i].Unit" />
+            <input type="hidden" asp-for="Ingredients[i].Id" value="@Model.Ingredients[i].Id" />
+            <input type="hidden" asp-for="Ingredients[i].Price" value="@Model.Ingredients[i].Price" />
         }
-    </ul>
-    <button class="w-full bg-blue-400 hover:bg-blue-500 text-white py-2 rounded-b-sm">Order</button>
+        <button type="submit" class="w-full bg-prim mt-3 rounded-full text-on-prim py-2">Order @Model.Price.ToString("C", CultureInfo.CurrentCulture)</button>
+    </form>
 </div>

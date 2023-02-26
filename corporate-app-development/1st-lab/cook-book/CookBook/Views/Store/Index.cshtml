@@ -1,15 +1,23 @@
-﻿@model IEnumerable<Dish>
+﻿@using System.Globalization;
+@model DishesNCart
 @{
     ViewData["Title"] = "Cook Book Store";
     ViewData["HeaderTitle"] = "Dishes";
 }
 
 <section>
-    <div class="bg-green-100 hover:bg-green-200">
-        <a href="#" class="block text-xl text-center py-5 text-slate-600">You ordered # dishes</a>
+    @if (Model.OrderFinished)
+    {
+        <div class="w-fit bg-ter-cont rounded-md text-on-ter-cont py-4 px-6 text-xl mx-auto mb-3">
+            Thank you! Your order will be ready in a matter of minutes!
+        </div>
+    }
+    <div class="bg-sur border rounded-full border-outline sticky top-0">
+        <a asp-action="Order" class="block text-xl text-center py-5 text-sec">You ordered @Model.Cart.ItemsCount dishes to the total of @Model.Cart.ComputeTotalValue().ToString("C", CultureInfo.CurrentCulture)</a>
     </div>
-    <div class="flex flex-wrap items-center">
-        @foreach (Dish dish in Model)
+    <div class="flex flex-wrap items-center mt-6 gap-y-12">
+        <!-- Dish Card -->
+        @foreach (Dish dish in Model.Dishes)
         {
             <partial name="_DishStoreCard" model="dish"/>
         }

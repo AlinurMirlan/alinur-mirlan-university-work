@@ -16,12 +16,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Alinur\university-work\corporate-app-development\1st-lab\cook-book\CookBook
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Kitchen/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2l0Y2hlblxFZGl0LmNzaHRtbA==
+[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Dishes/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaGVzXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Kitchen/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2l0Y2hlblxJbmRleC5jc2h0bWw=
+[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Dishes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Dishes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Ingredients/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudHNcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Ingredients/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Ingredients/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Shared/Error.cshtml]
@@ -32,8 +48,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EaXNoS2l0Y2hlbkNhcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Shared/_DishOrderCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EaXNoT3JkZXJDYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Shared/_DishStoreCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EaXNoU3RvcmVDYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Shared/_IngredientCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9JbmdyZWRpZW50Q2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Shared/_Layout.cshtml]
@@ -46,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Store/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/Store/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVcT3JkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Alinur/university-work/corporate-app-development/1st-lab/cook-book/CookBook/Views/_ViewImports.cshtml]

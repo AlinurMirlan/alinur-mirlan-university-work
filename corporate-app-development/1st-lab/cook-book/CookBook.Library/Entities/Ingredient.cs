@@ -9,15 +9,17 @@ namespace CookBook.Library.Entities
     public class Ingredient
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public int UnitId { get; set; }
+        public string? Name { get; set; }
+        public decimal? Price { get; set; }
+        public string? Unit { get; set; }
 
-        public Ingredient(string name, decimal price, int unitId)
+        public Ingredient(string name, decimal price, string unit)
         {
             Name = name;
             Price = price;
-            UnitId = unitId;
+            Unit = unit;
         }
+
+        public Ingredient() { }
     }
 }

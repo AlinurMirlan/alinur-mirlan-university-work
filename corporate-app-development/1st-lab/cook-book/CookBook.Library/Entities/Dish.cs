@@ -9,16 +9,18 @@ namespace CookBook.Library.Entities
     public class Dish
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public decimal Price { get; set; }
-        public int DishTypeId { get; set; }
-        public List<Ingredient> Ingredients { get; set; } = new();
+        public string? DishType { get; set; }
+        public List<DishIngredient> Ingredients { get; set; } = new();
 
-        public Dish(string name, decimal price, int dishTypeId)
+        public Dish(string name, decimal price, string dishType)
         {
             Name = name;
             Price = price;
-            DishTypeId = dishTypeId;
+            DishType = dishType;
         }
+
+        public Dish() { }
     }
 }

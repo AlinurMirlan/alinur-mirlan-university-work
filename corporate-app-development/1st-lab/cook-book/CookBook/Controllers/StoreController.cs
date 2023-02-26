@@ -1,4 +1,6 @@
-﻿using CookBook.Library.Repositories.Abstractions;
+﻿using CookBook.Infrastructure;
+using CookBook.Library.Entities;
+using CookBook.Library.Repositories.Abstractions;
 using CookBook.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -16,13 +18,55 @@ namespace CookBook.Controllers
 
         public IActionResult Index()
         {
-            return View(_dishRepo.GetDishes());
+            Cart? cart = HttpContext.Session.Get<Cart>("cart") ?? new();
+            DishesNCart dishesNCart = new()
+            {
+                Cart = cart,
+                Dishes = _dishRepo.GetDishes()
+            };
+
+            return View(dishesNCart);
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Index(Dish dish)
         {
-            return View();
+            Cart? cart = HttpContext.Session.Get<Cart>("cart") ?? new();
+            cart.AddOneItem(dish);
+            HttpContext.Session.Set("cart", cart);
+            DishesNCart dishesNCart = new()
+            {
+                Cart = cart,
+                Dishes = _dishRepo.GetDishes()
+            };
+
+            return View(dishesNCart);
         }
+
+        public IActionResult Order()
+        {
+            Cart? cart = HttpContext.Session.Get<Cart>("cart") ?? new();
+            return View(cart);
+        }
+
+        public IActionResult FinishOrder(int itemsOrdered)
+        {
+            if (itemsOrdered == 0)
+                return RedirectToAction(nameof(Order));
+
+            HttpContext.Session.Clear();
+            Cart cart = new();
+            HttpContext.Session.Set("cart", cart);
+            DishesNCart dishesNCart = new()
+            {
+                Cart = cart,
+                Dishes = _dishRepo.GetDishes(),
+                OrderFinished = true
+            };
+
+            return View(nameof(Index), dishesNCart);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

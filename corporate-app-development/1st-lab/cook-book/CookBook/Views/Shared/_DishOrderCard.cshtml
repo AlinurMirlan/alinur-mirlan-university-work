@@ -1,0 +1,41 @@
+﻿@using System.Globalization;
+@model CartLine
+
+<div class="max-w-4xl w-max mt-10">
+    <div class="flex items-center space-x-2 mb-3">
+        <div class="h-7 w-7 rounded-full bg-prim-cont text-on-prim-cont text-center pt-[2px]">@Model.Quantity</div>
+        <h4 class="text-2xl text-prim">@Model.Dish.Name</h4>
+    </div>
+    <div class="border-outline border rounded-t-md">
+        <table>
+            <thead>
+                <tr class="bg-sec-cont text-on-sec-cont">
+                    <th class="pr-16 py-4 pl-4 rounded-tl-md">Ingredient</th>
+                    <th class="pr-16 py-4 pl-4">Amount</th>
+                    <th class="pr-16 py-4 pl-4">Price</th>
+                    <th class="pr-16 py-4 pl-4 rounded-tr-md">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ decimal orderCost = 0; }
+                @for (int i = 0; i < Model.Dish.Ingredients.Count; i++)
+                {
+                    var ingredient = @Model.Dish.Ingredients[i];
+                    decimal totalPrice = (ingredient.Price ?? 0) * Model.Quantity;
+                    orderCost += totalPrice;
+
+                    <tr class="bg-sur">
+                        <td class="py-4 px-4 text-on-sur-var">@ingredient.Name</td>
+                        <td class="py-4 px-4 text-on-sur-var">@($"{ingredient.Amount * Model.Quantity}{ingredient.Unit}")</td>
+                        <td class="py-4 px-4 text-on-sur-var">@totalPrice.ToString("C", CultureInfo.CurrentCulture)</td>
+                        <td class="py-4 px-4 text-on-sur-var">@orderCost.ToString("C", CultureInfo.CurrentCulture)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="flex space-x-6">
+        <button class="px-10 bg-prim mt-3 rounded-full text-on-prim py-2">Order Up</button>
+        <button class="px-10 bg-err mt-3 rounded-full text-on-err py-2">Drop Down</button>
+    </div>
+</div>

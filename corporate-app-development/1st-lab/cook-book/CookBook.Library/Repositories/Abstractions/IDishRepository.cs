@@ -10,7 +10,9 @@ namespace CookBook.Library.Repositories.Abstractions
 {
     public interface IDishRepository
     {
-        public int AddDish(Dish dish, params (Ingredient ingredient, float amount)[] ingredients);
+        public int AddDish(Dish dish, params DishIngredient[] ingredients);
+        public void EditDish(Dish oldDish, Dish newDish);
+        public void AddDishIngredients(int dishId, params DishIngredient[] ingredients);
         public void DeleteDish(int dishId);
         public IList<Dish> GetDishes();
         public Dish? GetDish(int dishId);

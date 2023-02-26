@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Dish>
+@{
+    ViewData["Title"] = "Cook Book Kitchen Dishes";
+    ViewData["HeaderTitle"] = "Kitchen Dishes";
+}
+
+<section>
+    <div class="bg-sur border rounded-full border-outline sticky top-0">
+        <a asp-action="Add" class="block text-xl text-center py-5 text-sec">Add Dish</a>
+    </div>
+    <div class="flex flex-wrap items-center mt-6 gap-y-12">
+        @foreach (Dish dish in Model)
+        {
+            <partial name="_DishKitchenCard" model="dish" />
+        }
+    </div>
+</section>

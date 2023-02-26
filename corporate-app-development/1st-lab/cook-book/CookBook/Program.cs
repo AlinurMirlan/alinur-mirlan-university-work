@@ -7,6 +7,9 @@ var config = builder.Configuration;
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDishRepository, DishRepository>((f) => new DishRepository(config["ConnectionStrings:DefaultConnection"]));
+builder.Services.AddScoped<IIngredientRepository, IngredientRepository>((f) => new IngredientRepository(config["ConnectionStrings:DefaultConnection"]));
+builder.Services.AddScoped<IUnitRepository, UnitRepository>((f) => new UnitRepository(config["ConnectionStrings:DefaultConnection"]));
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -24,6 +27,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
