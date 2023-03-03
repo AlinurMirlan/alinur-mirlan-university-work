@@ -2,9 +2,9 @@
 
 namespace CookBook.Models
 {
-    public class DishesNCart
+    public class MenuTabViewModel
     {
-        public Cart Cart { get; set; }
+        public Tab Tab { get; set; }
         public IList<Dish> Dishes { get; set; }
         public bool OrderFinished { get; set; }
     }

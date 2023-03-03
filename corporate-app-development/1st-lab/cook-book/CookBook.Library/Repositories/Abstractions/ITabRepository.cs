@@ -9,7 +9,9 @@ namespace CookBook.Library.Repositories.Abstractions
 {
     public interface ITabRepository
     {
-        public int AddTab(Tab tab, Dish[] dishes);
-        public Tab GetTab(int tabId);
+        public int AddTab(Tab tab);
+        public Tab GetTabDishes(int tabId);
+        public IList<Tab> GetTabs(bool orderByDescending);
+        public IList<Tab> GetTabsByDate(DateTime orderDate, bool orderByDescending);
     }
 }

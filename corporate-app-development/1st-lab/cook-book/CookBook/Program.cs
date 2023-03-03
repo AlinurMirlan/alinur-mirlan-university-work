@@ -9,6 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDishRepository, DishRepository>((f) => new DishRepository(config["ConnectionStrings:DefaultConnection"]));
 builder.Services.AddScoped<IIngredientRepository, IngredientRepository>((f) => new IngredientRepository(config["ConnectionStrings:DefaultConnection"]));
 builder.Services.AddScoped<IUnitRepository, UnitRepository>((f) => new UnitRepository(config["ConnectionStrings:DefaultConnection"]));
+builder.Services.AddScoped<ITabRepository, TabRepository>((f) => new TabRepository(config["ConnectionStrings:DefaultConnection"]));
 builder.Services.AddSession();
 
 var app = builder.Build();

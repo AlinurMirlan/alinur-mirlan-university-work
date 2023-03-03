@@ -1,0 +1,15 @@
+﻿@using System.Globalization;
+@model Tab
+@{
+    ViewData["Title"] = "Cook Book Order";
+    ViewData["HeaderTitle"] = $"Order #{Model.TabNumber} to {Model.Cost.ToString("C3", CultureInfo.CurrentCulture)}";
+}
+
+<section>
+    <div class="flex flex-wrap gap-x-2 gap-y-5 justify-around">
+        @for (int i = 0; i < Model.TabDishes.Count; i++)
+        {
+            <partial name="_OrderCard" model="Model.TabDishes[i]" />
+        }
+    </div>
+</section>

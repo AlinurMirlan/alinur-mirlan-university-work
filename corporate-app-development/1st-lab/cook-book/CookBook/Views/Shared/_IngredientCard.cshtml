@@ -1,4 +1,5 @@
-﻿@model Ingredient
+﻿@using System.Globalization;
+@model Ingredient
 
 <div class="max-w-xs rounded-md p-2 text-slate-800 h-full min-w-[200px]">
     <div class="max-w-xs rounded-md p-2 text-slate-800 h-full min-w-[200px]">
@@ -6,7 +7,7 @@
             <span class="rounded-t-md block py-3 px-12 bg-sec-cont text-on-sec-cont">@Model.Name</span>
             <ul>
                 <li class="flex">
-                    <span class="grow text-on-sur bg-sur py-2 text-left pl-3">@Model.Price</span>
+                    <span class="grow text-on-sur bg-sur py-2 text-left pl-3">@(Model.Price.ToString("C3", CultureInfo.CurrentCulture))</span>
                     <span class="px-3 py-2 text-on-sur bg-sur">@Model.Unit</span>
                 </li>
             </ul>

@@ -1,10 +1,10 @@
 ﻿@using System.Globalization;
-@model CartLine
+@model TabDish
 
 <div class="max-w-4xl w-max mt-10">
     <div class="flex items-center space-x-2 mb-3">
         <div class="h-7 w-7 rounded-full bg-prim-cont text-on-prim-cont text-center pt-[2px]">@Model.Quantity</div>
-        <h4 class="text-2xl text-prim">@Model.Dish.Name</h4>
+        <h4 class="text-2xl text-prim">@Model.Name</h4>
     </div>
     <div class="border-outline border rounded-t-md">
         <table>
@@ -18,10 +18,10 @@
             </thead>
             <tbody>
                 @{ decimal orderCost = 0; }
-                @for (int i = 0; i < Model.Dish.Ingredients.Count; i++)
+                @for (int i = 0; i < Model.Ingredients.Count; i++)
                 {
-                    var ingredient = @Model.Dish.Ingredients[i];
-                    decimal totalPrice = (ingredient.Price ?? 0) * Model.Quantity;
+                    var ingredient = @Model.Ingredients[i];
+                    decimal totalPrice = (ingredient.Price * (decimal)ingredient.Amount) * Model.Quantity;
                     orderCost += totalPrice;
 
                     <tr class="bg-sur">
@@ -35,7 +35,11 @@
         </table>
     </div>
     <div class="flex space-x-6">
-        <button class="px-10 bg-prim mt-3 rounded-full text-on-prim py-2">Order Up</button>
-        <button class="px-10 bg-err mt-3 rounded-full text-on-err py-2">Drop Down</button>
+        <form method="post">
+            <button asp-route-dishId="@Model.Id" asp-action="OrderUp" class="px-10 bg-prim mt-3 rounded-full text-on-prim py-2">Order Up</button>
+        </form>
+        <form method="post">
+            <button asp-route-dishId="@Model.Id" asp-action="OrderDown" class="px-10 bg-err mt-3 rounded-full text-on-err py-2">Order Down</button>
+        </form>
     </div>
 </div>

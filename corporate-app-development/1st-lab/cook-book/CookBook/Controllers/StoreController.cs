@@ -18,53 +18,74 @@ namespace CookBook.Controllers
 
         public IActionResult Index()
         {
-            Cart? cart = HttpContext.Session.Get<Cart>("cart") ?? new();
-            DishesNCart dishesNCart = new()
+            Tab? tab = HttpContext.Session.Get<Tab>("tab") ?? new();
+            MenuTabViewModel menuTab = new()
             {
-                Cart = cart,
+                Tab = tab,
                 Dishes = _dishRepo.GetDishes()
             };
 
-            return View(dishesNCart);
+            return View(menuTab);
         }
 
         [HttpPost]
         public IActionResult Index(Dish dish)
         {
-            Cart? cart = HttpContext.Session.Get<Cart>("cart") ?? new();
-            cart.AddOneItem(dish);
-            HttpContext.Session.Set("cart", cart);
-            DishesNCart dishesNCart = new()
+            Tab? tab = HttpContext.Session.Get<Tab>("tab") ?? new();
+            tab.AddDish(dish);
+            HttpContext.Session.Set("tab", tab);
+            MenuTabViewModel menuTab = new()
             {
-                Cart = cart,
+                Tab = tab,
                 Dishes = _dishRepo.GetDishes()
             };
 
-            return View(dishesNCart);
+            return View(menuTab);
+        }
+
+        [HttpPost]
+        public IActionResult OrderUp(int dishId)
+        {
+            Tab? tab = HttpContext.Session.Get<Tab>("tab") ?? new();
+            tab.OrderUpDish(dishId);
+            HttpContext.Session.Set("tab", tab);
+            return RedirectToAction(nameof(Order));
+        }
+
+
+        [HttpPost]
+        public IActionResult OrderDown(int dishId)
+        {
+            Tab? tab = HttpContext.Session.Get<Tab>("tab") ?? new();
+            tab.OrderDownDish(dishId);
+            HttpContext.Session.Set("tab", tab);
+            return RedirectToAction(nameof(Order));
         }
 
         public IActionResult Order()
         {
-            Cart? cart = HttpContext.Session.Get<Cart>("cart") ?? new();
-            return View(cart);
+            Tab? tab = HttpContext.Session.Get<Tab>("tab") ?? new();
+            return View(tab);
         }
 
-        public IActionResult FinishOrder(int itemsOrdered)
+        public IActionResult FinishOrder(int itemsOrdered, [FromServices] ITabRepository tabRepo)
         {
             if (itemsOrdered == 0)
                 return RedirectToAction(nameof(Order));
 
+            Tab tab = HttpContext.Session.Get<Tab>("tab")!;
+            tabRepo.AddTab(tab);
             HttpContext.Session.Clear();
-            Cart cart = new();
-            HttpContext.Session.Set("cart", cart);
-            DishesNCart dishesNCart = new()
+            tab = new();
+            HttpContext.Session.Set("tab", tab);
+            MenuTabViewModel menuTab = new()
             {
-                Cart = cart,
+                Tab = tab,
                 Dishes = _dishRepo.GetDishes(),
                 OrderFinished = true
             };
 
-            return View(nameof(Index), dishesNCart);
+            return View(nameof(Index), menuTab);
         }
 
 

@@ -1,0 +1,42 @@
+﻿@model OrdersViewModel
+@{
+    ViewData["Title"] = "Cook Book Orders";
+    ViewData["HeaderTitle"] = "Orders";
+}
+
+<section class="max-w-2xl mx-auto">
+    <div class="flex gap-x-2 justify-between mt-5">
+        <form asp-action="Index" method="post" asp-route-returnUrl="@Model.ReturnUrl">
+            <div class="flex">
+                <button type="submit" class="bg-prim rounded-l-full text-on-prim py-2 pl-4 pr-3">Order by</button>
+                <select name="orderByDescending" class="min-h-full pl-2 border text-prim border-outline rounded-r-full">
+                    <option value="false" selected="@(Model.OrderByDescending ? "selected" : null)">Descending</option>
+                    <option value="true" selected="@(Model.OrderByDescending ? null : "selected")">Ascending</option>
+                </select>
+            </div>
+        </form>
+        <form method="get" asp-action="OrdersByDate">
+            <div class="flex">
+                <button type="submit" class="bg-prim rounded-l-full text-on-prim py-2 pl-4 pr-3">Find by Date</button>
+                <input type="date" value="@(Model.Date == default ? null : Model.Date.ToString("yyyy-MM-dd"))" class="min-h-full pl-2 border text-prim border-outline rounded-r-full" name="orderDate">
+            </div>
+        </form>
+    </div>
+    <table class="w-full mt-5">
+        <thead class="">
+            <tr class="bg-sec-cont text-on-sec-cont">
+                <th class="pl-4 text-left py-3">Order Number</th>
+                <th class="pl-2 text-left">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Tab tab in Model.Tabs)
+            {
+                <tr class="bg-sur border-b border-b-slate-200">
+                    <td class="pl-4 py-3"><a asp-route-tabNumber="@tab.TabNumber" asp-route-tabId="@tab.Id" asp-action="Order" class="underline text-sec">@tab.TabNumber</a></td>
+                    <td class="pl-2">@tab.OrderDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

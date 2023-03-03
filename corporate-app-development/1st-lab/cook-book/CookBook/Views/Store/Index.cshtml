@@ -1,5 +1,5 @@
 ﻿@using System.Globalization;
-@model DishesNCart
+@model MenuTabViewModel
 @{
     ViewData["Title"] = "Cook Book Store";
     ViewData["HeaderTitle"] = "Dishes";
@@ -13,7 +13,7 @@
         </div>
     }
     <div class="bg-sur border rounded-full border-outline sticky top-0">
-        <a asp-action="Order" class="block text-xl text-center py-5 text-sec">You ordered @Model.Cart.ItemsCount dishes to the total of @Model.Cart.ComputeTotalValue().ToString("C", CultureInfo.CurrentCulture)</a>
+        <a asp-action="Order" class="block text-xl text-center py-5 text-sec">You ordered @Model.Tab.DishesCount dishes to the total of @Model.Tab.Cost.ToString("C", CultureInfo.CurrentCulture)</a>
     </div>
     <div class="flex flex-wrap items-center mt-6 gap-y-12">
         <!-- Dish Card -->

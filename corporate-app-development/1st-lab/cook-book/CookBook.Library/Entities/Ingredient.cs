@@ -10,7 +10,7 @@ namespace CookBook.Library.Entities
     {
         public int Id { get; set; }
         public string? Name { get; set; }
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
         public string? Unit { get; set; }
 
         public Ingredient(string name, decimal price, string unit)

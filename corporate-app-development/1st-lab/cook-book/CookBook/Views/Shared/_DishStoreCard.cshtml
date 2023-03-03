@@ -31,6 +31,6 @@
             <input type="hidden" asp-for="Ingredients[i].Id" value="@Model.Ingredients[i].Id" />
             <input type="hidden" asp-for="Ingredients[i].Price" value="@Model.Ingredients[i].Price" />
         }
-        <button type="submit" class="w-full bg-prim mt-3 rounded-full text-on-prim py-2">Order @Model.Price.ToString("C", CultureInfo.CurrentCulture)</button>
+        <button asp-action="Index" type="submit" class="w-full bg-prim mt-3 rounded-full text-on-prim py-2">Order @Model.Price.ToString("C", CultureInfo.CurrentCulture)</button>
     </form>
 </div>

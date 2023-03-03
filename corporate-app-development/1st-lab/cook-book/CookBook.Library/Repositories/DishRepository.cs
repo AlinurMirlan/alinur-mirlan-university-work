@@ -82,7 +82,10 @@ namespace CookBook.Library.Repositories
             }
 
             if (commandStringBuilder.Length == 0)
+            {
+                exceptions.Add(new ArgumentException("Dish must at least contain one ingredient."));
                 return;
+            }
 
             connection.Open();
             ingrCheckCommand.CommandText = commandStringBuilder.ToString();

@@ -21,7 +21,7 @@ namespace CookBook.Library.Repositories
 
         private void ValidateIngredient(List<Exception> exceptions, Ingredient ingredient, Ingredient? oldIngredient = null)
         {
-            if (ingredient.Price is null || ingredient.Price <= 0)
+            if (ingredient.Price <= 0)
                 exceptions.Add(new ArgumentException("Price has to be a positive number."));
             if (string.IsNullOrWhiteSpace(ingredient.Name))
             {
