@@ -1,0 +1,15 @@
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\bin\Debug\net7.0\SixthLab.exe
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\bin\Debug\net7.0\SixthLab.deps.json
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\bin\Debug\net7.0\SixthLab.runtimeconfig.json
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\bin\Debug\net7.0\SixthLab.dll
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\bin\Debug\net7.0\SixthLab.pdb
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\obj\Debug\net7.0\SixthLab.csproj.AssemblyReference.cache
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\obj\Debug\net7.0\SixthLab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\obj\Debug\net7.0\SixthLab.AssemblyInfoInputs.cache
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\obj\Debug\net7.0\SixthLab.AssemblyInfo.cs
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\obj\Debug\net7.0\SixthLab.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\obj\Debug\net7.0\SixthLab.dll
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\obj\Debug\net7.0\refint\SixthLab.dll
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\obj\Debug\net7.0\SixthLab.pdb
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\obj\Debug\net7.0\SixthLab.genruntimeconfig.cache
+C:\Alinur\university-work\csharp\6th-lab\sixth-lab\SixthLab\obj\Debug\net7.0\ref\SixthLab.dll
