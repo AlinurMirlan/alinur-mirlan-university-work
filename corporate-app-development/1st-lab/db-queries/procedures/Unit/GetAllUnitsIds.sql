@@ -1,0 +1,5 @@
+CREATE OR ALTER PROC GetAllUnitsAndIds
+AS
+BEGIN
+	SELECT * FROM Unit;
+END

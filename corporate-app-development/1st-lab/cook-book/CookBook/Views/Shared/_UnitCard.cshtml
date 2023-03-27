@@ -1,0 +1,21 @@
+﻿@using System.Globalization;
+@model Unit
+@{
+    TextInfo text = CultureInfo.CurrentCulture.TextInfo;
+}
+
+
+<div class="max-w-xs rounded-md p-2 text-slate-800 h-full min-w-[200px]">
+    <div class="max-w-xs rounded-md p-2 text-slate-800 h-full min-w-[200px]">
+        <div class="border border-outline rounded-t-md">
+            <span class="rounded-t-md block py-3 px-12 bg-sec-cont text-on-sec-cont">@text.ToLower(Model.Name)</span>
+        </div>
+        <div class="flex gap-x-1 mt-3">
+            <a asp-action="Edit" asp-route-unitId="@Model.Id" class="text-center w-full bg-prim  rounded-full text-on-prim py-2">Edit</a>
+            <form asp-action="Delete" method="post" class="w-full">
+                <input type="hidden" name="unitId" value="@Model.Id" />
+                <button type="submit" class="w-full bg-err rounded-full text-on-err py-2">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>

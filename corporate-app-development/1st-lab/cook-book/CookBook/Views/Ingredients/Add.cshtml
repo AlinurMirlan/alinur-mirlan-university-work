@@ -1,7 +1,9 @@
-﻿@model IngredientUnitsViewModel
+﻿@using System.Globalization;
+@model IngredientUnitsViewModel
 @{
     ViewData["Title"] = "Cook Book Add Ingredient";
     ViewData["HeaderTitle"] = "Add Ingredient";
+    TextInfo text = CultureInfo.CurrentCulture.TextInfo;
 }
 
 <section class="max-w-lg mx-auto">
@@ -18,7 +20,7 @@
     }
     <form method="post">
         <div class="grid grid-cols-6 border border-outline rounded-t-md">
-            <label for="dish" class="col-span-2 rounded-tl-md p-2 border-outline bg-sec-cont text-on-sec-cont">Ingredient</label>
+            <label for="Ingredient" class="col-span-2 rounded-tl-md p-2 border-outline bg-sec-cont text-on-sec-cont">Ingredient</label>
             <input asp-for="Ingredient.Name" value="@Model.Ingredient.Name" placeholder="Name" class="col-span-4 focus:outline-none px-2 bg-sur border-outline border-b rounded-tr-md" id="Ingredient">
             <span class="col-span-2 p-2 border-outline bg-sec-cont text-on-sec-cont">Price per Unit</span>
             <div class="col-span-4 flex">

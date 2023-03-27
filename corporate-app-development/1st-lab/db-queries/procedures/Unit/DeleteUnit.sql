@@ -1,0 +1,6 @@
+CREATE OR ALTER PROC DeleteUnit
+	@unitId int
+AS
+BEGIN
+	DELETE FROM Unit WHERE Id = @unitId;
+END

@@ -1,12 +1,17 @@
-﻿@model Dish
+﻿@using System.Globalization;
+@model Dish
+@{
+    TextInfo text = CultureInfo.CurrentCulture.TextInfo;
+}
+
 
 <div class="max-w-xs rounded-md p-2 text-slate-800 h-full min-w-[200px]">
     <div class="max-w-xs rounded-md p-2 text-slate-800 h-full min-w-[200px]">
         <div class="border border-outline rounded-t-md">
             <div class="flex rounded-t-md px-3 bg-sec-cont items-stretch justify-evenly">
-                <span class="py-3 text-on-sec-cont">@Model.Name</span>
+                <span class="py-3 text-on-sec-cont">@text.ToTitleCase(Model.Name!)</span>
                 <div class="w-[3px] flex bg-white mx-2"></div>
-                <span class="py-3 text-on-sec-cont">@Model.DishType</span>
+                <span class="py-3 text-on-sec-cont">@text.ToTitleCase(Model.DishType!)</span>
             </div>
             <ul>
                 @foreach (DishIngredient ingredient in Model.Ingredients)

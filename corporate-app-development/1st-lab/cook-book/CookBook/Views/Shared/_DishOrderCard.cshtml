@@ -1,10 +1,14 @@
 ﻿@using System.Globalization;
 @model TabDish
+@{
+    TextInfo text = CultureInfo.CurrentCulture.TextInfo;
+}
+
 
 <div class="max-w-4xl w-max mt-10">
     <div class="flex items-center space-x-2 mb-3">
         <div class="h-7 w-7 rounded-full bg-prim-cont text-on-prim-cont text-center pt-[2px]">@Model.Quantity</div>
-        <h4 class="text-2xl text-prim">@Model.Name</h4>
+        <h4 class="text-2xl text-prim">@text.ToTitleCase(Model.Name!)</h4>
     </div>
     <div class="border-outline border rounded-t-md">
         <table>

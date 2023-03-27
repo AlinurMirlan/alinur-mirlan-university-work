@@ -53,8 +53,7 @@ namespace CookBook.Library.Repositories
 
         public void EditIngredient(Ingredient oldIngredient, Ingredient newIngredient)
         {
-            if (oldIngredient.Name == newIngredient.Name && oldIngredient.Price == newIngredient.Price
-                && oldIngredient.Unit == newIngredient.Unit)
+            if (string.Equals(oldIngredient.Name, newIngredient.Name, StringComparison.OrdinalIgnoreCase) && oldIngredient.Price == newIngredient.Price && oldIngredient.Unit == newIngredient.Unit)
                 return;
             List<Exception> exceptions = new();
             ValidateIngredient(exceptions, newIngredient, oldIngredient);

@@ -13,5 +13,6 @@ namespace CookBook.Library.Repositories.Abstractions
         public Tab GetTabDishes(int tabId);
         public IList<Tab> GetTabs(bool orderByDescending);
         public IList<Tab> GetTabsByDate(DateTime orderDate, bool orderByDescending);
+        public IList<IngredientExpenditure> GetProvisionExpenditure(DateTime dateStart, DateTime dateEnd);
     }
 }

@@ -1,0 +1,23 @@
+﻿@model UnitsViewModel
+@{
+    ViewData["Title"] = "Cook Book Kitchen Units";
+    ViewData["HeaderTitle"] = "Kitchen Units";
+}
+
+<section>
+    @if (Model.DeletedUnitIsInUse)
+    {
+        <div class="w-fit bg-err rounded-md text-on-err py-4 px-6 text-xl mx-auto mb-3">
+            You can't delete the unit named @Model.DeletedUnitName. It's already in use
+        </div>
+    }
+    <div class="bg-sur border rounded-full border-outline sticky top-0">
+        <a asp-action="Add" class="block text-xl text-center py-5 text-sec">Add Unit</a>
+    </div>
+    <div class="flex flex-wrap items-center mt-6 gap-y-12">
+        @foreach (Unit unit in Model.Units)
+        {
+            <partial name="_UnitCard" model="unit" />
+        }
+    </div>
+</section>

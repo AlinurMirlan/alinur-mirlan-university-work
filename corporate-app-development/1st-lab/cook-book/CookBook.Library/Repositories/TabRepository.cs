@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace CookBook.Library.Repositories
 {
@@ -124,6 +125,32 @@ namespace CookBook.Library.Repositories
             }
 
             return tabs;
+        }
+
+        public IList<IngredientExpenditure> GetProvisionExpenditure(DateTime dateStart, DateTime dateEnd)
+        {
+            TextInfo text = CultureInfo.CurrentCulture.TextInfo;
+            using SqlConnection connection = new(connectionString);
+            using SqlCommand command = new("IngredientsExpenditure", connection) { CommandType = CommandType.StoredProcedure };
+            command.Parameters.Add(new("@dateStart", dateStart) { SqlDbType = SqlDbType.Date });
+            command.Parameters.Add(new("@dateEnd", dateEnd) { SqlDbType = SqlDbType.Date });
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            List<IngredientExpenditure> expenditures = new();
+            while (reader.Read())
+            {
+                IngredientExpenditure expenditure = new()
+                {
+                    Ingredient = text.ToTitleCase(reader.GetFieldValue<string>("IngredientName")),
+                    Unit = reader.GetFieldValue<string>("Unit"),
+                    Amount = reader.GetFieldValue<double>("Amount"),
+                    Cost = reader.GetFieldValue<double>("TotalPrice")
+                };
+
+                expenditures.Add(expenditure);
+            }
+
+            return expenditures;
         }
     }
 }

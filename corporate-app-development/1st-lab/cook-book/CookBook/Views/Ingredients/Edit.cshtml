@@ -1,7 +1,9 @@
-﻿@model IngredientUnitsViewModel
+﻿@using System.Globalization;
+@model IngredientUnitsViewModel
 @{
     ViewData["Title"] = "Cook Book Edit Ingredient";
     ViewData["HeaderTitle"] = "Edit Ingredient";
+    TextInfo text = CultureInfo.CurrentCulture.TextInfo;
 }
 
 <section class="max-w-lg mx-auto">

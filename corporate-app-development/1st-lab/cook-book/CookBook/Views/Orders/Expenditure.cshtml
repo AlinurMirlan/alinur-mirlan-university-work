@@ -1,0 +1,33 @@
+﻿@model ExpenditureViewModel
+@{
+    ViewData["Title"] = "Cook Book Expenditure";
+    ViewData["HeaderTitle"] = $"Provision expenditures from {Model.DateStart:d} to {Model.DateEnd:d}";
+}
+
+<section class="max-w-2xl mx-auto">
+    <table class="w-full mt-5">
+        <thead class="">
+            <tr class="bg-sec-cont text-on-sec-cont">
+                <th class="pl-4 text-left py-3">Ingredient</th>
+                <th class="pl-2 text-left">Amount</th>
+                <th class="pl-2 text-left">Cost</th>
+                <th class="pl-2 text-left">Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                double total = 0;
+            }
+            @foreach (IngredientExpenditure expenditure in Model.Expenditures)
+            {
+                total += expenditure.Cost;
+                <tr class="bg-sur border-b border-b-slate-200">
+                    <td class="pl-4 py-3">@expenditure.Ingredient</td>
+                    <td class="pl-2">@expenditure.Amount.ToString("F2")@expenditure.Unit</td>
+                    <td class="pl-2">@expenditure.Cost.ToString("C2", System.Globalization.CultureInfo.CurrentCulture)</td>
+                    <td class="pl-2">@total.ToString("C2", System.Globalization.CultureInfo.CurrentCulture)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

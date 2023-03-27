@@ -48,5 +48,16 @@ namespace CookBook.Controllers
             OrdersViewModel viewModel = new() { Tabs = tabs, OrderByDescending = orderBy, Date = orderDate, ReturnUrl = returnUrl };
             return View(nameof(Index), viewModel);
         }
+
+        [HttpPost]
+        public IActionResult Expenditure(DateTime dateStart, DateTime dateEnd)
+        {
+            if (dateStart > dateEnd || dateStart == default || dateEnd == default)
+                return RedirectToAction(nameof(Index));
+
+            IList<IngredientExpenditure> expenditures = _tabRepo.GetProvisionExpenditure(dateStart, dateEnd);
+            ExpenditureViewModel model = new() { DateStart = dateStart, DateEnd = dateEnd, Expenditures = expenditures };
+            return View(model);
+        }
     }
 }

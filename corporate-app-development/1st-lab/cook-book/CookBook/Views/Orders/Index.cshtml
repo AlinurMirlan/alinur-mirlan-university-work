@@ -5,6 +5,17 @@
 }
 
 <section class="max-w-2xl mx-auto">
+    <form class="flex" asp-action="Expenditure" method="post">
+        <div class="text-on-sur mr-2">
+            Ingredients Spent from
+            <input type="date" class="min-h-full border rounded-full px-2 text-prim" name="dateStart">
+        </div>
+        <div class="text-on-sur mr-2">
+            to
+            <input type="date" class="min-h-full border rounded-full px-2 text-prim" name="dateEnd">
+        </div>
+        <button type="submit" class="bg-prim rounded-full text-on-prim px-4 py-2">Get</button>
+    </form>
     <div class="flex gap-x-2 justify-between mt-5">
         <form asp-action="Index" method="post" asp-route-returnUrl="@Model.ReturnUrl">
             <div class="flex">
