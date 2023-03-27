@@ -30,6 +30,7 @@ namespace SixthLab
                 Thread.Sleep(TimeSpan.FromSeconds(1.5));
                 totalCost = (decimal)random.NextDouble() * 1000;
             });
+            totalCostFetchProcess.Start();
 
             return totalCostFetchProcess;
         }
@@ -41,6 +42,7 @@ namespace SixthLab
                 Thread.Sleep(TimeSpan.FromSeconds(0.5));
                 discountRate = random.NextDouble();
             });
+            discountFetchProcess.Start();
 
             return discountFetchProcess;
         }
