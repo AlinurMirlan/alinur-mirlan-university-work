@@ -1,0 +1,17 @@
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\bin\Debug\net7.0-windows\TreasureSeeker.exe
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\bin\Debug\net7.0-windows\TreasureSeeker.deps.json
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\bin\Debug\net7.0-windows\TreasureSeeker.runtimeconfig.json
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\bin\Debug\net7.0-windows\TreasureSeeker.dll
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\bin\Debug\net7.0-windows\TreasureSeeker.pdb
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\TreasureSeeker.csproj.AssemblyReference.cache
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\TreasureSeeker.Form1.resources
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\TreasureSeeker.csproj.GenerateResource.cache
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\TreasureSeeker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\TreasureSeeker.AssemblyInfoInputs.cache
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\TreasureSeeker.AssemblyInfo.cs
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\TreasureSeeker.csproj.CoreCompileInputs.cache
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\TreasureSeeker.dll
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\refint\TreasureSeeker.dll
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\TreasureSeeker.pdb
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\TreasureSeeker.genruntimeconfig.cache
+C:\Alinur\university-work\computer-graphics\2nd-lab\treasure-seeker\TreasureSeeker\obj\Debug\net7.0-windows\ref\TreasureSeeker.dll
