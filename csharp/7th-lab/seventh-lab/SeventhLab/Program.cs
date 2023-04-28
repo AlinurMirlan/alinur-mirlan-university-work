@@ -3,12 +3,11 @@ using SeventhLab.Infrastructure;
 using SeventhLab.ShoeMakers;
 
 
-/*StackHeap();
-ValueFormatter valueFormatter = new();
+//StackHeap();
+/*ValueFormatter valueFormatter = new();
 valueFormatter.RunFormatters("000.000", "###", "%00.00");*/
 ShoeMaking();
-
-
+//Demonstrate();
 #region Semaphore usage methods
 
 // 2nd task
@@ -42,32 +41,42 @@ void StackHeap()
 
 #endregion
 
+#region AutoResentEvent usage in 'producer consumer' pattern
+
 void ShoeMaking()
 {
-    ShoeShop shoeShop = new(1, new NikeShoes(), new NewBalanceShoes(), new LiningShoes());
+    ShoeShop shoeShop = new(3, new NikeShoes(), new NewBalanceShoes());
     shoeShop.Open();
     Thread.Sleep(100000);
 }
 
+#endregion
+
+#region async method consumption
 async void Demonstrate()
 {
     // 1st method
     Task<int> fetchValueTask = FetchValueAsync();
     int value = await fetchValueTask;
+    Console.WriteLine($"fetched #1 {value}");
 
+    fetchValueTask = FetchValueAsync();
     // 2nd method
     while (!fetchValueTask.IsCompleted)
     {
         Thread.Sleep(100);
+        Console.Write(".");
     }
-
-    // 3rd method
     value = fetchValueTask.Result;
-    Task<int> continuation = fetchValueTask.ContinueWith((antecedent) => antecedent.Result + 1);
-    int newValue = await continuation;
+    Console.WriteLine($"fetched #2 {value}");
 
     // 4th method
-    await DoSomethingOnCompletedAsync(() => Console.WriteLine("Finished."));
+    Task<int> continuation = fetchValueTask.ContinueWith((antecedent) => antecedent.Result + 1);
+    int processedValue = await continuation;
+    Console.WriteLine($"fetched #2 and processsed it to be {processedValue}");
+
+    // 3rd method
+    await OnCompleteTask(() => Console.WriteLine("process finished"));
 }
 
 async Task<int> FetchValueAsync()
@@ -76,8 +85,10 @@ async Task<int> FetchValueAsync()
     return 1;
 }
 
-async Task DoSomethingOnCompletedAsync(Action callback)
+async Task OnCompleteTask(Action callbackFunction)
 {
     await Task.Delay(TimeSpan.FromSeconds(2));
-    callback();
+    callbackFunction();
 }
+
+#endregion

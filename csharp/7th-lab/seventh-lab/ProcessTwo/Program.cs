@@ -12,7 +12,7 @@ string mutexName = config["MutexName"] ?? throw new InvalidDataException();
 
 CancellationTokenSource tokenSource = new();
 CancellationToken cancelToken = tokenSource.Token;
-Task loggingTask = new Worker(mutexName, logFilePath).Run(cancelToken);
+Task loggingTask = new Worker(mutexName, logFilePath).RunAsync(cancelToken);
 Console.WriteLine("Press 'Enter' to shutdown.");
 Console.ReadLine();
 tokenSource.Cancel();

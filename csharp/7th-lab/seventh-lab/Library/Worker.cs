@@ -20,7 +20,7 @@ namespace Library
             this.logger = new FileLogger(logFilePath);
         }
 
-        public Task Run(CancellationToken cancelToken) => Task.Run(() => Work(mutex, cancelToken), cancelToken);
+        public Task RunAsync(CancellationToken cancelToken) => Task.Run(() => Work(mutex, cancelToken), cancelToken);
 
         private void Work(Mutex mutex, CancellationToken cancelToken)
         {
@@ -45,7 +45,7 @@ namespace Library
                 // Simulate work
                 Thread.Sleep(random.Next(10) + 990);
                 // Write message to a file
-                logger.Log($"process: {Process.GetCurrentProcess().ProcessName}, thread: {Thread.CurrentThread.Name}, output: {random.NextDouble() * 1000}");
+                logger.Log($"process: {Process.GetCurrentProcess().ProcessName}, thread: {Thread.CurrentThread.ManagedThreadId}, output: {random.NextDouble() * 1000}");
             }
             finally
             {
