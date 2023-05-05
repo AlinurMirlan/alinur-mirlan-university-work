@@ -1,5 +1,5 @@
 # alinur-mirlan-university-work
-Hey there! I go by the name Alinur, and this is my vault for storing university related work and activities. Hopefully, it serves me as a testament of my efforts and endeavors towards becoming more 'digitally aware' person.
+Hey there! I go by the name Alinur, and this is my vault for storing university related work and activities. Hopefully, it serves as a testament to my efforts and endeavors towards becoming more proficient in the software engineering field.
 ## Projects:
 1. ASP.NET Razor Pages web application that facilitates learning and memorizing 
 information via spaced repetitions with automated revision notifications: 
