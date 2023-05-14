@@ -4,6 +4,7 @@ using AutoMapper;
 using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics.LinearAlgebra.Double;
 using System.Net.Http.Headers;
+using System.Xml.Linq;
 
 var autoMapperConfig = new MapperConfiguration(config =>
 {
@@ -29,62 +30,34 @@ if (topLevelCriteria is null || topLevelCriteria.Length == 0 || topLevelCriteria
     return;
 }
 
+Node rootNode = new() { Name = "Root" };
 LinkedList<Node> nodes = mapper.Map<LinkedList<Node>>(topLevelCriteria);
+rootNode.SubNodes = nodes;
 BuildHierarchy(null, nodes, 1, 4, mapper);
 DisplayHierarchy(nodes, 0);
 
-Console.WriteLine("Fill in your judgments:");
-FillJudgments(nodes, mapper);
-/*Repeat(() =>
-{
-    string nodesGlossary = nodes.Aggregate("\t", (glossary, node) => $"{glossary}{node.Name}\t");
-    Console.WriteLine(nodesGlossary);
-    double[][] judgments = new double[nodes.Count][];
-    var node = nodes.First;
-    for (int i = 0; i < nodes.Count; i++)
-    {
-        var stratumNode = node?.Value ?? throw new InvalidOperationException();
-        Repeat(() =>
-        {
-            Console.Write($"{stratumNode.Name}\t");
-            string[]? fractions = Console.ReadLine()?.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-            if (fractions is null || fractions.Length < nodes.Count)
-            {
-                Console.WriteLine("The number of entries ought to match that of the criteria.");
-                return false;
-            }
 
-            judgments[i] = mapper.Map<double[]>(fractions);
-            return true;
-        });
-
-        node = node.Next;
-    }
-
-    double[,] normalizedJudgments = GetNormalizedJudgments(judgments);
-    double[] weights = new double[judgments.Length];
-    var weightNode = nodes.First();
-    for (int x = 0; x < weights.Length; x++)
-    {
-        for (int y = 0; y < weights.Length ; y++)
-        {
-            weights[x] += normalizedJudgments[x, y];
-        }
-
-        weights[x] /= weights.Length;
-        weightNode.Weight = weights[x];
-    }
-
-    if (GetCoherenceRatio(judgments, weights) > 0.1)
-    {
-        Console.WriteLine("The coherence of your reasoning is flawed. Try reconsidering the judgments.");
-        return false;
-    }
-
-    return true;
-});*/
+EnterJudgments(rootNode, out var nodesQueue);
 return;
 
+static void EnterJudgments(Node rootNode, out Queue<LinkedList<Node>> nodesQueue)
+{
+    nodesQueue = new();
+    Queue<Node> nodeQueue = new(new[] { rootNode });
+    while (nodeQueue.Count > 0)
+    {
+        Node parentNode = nodeQueue.Dequeue();
+        LinkedList<Node> subNodes = parentNode.SubNodes;
+        nodesQueue.Enqueue(subNodes);
+        foreach (var node in subNodes)
+        {
+            if (node.SubNodes.Count > 0)
+            {
+                nodeQueue.Enqueue(node);
+            }
+        }
+    }
+}
 static void FillJudgments(LinkedList<Node> nodes, IMapper mapper)
 {
     Repeat(() =>
