@@ -102,3 +102,8 @@ C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\bin\Debug
 C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\obj\Debug\net6.0\Flash.csproj.CopyComplete
+C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\obj\Debug\net6.0\staticwebassets\msbuild.Flash.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\obj\Debug\net6.0\staticwebassets\msbuild.build.Flash.props
+C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Flash.props
+C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Flash.props
+C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\obj\Debug\net6.0\staticwebassets.pack.json
