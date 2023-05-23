@@ -1,0 +1,39 @@
+﻿@model CredentialsViewModel
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Login</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Index" method="post">
+                        <!-- Validation Summary -->
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" asp-for="RememberMe" id="rememberMe" class="form-check-input" />
+                            <label class="form-check-label" for="rememberMe">Remember Me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <p class="text-center">Don't have an account? <a asp-action="Register">Register</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_ValidationScriptsPartial" />
