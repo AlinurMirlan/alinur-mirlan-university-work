@@ -9,97 +9,97 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Flash
 build_property.RootNamespace = Flash
-build_property.ProjectDir = C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\
+build_property.ProjectDir = c:\Alinur\university-work\5th-semester-course-work\project\flash\Flash\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Alinur\university-work\5th-semester-course-work\project\flash\Flash
+build_property.MSBuildProjectDirectory = c:\Alinur\university-work\5th-semester-course-work\project\flash\Flash
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Login.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Logout.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcTG9nb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Register.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Shared/_Layout.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/_ViewImports.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/_ViewStart.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Card/Add.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Card/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Card/Browse.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Card/Browse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZFxCcm93c2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Card/Delete.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Card/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Card/Edit.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Card/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Decks.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Decks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVja3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Error.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Index.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Settings.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2V0dGluZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_CompactFlashcard.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_CompactFlashcard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Db21wYWN0Rmxhc2hjYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_Deck.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_Deck.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9EZWNrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_Flashcard.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_Flashcard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9GbGFzaGNhcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_Layout.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_SelectedDeck.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/Shared/_SelectedDeck.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9TZWxlY3RlZERlY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/_ViewImports.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/_ViewStart.cshtml]
+[c:/Alinur/university-work/5th-semester-course-work/project/flash/Flash/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
