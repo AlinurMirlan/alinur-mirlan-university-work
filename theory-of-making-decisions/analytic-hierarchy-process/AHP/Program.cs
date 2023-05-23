@@ -3,8 +3,6 @@ using AHP.AutoMapper;
 using AutoMapper;
 using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics.LinearAlgebra.Double;
-using System.Net.Http.Headers;
-using System.Xml.Linq;
 
 var autoMapperConfig = new MapperConfiguration(config =>
 {
@@ -21,7 +19,7 @@ if (alternatives is null || alternatives.Length <= 1 || alternatives.Length > 3)
     return;
 }
 
-Console.WriteLine("How many top-level criteria do you want? (from 1 up to 3)?\n" +
+Console.WriteLine("\nHow many top-level criteria do you want? (from 1 up to 3)?\n" +
     "List them, each one separated with a comma(,):");
 string[]? topLevelCriteria = Console.ReadLine()?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 if (topLevelCriteria is null || topLevelCriteria.Length == 0 || topLevelCriteria.Length > 3)
@@ -33,16 +31,56 @@ if (topLevelCriteria is null || topLevelCriteria.Length == 0 || topLevelCriteria
 Node rootNode = new() { Name = "Root" };
 LinkedList<Node> nodes = mapper.Map<LinkedList<Node>>(topLevelCriteria);
 rootNode.SubNodes = nodes;
-BuildHierarchy(null, nodes, 1, 4, mapper);
-DisplayHierarchy(nodes, 0);
+LinkedList<Node> leafNodes = new();
+BuildHierarchy(rootNode, nodes, leafNodes, 1, 4, mapper);
 
+Console.WriteLine("\nHierarchy:");
+DisplayNodes(nodes, 0, (node) => node.Name);
 
-EnterJudgments(rootNode, out var nodesQueue);
-return;
+EnterJudgments(rootNode, mapper);
 
-static void EnterJudgments(Node rootNode, out Queue<LinkedList<Node>> nodesQueue)
+Console.WriteLine("\nWeights:");
+DisplayNodes(nodes, 0, (node) => $"{node.Name} ( {node.Weight:F3} )");
+
+LinkedList<Node> optionNodes = mapper.Map<LinkedList<Node>>(alternatives);
+Dictionary<Node, double> optionValues = EnterAndEvaluateAlternatives(leafNodes, optionNodes, mapper);
+Console.WriteLine("\nFinalized estimates of the alternatives:");
+foreach (var optionValue in optionValues)
 {
-    nodesQueue = new();
+    Console.WriteLine($"{optionValue.Key.Name} ( {optionValue.Value} )");
+}
+
+
+#region Methods
+static Dictionary<Node, double> EnterAndEvaluateAlternatives(LinkedList<Node> leafNodes, LinkedList<Node> optionNodes, IMapper mapper)
+{
+    Dictionary<Node, double> optionValues = new();
+    foreach (var optionNode in optionNodes)
+    {
+        optionValues.Add(optionNode, 0);
+    }
+
+    foreach (Node leafNode in leafNodes)
+    {
+        foreach (Node optionNode in optionNodes)
+        {
+            optionNode.ParentNode = leafNode;
+        }
+
+        Console.WriteLine($"\nFill in the judgments of the alternatives regarding the {leafNode.Name} criterion:");
+        FillJudgments(optionNodes, mapper);
+        foreach (Node optionNode in optionNodes)
+        {
+            optionValues[optionNode] += optionNode.Weight;
+        }
+    }
+
+    return optionValues;
+}
+
+static void EnterJudgments(Node rootNode, IMapper mapper)
+{
+    Queue<LinkedList<Node>> nodesQueue = new();
     Queue<Node> nodeQueue = new(new[] { rootNode });
     while (nodeQueue.Count > 0)
     {
@@ -57,13 +95,22 @@ static void EnterJudgments(Node rootNode, out Queue<LinkedList<Node>> nodesQueue
             }
         }
     }
+
+    while (nodesQueue.Count > 0)
+    {
+        var nodes = nodesQueue.Dequeue();
+        string parentNodeName = nodes.First?.Value.ParentNode?.Name ?? throw new InvalidOperationException();
+        Console.WriteLine($"\nFill in the judgments of the {parentNodeName} level:");
+        FillJudgments(nodes, mapper);
+    }
 }
+
 static void FillJudgments(LinkedList<Node> nodes, IMapper mapper)
 {
     Repeat(() =>
     {
         string nodesGlossary = nodes.Aggregate("\t", (glossary, node) => $"{glossary}{node.Name}\t");
-        Console.WriteLine(nodesGlossary);
+        Console.WriteLine($"{nodesGlossary}");
         double[][] judgments = new double[nodes.Count][];
         var listNode = nodes.First;
         for (int i = 0; i < nodes.Count; i++)
@@ -136,16 +183,15 @@ static double[,] GetNormalizedJudgments(double[][] judgments)
 static double GetCoherenceRatio(double[][] judgments, double[] weights)
 {
     Matrix<double> judgmentsMatrix = DenseMatrix.OfRowArrays(judgments);
-    Matrix<double> weightsMatrix = DenseMatrix.OfColumnMajor(3, 1, weights);
+    Matrix<double> weightsMatrix = DenseMatrix.OfColumnMajor(weights.Length, 1, weights);
     double nMax = (judgmentsMatrix * weightsMatrix).ColumnSums().Sum();
     int n = judgmentsMatrix.ColumnCount;
     double CI = (nMax - n) / (n - 1);
-    double RI = (1.98 * (n - 2)) / n;
+    double RI = (1.98 * (n - 2) + Math.Pow(Math.E, -8)) / n;
     return CI / RI;
 }
 
-
-static void BuildHierarchy(Node? parentNode, IEnumerable<Node> nodes, int level, int limit, IMapper mapper)
+static void BuildHierarchy(Node? parentNode, IEnumerable<Node> nodes, LinkedList<Node> leafNodes, int level, int limit, IMapper mapper)
 {
     if (level == limit)
     {
@@ -157,12 +203,13 @@ static void BuildHierarchy(Node? parentNode, IEnumerable<Node> nodes, int level,
         node.ParentNode = parentNode;
         Repeat(() =>
         {
-            Console.WriteLine($"Does {node.Name} have sub-criteria? (from 2 up to 3)?\n" +
+            Console.WriteLine($"\nDoes {node.Name} have sub-criteria? (from 2 up to 3)?\n" +
     "List them, each one separated with a comma(,); or press 'Enter' to skip them:");
             string[]? criteria = Console.ReadLine()?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
             if (criteria is null || criteria.Length == 0)
             {
                 Console.WriteLine($"{node.Name} is rendered sub-strata-less.");
+                leafNodes.AddLast(node);
                 return true;
             }
             if (criteria.Length <= 1 || criteria.Length > 3)
@@ -172,19 +219,19 @@ static void BuildHierarchy(Node? parentNode, IEnumerable<Node> nodes, int level,
             }
 
             node.SubNodes = mapper.Map<LinkedList<Node>>(criteria);
-            BuildHierarchy(node, node.SubNodes, level + 1, limit, mapper);
+            BuildHierarchy(node, node.SubNodes, leafNodes, level + 1, limit, mapper);
             return true;
         });
     }
 }
 
-static void DisplayHierarchy(IEnumerable<Node> nodes, int level)
+static void DisplayNodes(IEnumerable<Node> nodes, int level, Func<Node, string> message)
 {
     string tab = Enumerable.Range(1, level).Aggregate(string.Empty, (space, _) => space + '\t');
     foreach (var node in nodes)
     {
-        Console.WriteLine($"{tab}{node.Name}");
-        DisplayHierarchy(node.SubNodes, level + 1);
+        Console.WriteLine($"{tab}{message(node)}");
+        DisplayNodes(node.SubNodes, level + 1, message);
     }
 }
 
@@ -196,3 +243,4 @@ static void Repeat(Func<bool> operation)
         isFinalized = operation();
     }
 }
+#endregion Methods
