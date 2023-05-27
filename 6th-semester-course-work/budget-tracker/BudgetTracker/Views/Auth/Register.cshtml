@@ -26,6 +26,11 @@
                             <input type="password" asp-for="ConfirmPassword" class="form-control" />
                             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                         </div>
+                        <div class="mb-3">
+                            <label for="initialBalance" class="form-label">Initial balance</label>
+                            <input type="number" id="initialBalance" asp-for="InitialBalance" class="form-control" />
+                            <span asp-validation-for="InitialBalance" class="text-danger"></span>
+                        </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" asp-for="RememberMe" id="rememberMe" class="form-check-input" />
                             <label class="form-check-label" for="rememberMe">Remember Me</label>
@@ -41,6 +46,9 @@
     </div>
 </div>
 
-<partial name="_ValidationScriptsPartial" />
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
 
                             

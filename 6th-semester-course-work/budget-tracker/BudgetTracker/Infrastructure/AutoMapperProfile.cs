@@ -9,7 +9,8 @@ namespace BudgetTracker.Infrastructure
         public AutoMapperProfile()
         {
             base.CreateMap<RegistrationViewModel, User>()
-                .ForMember(user => user.UserName, options => options.MapFrom(userModel => userModel.Email));
+                .ForMember(user => user.UserName, options => options.MapFrom(registrationModel => registrationModel.Email))
+                .ForMember(user => user.AccountBalance, options => options.MapFrom(registrationModel => registrationModel.InitialBalance));
         }
     }
 }

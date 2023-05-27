@@ -65,13 +65,20 @@ namespace BudgetTracker.Controllers
             {
                 return View();
             }
-
+            
             var user = mapper.Map<User>(credentials);
+            var userWithTheSameEmail = await userManager.FindByEmailAsync(user.Email!);
+            if (userWithTheSameEmail is not null)
+            {
+                ModelState.AddModelError(nameof(RegistrationViewModel.Email), "Email is taken.");
+                return View();
+            }
+
             var result = await userManager.CreateAsync(user, credentials.Password);
             if (!result.Succeeded)
             {
-                logger.LogWarning("Something went wrong in the registration process.");
-                ModelState.AddModelError(string.Empty, "Something went wrong. Please, try again later.");
+                logger.LogError("Something went wrong in the registration process.");
+                ModelState.AddModelError("", "Something went wrong. Please, try again later.");
                 return View();
             }
 

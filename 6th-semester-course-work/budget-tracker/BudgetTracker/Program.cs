@@ -1,6 +1,7 @@
 using BudgetTracker.Data;
 using BudgetTracker.Infrastructure;
 using BudgetTracker.Models;
+using BudgetTracker.Repositories;
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
@@ -41,6 +42,7 @@ builder.Services.ConfigureApplicationCookie(config =>
     config.LoginPath = "/Auth";
 });
 builder.Services.AddAuthorization();
+builder.Services.AddScoped<IIncomeRepository, IncomeRepository>();
 
 var app = builder.Build();
 
