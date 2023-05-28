@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using BudgetTracker.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BudgetTracker.Models
+namespace BudgetTracker.Areas.Expense.Models
 {
-    public class Income
+    public class Expense
     {
         public int Id { get; set; }
         public required string UserId { get; set; }
@@ -13,8 +14,8 @@ namespace BudgetTracker.Models
         [Column(TypeName = "money")]
         public decimal Amount { get; set; }
         public string? Description { get; set; }
-        public List<IncomeTag> Tags { get; set; } = new List<IncomeTag>();
-        public IncomeCategory? Category { get; set; }
+        public List<ExpenseTag> Tags { get; set; } = new List<ExpenseTag>();
+        public ExpenseCategory? Category { get; set; }
         public User? User { get; set; }
     }
 }

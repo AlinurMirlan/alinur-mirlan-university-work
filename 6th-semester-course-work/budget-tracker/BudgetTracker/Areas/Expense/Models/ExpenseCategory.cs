@@ -1,6 +1,6 @@
-﻿namespace BudgetTracker.Models
+﻿namespace BudgetTracker.Areas.Expense.Models
 {
-    public class IncomeCategory
+    public class ExpenseCategory
     {
         public int Id { get; set; }
         public required string CategoryName { get; set; }

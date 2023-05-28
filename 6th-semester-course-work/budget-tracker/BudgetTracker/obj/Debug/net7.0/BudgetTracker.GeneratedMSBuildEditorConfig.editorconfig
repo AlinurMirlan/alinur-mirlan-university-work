@@ -16,6 +16,34 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Alinur\university-work\6th-semester-course-work\budget-tracker\BudgetTracker
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Areas/Expense/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZW5zZVxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Areas/Expense/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXhwZW5zZVxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Areas/Income/Views/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5jb21lXFZpZXdzXENhdGVnb3JpZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Areas/Income/Views/Shared/_CategoryCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5jb21lXFZpZXdzXFNoYXJlZFxfQ2F0ZWdvcnlDYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Areas/Income/Views/Shared/_CategoryForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5jb21lXFZpZXdzXFNoYXJlZFxfQ2F0ZWdvcnlGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Areas/Income/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5jb21lXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Areas/Income/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5jb21lXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Views/Auth/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,10 +54,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Views/Income/Categories/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jb21lXENhdGVnb3JpZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Alinur/university-work/6th-semester-course-work/budget-tracker/BudgetTracker/Views/Shared/Error.cshtml]

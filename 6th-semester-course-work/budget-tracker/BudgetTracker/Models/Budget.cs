@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using BudgetTracker.Areas.Expense.Models;
 
 namespace BudgetTracker.Models
 {

@@ -1,7 +1,7 @@
+using BudgetTracker.Areas.Income.Repositories;
 using BudgetTracker.Data;
 using BudgetTracker.Infrastructure;
 using BudgetTracker.Models;
-using BudgetTracker.Repositories;
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
@@ -42,7 +42,7 @@ builder.Services.ConfigureApplicationCookie(config =>
     config.LoginPath = "/Auth";
 });
 builder.Services.AddAuthorization();
-builder.Services.AddScoped<IIncomeRepository, IncomeRepository>();
+builder.Services.AddScoped<IncomeRepository>();
 
 var app = builder.Build();
 
@@ -63,6 +63,10 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseHangfireDashboard();
+
+app.MapControllerRoute(
+    name: "Income",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

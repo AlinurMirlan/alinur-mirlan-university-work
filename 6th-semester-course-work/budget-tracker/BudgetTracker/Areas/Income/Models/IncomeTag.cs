@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BudgetTracker.Models
+namespace BudgetTracker.Areas.Income.Models
 {
     public class IncomeTag
     {

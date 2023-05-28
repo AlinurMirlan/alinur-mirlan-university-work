@@ -1,4 +1,6 @@
-﻿using BudgetTracker.Models;
+﻿using BudgetTracker.Areas.Expense.Models;
+using BudgetTracker.Areas.Income.Models;
+using BudgetTracker.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

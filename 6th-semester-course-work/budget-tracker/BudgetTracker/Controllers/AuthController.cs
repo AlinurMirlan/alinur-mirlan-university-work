@@ -42,7 +42,7 @@ namespace BudgetTracker.Controllers
                 return View();
             }
 
-            var result = await signInManager.PasswordSignInAsync(user, credentials.Password, false, false);
+            var result = await signInManager.PasswordSignInAsync(user, credentials.Password, credentials.RememberMe, false);
             if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "Either email or password is wrong.");
