@@ -36,20 +36,93 @@ namespace BudgetTracker.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Budgets");
                 });
 
-            modelBuilder.Entity("BudgetTracker.Models.Expense", b =>
+            modelBuilder.Entity("BudgetTracker.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("BudgetId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("EntryTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BudgetId")
+                        .IsUnique()
+                        .HasFilter("[BudgetId] IS NOT NULL");
+
+                    b.HasIndex("CategoryName")
+                        .IsUnique();
+
+                    b.HasIndex("EntryTypeId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("BudgetTracker.Models.Entry", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("money");
+
+                    b.Property<int?>("BudgetId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EntryRecurringId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasColumnType("money");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BudgetId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("EntryRecurringId");
+
+                    b.ToTable("Entries");
+                });
+
+            modelBuilder.Entity("BudgetTracker.Models.EntryRecurring", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -63,55 +136,11 @@ namespace BudgetTracker.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Expenses");
-                });
-
-            modelBuilder.Entity("BudgetTracker.Models.ExpenseCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CategoryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ExpenseCategories");
-                });
-
-            modelBuilder.Entity("BudgetTracker.Models.ExpenseRecurring", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("ExpenseId")
-                        .HasColumnType("int");
 
                     b.Property<int>("RecurringInterval")
                         .HasColumnType("int");
@@ -119,71 +148,14 @@ namespace BudgetTracker.Data.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ExpenseId")
-                        .IsUnique();
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ExpensesRecurring");
-                });
-
-            modelBuilder.Entity("BudgetTracker.Models.ExpenseTag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("TagName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ExpenseTags");
-                });
-
-            modelBuilder.Entity("BudgetTracker.Models.Income", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("money");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Incomes");
+                    b.ToTable("EntriesRecurring");
                 });
 
-            modelBuilder.Entity("BudgetTracker.Models.IncomeCategory", b =>
+            modelBuilder.Entity("BudgetTracker.Models.EntryType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -191,16 +163,16 @@ namespace BudgetTracker.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CategoryName")
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("IncomeCategories");
+                    b.ToTable("EntryTypes");
                 });
 
-            modelBuilder.Entity("BudgetTracker.Models.IncomeRecurring", b =>
+            modelBuilder.Entity("BudgetTracker.Models.Tag", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -208,17 +180,12 @@ namespace BudgetTracker.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("IncomeId")
+                    b.Property<int>("EntryTypeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("RecurringInterval")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("TagName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -226,29 +193,14 @@ namespace BudgetTracker.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IncomeId")
+                    b.HasIndex("EntryTypeId");
+
+                    b.HasIndex("TagName")
                         .IsUnique();
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("IncomesRecurring");
-                });
-
-            modelBuilder.Entity("BudgetTracker.Models.IncomeTag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("TagName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("IncomeTags");
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("BudgetTracker.Models.User", b =>
@@ -319,34 +271,34 @@ namespace BudgetTracker.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("ExpenseExpenseTag", b =>
+            modelBuilder.Entity("EntryRecurringTag", b =>
                 {
-                    b.Property<int>("ExpensesId")
+                    b.Property<int>("EntriesRecurringId")
                         .HasColumnType("int");
 
                     b.Property<int>("TagsId")
                         .HasColumnType("int");
 
-                    b.HasKey("ExpensesId", "TagsId");
+                    b.HasKey("EntriesRecurringId", "TagsId");
 
                     b.HasIndex("TagsId");
 
-                    b.ToTable("ExpenseExpenseTag");
+                    b.ToTable("EntryRecurringTag");
                 });
 
-            modelBuilder.Entity("IncomeIncomeTag", b =>
+            modelBuilder.Entity("EntryTag", b =>
                 {
-                    b.Property<int>("IncomesId")
+                    b.Property<int>("EntriesId")
                         .HasColumnType("int");
 
                     b.Property<int>("TagsId")
                         .HasColumnType("int");
 
-                    b.HasKey("IncomesId", "TagsId");
+                    b.HasKey("EntriesId", "TagsId");
 
                     b.HasIndex("TagsId");
 
-                    b.ToTable("IncomeIncomeTag");
+                    b.ToTable("EntryTag");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -482,125 +434,108 @@ namespace BudgetTracker.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("BudgetTracker.Models.Budget", b =>
+            modelBuilder.Entity("BudgetTracker.Models.Category", b =>
                 {
-                    b.HasOne("BudgetTracker.Models.ExpenseCategory", "Category")
+                    b.HasOne("BudgetTracker.Models.Budget", "Budget")
+                        .WithOne("Category")
+                        .HasForeignKey("BudgetTracker.Models.Category", "BudgetId");
+
+                    b.HasOne("BudgetTracker.Models.EntryType", "EntryType")
+                        .WithMany()
+                        .HasForeignKey("EntryTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BudgetTracker.Models.User", "User")
+                        .WithMany("Categories")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Budget");
+
+                    b.Navigation("EntryType");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BudgetTracker.Models.Entry", b =>
+                {
+                    b.HasOne("BudgetTracker.Models.Budget", "Budget")
+                        .WithMany("Entries")
+                        .HasForeignKey("BudgetId");
+
+                    b.HasOne("BudgetTracker.Models.Category", "Category")
+                        .WithMany("Entries")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BudgetTracker.Models.EntryRecurring", "EntryRecurring")
+                        .WithMany("Entries")
+                        .HasForeignKey("EntryRecurringId");
+
+                    b.Navigation("Budget");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("EntryRecurring");
+                });
+
+            modelBuilder.Entity("BudgetTracker.Models.EntryRecurring", b =>
+                {
+                    b.HasOne("BudgetTracker.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BudgetTracker.Models.User", "User")
-                        .WithMany("Budgets")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Category");
-
-                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("BudgetTracker.Models.Expense", b =>
+            modelBuilder.Entity("BudgetTracker.Models.Tag", b =>
                 {
-                    b.HasOne("BudgetTracker.Models.ExpenseCategory", "Category")
+                    b.HasOne("BudgetTracker.Models.EntryType", "EntryType")
                         .WithMany()
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("EntryTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BudgetTracker.Models.User", "User")
-                        .WithMany("Expenses")
+                        .WithMany("Tags")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("EntryType");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("BudgetTracker.Models.ExpenseRecurring", b =>
+            modelBuilder.Entity("EntryRecurringTag", b =>
                 {
-                    b.HasOne("BudgetTracker.Models.Expense", "Expense")
-                        .WithOne()
-                        .HasForeignKey("BudgetTracker.Models.ExpenseRecurring", "ExpenseId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("BudgetTracker.Models.User", "User")
-                        .WithMany("ExpensesRecurring")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Expense");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("BudgetTracker.Models.Income", b =>
-                {
-                    b.HasOne("BudgetTracker.Models.IncomeCategory", "Category")
+                    b.HasOne("BudgetTracker.Models.EntryRecurring", null)
                         .WithMany()
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("EntriesRecurringId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BudgetTracker.Models.User", "User")
-                        .WithMany("Incomes")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("BudgetTracker.Models.IncomeRecurring", b =>
-                {
-                    b.HasOne("BudgetTracker.Models.Income", "Income")
-                        .WithOne()
-                        .HasForeignKey("BudgetTracker.Models.IncomeRecurring", "IncomeId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("BudgetTracker.Models.User", "User")
-                        .WithMany("IncomesRecurring")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Income");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("ExpenseExpenseTag", b =>
-                {
-                    b.HasOne("BudgetTracker.Models.Expense", null)
-                        .WithMany()
-                        .HasForeignKey("ExpensesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BudgetTracker.Models.ExpenseTag", null)
+                    b.HasOne("BudgetTracker.Models.Tag", null)
                         .WithMany()
                         .HasForeignKey("TagsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("IncomeIncomeTag", b =>
+            modelBuilder.Entity("EntryTag", b =>
                 {
-                    b.HasOne("BudgetTracker.Models.Income", null)
+                    b.HasOne("BudgetTracker.Models.Entry", null)
                         .WithMany()
-                        .HasForeignKey("IncomesId")
+                        .HasForeignKey("EntriesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BudgetTracker.Models.IncomeTag", null)
+                    b.HasOne("BudgetTracker.Models.Tag", null)
                         .WithMany()
                         .HasForeignKey("TagsId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -658,17 +593,28 @@ namespace BudgetTracker.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("BudgetTracker.Models.Budget", b =>
+                {
+                    b.Navigation("Category");
+
+                    b.Navigation("Entries");
+                });
+
+            modelBuilder.Entity("BudgetTracker.Models.Category", b =>
+                {
+                    b.Navigation("Entries");
+                });
+
+            modelBuilder.Entity("BudgetTracker.Models.EntryRecurring", b =>
+                {
+                    b.Navigation("Entries");
+                });
+
             modelBuilder.Entity("BudgetTracker.Models.User", b =>
                 {
-                    b.Navigation("Budgets");
+                    b.Navigation("Categories");
 
-                    b.Navigation("Expenses");
-
-                    b.Navigation("ExpensesRecurring");
-
-                    b.Navigation("Incomes");
-
-                    b.Navigation("IncomesRecurring");
+                    b.Navigation("Tags");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,22 @@
+﻿@model CategoryDto
+
+<!-- Add Category form -->
+<div class="card mb-3">
+    <div class="card-body">
+        <h2 class="card-title">Add Category</h2>
+        <form asp-action="Index" method="post">
+            <div class="form-group">
+                <input hidden asp-for="UserId" value="@Model.UserId" class="form-control">
+                <label for="categoryName">Category Name</label>
+                <div class="input-group">
+                    <input type="text" asp-for="CategoryName" class="form-control">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+                <small id="successMessage" class="text-success">@TempData["Success"]</small>
+            </div>
+        </form>
+    </div>
+</div>

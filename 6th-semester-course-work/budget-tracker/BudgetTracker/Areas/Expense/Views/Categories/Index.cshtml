@@ -1,0 +1,33 @@
+﻿@model CategoriesVm
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <partial name="_CategoryForm" model="Model.NewCategory" />
+            <partial name="_CategorySearchForm" model="Model.CategoryCriteria" />
+        </div>
+        <div class="col-md-9">
+            <!-- Display IncomeCategory cards -->
+            <h1>Expense Categories</h1>
+            <div class="mt-1 card-deck">
+                @foreach (var category in Model.Categories)
+                {
+                    <partial name="_CategoryCard" model="category" />
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <div page-model="@Model.PagingInfo" page-action="Index"
+                 page-class="btn" page-class-normal="btn-outline-dark"
+                 page-class-selected="btn-primary"
+                 class="btn-group m-1">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+}

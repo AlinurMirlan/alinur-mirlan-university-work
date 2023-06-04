@@ -1,0 +1,42 @@
+﻿@model EntriesRecVm
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="d-flex flex-column">
+                <div class="mb-3">
+                    <partial name="_EntryRecForm" model="Model.NewEntry" />
+                </div>
+                <div class="mb-3">
+                    <partial name="_EntrySearchForm" model="Model.SearchForm" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 order-md-first">
+            <h1>Recurring Income History</h1>
+            <div class="mb-3">
+                <partial name="_EntryOrderForm" model="Model.Order" />
+            </div>
+            <!-- Display Income history -->
+            <div class="card-deck">
+                @foreach (var income in Model.EntriesRec)
+                {
+                    <partial name="_EntryRecCard" model="income" />
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <div page-model="@Model.PagingInfo" page-action="Index"
+                 page-class="btn" page-class-normal="btn-outline-dark"
+                 page-class-selected="btn-primary"
+                 class="btn-group m-1">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+}

@@ -1,17 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using BudgetTracker.Areas.Expense.Models;
 
 namespace BudgetTracker.Models
 {
     public class Budget
     {
         public int Id { get; set; }
-        public required string UserId { get; set; }
         public int CategoryId { get; set; }
 
         [Column(TypeName = "money")]
         public decimal Amount { get; set; }
-        public ExpenseCategory? Category { get; set; }
-        public User? User { get; set; }
+        public DateTime Date { get; set; } = DateTime.Now;
+        public List<Entry> Entries { get; set; } = new List<Entry>();
+        public Category? Category { get; set; }
     }
 }

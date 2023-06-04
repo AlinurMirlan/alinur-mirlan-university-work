@@ -1,0 +1,33 @@
+﻿@model EntryRecurring
+
+<div class="card mb-3">
+    <div class="card-header d-flex justify-content-between">
+        <h2 class="display-6">@Model.Amount.ToString("C")</h2>
+        <span>Recurring interval in days: @Model.RecurringInterval</span>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">@Model.Category?.CategoryName</h5>
+        @foreach (var tag in Model.Tags)
+        {
+            <span class="badge bg-primary">@tag.TagName</span>
+        }
+        <p class="card-text">@Model.Description</p>
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-between">
+        <div>
+            <form asp-action="Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this income?')" class="d-inline-block">
+                <input type="hidden" name="incomeId" value="@Model.Id" />
+                <button type="submit" class="btn btn-danger me-2">Delete</button>
+            </form>
+            <form asp-action="Edit" method="get" class="d-inline-block">
+                <input type="hidden" name="incomeId" value="@Model.Id" />
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </form>
+        </div>
+        <div>
+            Start date: @Model.StartDate.ToString("yyyy-MM-dd HH:mm")
+            <br />
+            Termination date: @(Model.EndDate == DateTime.MaxValue ? "∞" : Model.EndDate.ToString("yyyy-MM-dd HH:mm"))
+        </div>
+    </div>
+</div>

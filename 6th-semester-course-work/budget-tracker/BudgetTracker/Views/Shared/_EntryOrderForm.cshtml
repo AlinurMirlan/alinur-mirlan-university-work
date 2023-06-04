@@ -1,0 +1,7 @@
+﻿@model OrderByDto
+
+<form asp-action="Order" method="post" class="form-inline align-items-center d-flex">
+    <select class="form-control" asp-for="Property" asp-items="Model.PropertyOptions" class="form-control" id="categoryId" required></select>
+    <select class="form-control flex-grow-0 mr-2" asp-for="Direction" asp-items="Model.DirectionOptions" class="form-control" id="categoryId" required></select>
+    <button type="submit" class="btn btn-primary ml-2">Sort</button>
+</form>

@@ -1,7 +1,8 @@
-using BudgetTracker.Areas.Income.Repositories;
+using AutoMapper;
 using BudgetTracker.Data;
 using BudgetTracker.Infrastructure;
 using BudgetTracker.Models;
+using BudgetTracker.Repositories;
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
@@ -13,6 +14,7 @@ var config = builder.Configuration;
 // Add services to the container.
 string connectionString = config.GetConnectionString("Default") ?? throw new InvalidOperationException("Connection string is not initialized.");
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
@@ -26,6 +28,12 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 })
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+builder.Services.AddSingleton(provider => new MapperConfiguration(cfg =>
+{
+    var contextAccessor = provider.GetRequiredService<IHttpContextAccessor>();
+    var logger = provider.GetRequiredService<ILogger<AutoMapperProfile>>();
+    cfg.AddProfile(new AutoMapperProfile(contextAccessor, logger));
+}).CreateMapper());
 builder.Services.AddHangfire(configuration => configuration
     .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
     .UseSimpleAssemblyNameTypeSerializer()
@@ -42,7 +50,8 @@ builder.Services.ConfigureApplicationCookie(config =>
     config.LoginPath = "/Auth";
 });
 builder.Services.AddAuthorization();
-builder.Services.AddScoped<IncomeRepository>();
+builder.Services.AddScoped<EntryRepository>();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -61,6 +70,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSession();
 
 app.UseHangfireDashboard();
 

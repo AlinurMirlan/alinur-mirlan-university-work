@@ -1,0 +1,43 @@
+﻿@model EntriesVm
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="d-flex flex-column">
+                <div class="mb-3">
+                    <partial name="_EntryForm" model="Model.NewEntry" />
+                </div>
+                <div class="mb-3">
+                    <partial name="_EntrySearchForm" model="Model.SearchForm" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 order-md-first">
+            <h1>Expense History</h1>
+            <div class="mb-3">
+                <partial name="_EntryOrderForm" model="Model.Order" />
+            </div>
+            <!-- Display Expense history -->
+            <div class="card-deck">
+                @foreach (var income in Model.Entries)
+                {
+                    var entryVm = new EntryVm(income, '-');
+                    <partial name="_EntryCard" model="entryVm" />
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <div page-model="@Model.PagingInfo" page-action="Index"
+                 page-class="btn" page-class-normal="btn-outline-dark"
+                 page-class-selected="btn-primary"
+                 class="btn-group m-1">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+}

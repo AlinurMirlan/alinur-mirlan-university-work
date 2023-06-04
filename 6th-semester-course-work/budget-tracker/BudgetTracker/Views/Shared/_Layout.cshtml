@@ -32,10 +32,10 @@
                                    data-bs-toggle="dropdown" aria-expanded="false">Income</a>
                                 <ul class="dropdown-menu" aria-labelledby="incomeDropdown">
                                     <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="Income" asp-action="Index">Incomes</a>
+                                        <a class="dropdown-item" asp-area="Income" asp-controller="Incomes" asp-action="Index">Incomes</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="RecurringIncome" asp-action="Index">Recurring Incomes</a>
+                                        <a class="dropdown-item" asp-area="Income" asp-controller="IncomesRec" asp-action="Index">Recurring Incomes</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" asp-area="Income" asp-controller="Categories" asp-action="Index">Categories</a>
@@ -47,13 +47,13 @@
                                    data-bs-toggle="dropdown" aria-expanded="false">Expense</a>
                                 <ul class="dropdown-menu" aria-labelledby="expenseDropdown">
                                     <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="Expense" asp-action="Index">Expenses</a>
+                                        <a class="dropdown-item" asp-area="Expense" asp-controller="Expenses" asp-action="Index">Expenses</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="RecurringExpense" asp-action="Index">Recurring Expenses</a>
+                                        <a class="dropdown-item" asp-area="Expense" asp-controller="ExpensesRec" asp-action="Index">Recurring Expenses</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="Category" asp-action="Index">Categories</a>
+                                        <a class="dropdown-item" asp-area="Expense" asp-controller="Categories" asp-action="Index">Categories</a>
                                     </li>
                                 </ul>
                             </li>

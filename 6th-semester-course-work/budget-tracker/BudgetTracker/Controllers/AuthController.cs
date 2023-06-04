@@ -27,7 +27,7 @@ namespace BudgetTracker.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(CredentialsViewModel credentials)
+        public async Task<IActionResult> Index(CredentialsVm credentials)
         {
             if (!ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace BudgetTracker.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegistrationViewModel credentials, string? returnUrl)
+        public async Task<IActionResult> Register(RegistrationVm credentials, string? returnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -70,7 +70,7 @@ namespace BudgetTracker.Controllers
             var userWithTheSameEmail = await userManager.FindByEmailAsync(user.Email!);
             if (userWithTheSameEmail is not null)
             {
-                ModelState.AddModelError(nameof(RegistrationViewModel.Email), "Email is taken.");
+                ModelState.AddModelError(nameof(RegistrationVm.Email), "Email is taken.");
                 return View();
             }
 

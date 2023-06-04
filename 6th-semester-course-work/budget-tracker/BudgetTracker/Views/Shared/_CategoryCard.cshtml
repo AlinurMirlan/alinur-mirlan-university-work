@@ -1,0 +1,33 @@
+﻿@model Category
+
+<div class="card mb-3">
+    <div class="card-header">
+        @Model.CategoryName
+    </div>
+    <div class="card-body">
+        <!-- Additional information here -->
+        <!-- Replace with your own content -->
+        <p>Additional info for @Model.CategoryName</p>
+    </div>
+    <div class="card-footer">
+        <div class="btn-group" role="group" aria-label="Actions">
+            <!-- Delete form -->
+            <form asp-action="Delete" method="post" class="me-2">
+                <input hidden name="categoryId" value="@Model.Id" />
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+
+            <!-- Edit form -->
+            <form asp-action="Edit" method="post" class="me-2">
+                <input hidden name="categoryId" value="@Model.Id" />
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </form>
+
+            <!-- More form -->
+            <form asp-action="More" method="post" class="me-2">
+                <input hidden name="categoryId" value="@Model.Id" />
+                <button type="submit" class="btn btn-secondary">More</button>
+            </form>
+        </div>
+    </div>
+</div>

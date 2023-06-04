@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <Folder Include="Areas\Income\Views\Shared\" />
   </ItemGroup>
 
 </Project>
