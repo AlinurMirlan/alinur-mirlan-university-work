@@ -5,7 +5,18 @@ namespace BudgetTracker.Models.ViewModels
 {
     public class EntrySearchFormVm
     {
-        public CriteriaDto Criteria { get; set; } = new();
-        public IEnumerable<SelectListItem> Categories { get; set; } = Enumerable.Empty<SelectListItem>();
+        public EntryName? EntryType { get; set; }
+        public EntryCriteriaDto Criteria { get; set; } = new();
+
+        private List<SelectListItem> categories = new();
+        public List<SelectListItem> Categories
+        {
+            get => categories;
+            set
+            {
+                categories = new() { new SelectListItem("", null) };
+                categories.AddRange(value);
+            } 
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace BudgetTracker.Models.ViewModels
         public EntrySearchFormVm? SearchForm { get; set; }
         public IEnumerable<Entry> Entries { get; set; } = Enumerable.Empty<Entry>();
         public required PagingInfo PagingInfo { get; set; }
+        public int? BudgetId { get; set; }
     }
 }

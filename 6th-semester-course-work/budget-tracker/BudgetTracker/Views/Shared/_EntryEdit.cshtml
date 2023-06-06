@@ -1,0 +1,27 @@
+﻿@model EntryEditVm
+
+<!-- Add Income form -->
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Edit @(Model.EntryType.HasValue ? $"{Model.EntryType}" : "Entry")</h2>
+        <form asp-action="PerformEdit" method="post">
+            <input hidden name="returnPage" value="@Model.ReturnPage" />
+            <input hidden name="returnBudgetId" value="@Model.ReturnBudgetId" />
+            <input type="hidden" asp-for="EntryDto.Id" />
+            <div class="form-group">
+                <label for="tagInput">Tags</label>
+                <input asp-for="EntryDto.StringTags" type="text" class="form-control" id="tagInput" placeholder="Enter tags">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input asp-for="EntryDto.Description" type="text" class="form-control" id="description">
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input asp-for="EntryDto.Amount" class="form-control" id="amount" required>
+                <span class="text-danger" asp-validation-for="EntryDto.Amount"></span>
+            </div>
+            <button type="submit" class="mt-2 btn btn-primary">Edit</button>
+        </form>
+    </div>
+</div>

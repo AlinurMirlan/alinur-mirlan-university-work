@@ -10,7 +10,7 @@ namespace BudgetTracker.Models.DataObjects
 
         [Required]
         [DataType(DataType.Currency, ErrorMessage = "Please, type in valid amount.")]
-        [Range(0, double.MaxValue, ErrorMessage = "Amount must be positive.")]
+        [Range(0.001, double.MaxValue, ErrorMessage = "Amount must be positive.")]
         public decimal Amount { get; set; }
         public string? Description { get; set; }
         public string? StringTags { get; set; }

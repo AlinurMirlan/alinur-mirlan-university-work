@@ -2,6 +2,6 @@
 {
     public class CategoryCriteriaDto
     {
-        public string? CategoryName { get; set; }
+        public string? Category { get; set; }
     }
 }

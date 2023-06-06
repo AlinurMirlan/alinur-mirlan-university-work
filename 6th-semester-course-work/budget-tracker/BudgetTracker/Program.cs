@@ -3,6 +3,7 @@ using BudgetTracker.Data;
 using BudgetTracker.Infrastructure;
 using BudgetTracker.Models;
 using BudgetTracker.Repositories;
+using BudgetTracker.Services;
 using Hangfire;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
@@ -51,6 +52,13 @@ builder.Services.ConfigureApplicationCookie(config =>
 });
 builder.Services.AddAuthorization();
 builder.Services.AddScoped<EntryRepository>();
+builder.Services.AddTransient(provider =>
+{
+    var logger = provider.GetRequiredService<ILogger<RecurringJobs>>();
+    var entryRepo = provider.GetRequiredService<EntryRepository>();
+    var mapper = provider.GetRequiredService<IMapper>();
+    return new RecurringJobs(entryRepo, mapper, logger);
+});
 builder.Services.AddSession();
 
 var app = builder.Build();

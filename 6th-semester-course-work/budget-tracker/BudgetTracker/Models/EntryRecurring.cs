@@ -1,5 +1,6 @@
 ﻿using BudgetTracker.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BudgetTracker.Models
@@ -18,5 +19,20 @@ namespace BudgetTracker.Models
         public Category? Category { get; set; }
         public int RecurringInterval { get; set; }
         public List<Entry> Entries { get; set; } = new List<Entry>();
+
+        [NotMapped]
+        public string StringTags 
+        {
+            get
+            {
+                string stringTags = Tags.Aggregate("", (stringTags, tag) => stringTags + $"{tag.TagName}, ");
+                if (!string.IsNullOrEmpty(stringTags))
+                {
+                    stringTags = stringTags[..^2];
+                }
+
+                return stringTags;
+            }
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace BudgetTracker.Infrastructure
         public required ViewContext ViewContext { get; set; }
 
         [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
-        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
+        public Dictionary<string, object?> PageUrlValues { get; set; } = new Dictionary<string, object?>();
         public required PagingInfo PageModel { get; set; }
         public required string PageAction { get; set; }
         public required string PageClass { get; set; }

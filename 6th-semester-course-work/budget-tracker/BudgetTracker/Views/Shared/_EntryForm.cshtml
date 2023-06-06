@@ -7,20 +7,20 @@
         <form asp-action="Index" method="post">
             <div class="form-group">
                 <label for="categoryId">Category</label>
-                <select asp-for="IncomeDto.CategoryId" asp-items="Model.Categories" class="form-control" id="categoryId" required></select>
+                <select asp-for="EntryDto.CategoryId" asp-items="Model.Categories" class="form-control" id="categoryId" required></select>
             </div>
             <div class="form-group">
                 <label for="tagInput">Tags</label>
-                <input asp-for="IncomeDto.StringTags" type="text" class="form-control" id="tagInput" placeholder="Enter tags">
+                <input asp-for="EntryDto.StringTags" type="text" class="form-control" id="tagInput" placeholder="Enter tags">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <input asp-for="IncomeDto.Description" type="text" class="form-control" id="description">
+                <input asp-for="EntryDto.Description" type="text" class="form-control" id="description">
             </div>
             <div class="form-group">
                 <label for="amount">Amount</label>
-                <input asp-for="IncomeDto.Amount" class="form-control" id="amount" required>
-                <span class="text-danger" asp-validation-for="IncomeDto.Amount"></span>
+                <input asp-for="EntryDto.Amount" class="form-control" id="amount" required>
+                <span class="text-danger" asp-validation-for="EntryDto.Amount"></span>
             </div>
             <small id="successMessage" class="d-block text-success">@TempData["Success"]</small>
             <button type="submit" class="mt-2 btn btn-primary">Add</button>

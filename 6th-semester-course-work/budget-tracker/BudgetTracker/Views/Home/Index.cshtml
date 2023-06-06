@@ -2,7 +2,42 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@model EntriesVm
+
+<div class="container">
+    <div class="row"> 
+        <div class="col-md-3">
+            <div class="d-flex flex-column">
+                <div class="mb-3">
+                    <partial name="_EntrySearchForm" model="Model.SearchForm" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 order-md-first">
+            <h1>Entry History</h1>
+            <div class="mb-3">
+                <partial name="_EntryOrderForm" model="Model.Order" />
+            </div>
+            <!-- Display Income history -->
+            <div class="card-deck">
+                @foreach (var entry in Model.Entries)
+                {
+                    <partial name="_EntryCard" model="entry" />
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <div page-model="@Model.PagingInfo" page-action="Index"
+                 page-class="btn" page-class-normal="btn-outline-dark"
+                 page-class-selected="btn-primary"
+                 class="btn-group m-1">
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+}

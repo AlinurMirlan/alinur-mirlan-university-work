@@ -2,12 +2,10 @@
 
 <div class="card mb-3">
     <div class="card-header">
-        @Model.CategoryName
+        <h2 class="display-6">@Model.CategoryName</h2>
     </div>
     <div class="card-body">
-        <!-- Additional information here -->
-        <!-- Replace with your own content -->
-        <p>Additional info for @Model.CategoryName</p>
+        <h5 class="card-title">Total expenses: @Model.TotalExpenses.ToString("C")</h5>
     </div>
     <div class="card-footer">
         <div class="btn-group" role="group" aria-label="Actions">
@@ -19,14 +17,11 @@
 
             <!-- Edit form -->
             <form asp-action="Edit" method="post" class="me-2">
-                <input hidden name="categoryId" value="@Model.Id" />
+                <input type="hidden" name="page" value="@Context.Request.Query["page"]" />
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="CategoryName" />
+                <input type="hidden" asp-for="UserId" />
                 <button type="submit" class="btn btn-primary">Edit</button>
-            </form>
-
-            <!-- More form -->
-            <form asp-action="More" method="post" class="me-2">
-                <input hidden name="categoryId" value="@Model.Id" />
-                <button type="submit" class="btn btn-secondary">More</button>
             </form>
         </div>
     </div>

@@ -16,11 +16,17 @@
     <div class="card-footer text-muted d-flex justify-content-between">
         <div>
             <form asp-action="Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this income?')" class="d-inline-block">
-                <input type="hidden" name="incomeId" value="@Model.Id" />
+                <input type="hidden" asp-for="Id" />
+                <input hidden name="page" value="@Context.Request.Query["page"]" />
                 <button type="submit" class="btn btn-danger me-2">Delete</button>
             </form>
-            <form asp-action="Edit" method="get" class="d-inline-block">
-                <input type="hidden" name="incomeId" value="@Model.Id" />
+            <form asp-action="Edit" method="post" class="d-inline-block">
+                <input hidden name="page" value="@Context.Request.Query["page"]" />
+                <input type="hidden" asp-for="Amount" />
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="Description" />
+                <input type="hidden" name="entryTypeId" value="@Model.Category?.EntryTypeId" />
+                <input type="hidden" name="stringTags" value="@Model.StringTags" />
                 <button type="submit" class="btn btn-primary">Edit</button>
             </form>
         </div>

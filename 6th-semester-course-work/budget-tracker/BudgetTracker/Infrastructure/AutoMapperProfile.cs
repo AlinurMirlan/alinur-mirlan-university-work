@@ -18,15 +18,21 @@ namespace BudgetTracker.Infrastructure
                 .ForMember(u => u.UserName, opt => opt.MapFrom(registrationModel => registrationModel.Email))
                 .ForMember(u => u.AccountBalance, opt => opt.MapFrom(registrationModel => registrationModel.InitialBalance));
             base.CreateMap<EntryDto, Entry>()
-                .ForMember(e => e.Tags, opt => opt.MapFrom(iDto => GetTags(iDto.StringTags)));
+                .ForMember(e => e.Tags, opt => opt.MapFrom(eDto => GetTags(eDto.StringTags)));
             base.CreateMap<CategoryDto, Category>();
+            base.CreateMap<Category, CategoryDto>();
             base.CreateMap<EntryRecDto, EntryRecurring>()
-                .ForMember(e => e.Tags, opt => opt.MapFrom(iDto => GetTags(iDto.StringTags)));
+                .ForMember(e => e.Tags, opt => opt.MapFrom(eDto => GetTags(eDto.StringTags)));
+            base.CreateMap<EntryRecurring, Entry>()
+                .ForMember(e => e.Id, opt => opt.MapFrom(eRec => 0));
+            base.CreateMap<Entry, EntryRecurring>();
+            base.CreateMap<BudgetDto, Budget>();
+            base.CreateMap<Budget, BudgetDto>();
         }
 
         private List<Tag> GetTags(string? stringTags)
         {
-            var tagNames = stringTags?.Split(',') ?? Enumerable.Empty<string>();
+            var tagNames = stringTags?.Split(',', StringSplitOptions.RemoveEmptyEntries) ?? Enumerable.Empty<string>();
             var incomeTags = new List<Tag>();
             var userId = contextAccessor.HttpContext?.User.GetUserId();
             if (userId is null)

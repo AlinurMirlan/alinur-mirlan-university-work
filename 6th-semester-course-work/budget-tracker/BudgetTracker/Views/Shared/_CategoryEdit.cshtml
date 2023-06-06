@@ -1,0 +1,19 @@
+﻿@model CategoryEditVm
+
+<!-- Add Income form -->
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Edit Category</h2>
+        <form asp-action="PerformEdit" method="post">
+            <input hidden name="returnPage" value="@Model.ReturnPage" />
+            <input hidden asp-for="CategoryDto.Id" />
+            <input hidden asp-for="CategoryDto.UserId" />
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input asp-for="CategoryDto.CategoryName" class="form-control" id="amount" required>
+                <span class="text-danger" asp-validation-for="CategoryDto.CategoryName"></span>
+            </div>
+            <button type="submit" class="mt-2 btn btn-primary">Edit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+﻿@model BudgetFilterVm
+
+<form asp-action="Filter" method="post" class="form-inline align-items-center d-flex">
+    <select class="form-control" asp-for="FilterOption" asp-items="Model.FilterOptions" class="form-control" required></select>
+    <button type="submit" class="btn btn-primary ml-2">Apply</button>
+</form>

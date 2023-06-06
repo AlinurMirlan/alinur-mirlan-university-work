@@ -16,16 +16,18 @@ namespace BudgetTracker.Areas.Income.Controllers
     {
         private const string SuccessfulAdditionMessage = "Successfully added.";
         private readonly int itemsPerPage;
+        private readonly string searchCriteriaKey;
         private readonly ILogger<CategoriesController> logger;
-        private readonly EntryRepository incomeRepo;
+        private readonly EntryRepository entryRepo;
         private readonly IMapper mapper;
 
         public CategoriesController(ILogger<CategoriesController> logger, EntryRepository entryRepo, IMapper mapper, IConfiguration config)
         {
             string items = config["Pagination:ItemsPerPage"] ?? throw new InvalidOperationException("Pagination settings aren't initialized.");
             itemsPerPage = int.Parse(items);
+            searchCriteriaKey = config["Session:Keys:IncomesCategoryCriteria"] ?? throw new InvalidOperationException("Session Keys settings in the configuration aren't initialized.");
             this.logger = logger;
-            this.incomeRepo = entryRepo;
+            this.entryRepo = entryRepo;
             this.mapper = mapper;
         }
 
@@ -33,7 +35,8 @@ namespace BudgetTracker.Areas.Income.Controllers
         public IActionResult Index(int page = 1)
         {
             var userId = User.GetUserId();
-            var categories = incomeRepo.GetCategories(userId, EntryName.Income, page, itemsPerPage, out int totalItems);
+            var searchCriteria = HttpContext.Session.Get<CategoryCriteriaDto>(searchCriteriaKey);
+            var categories = entryRepo.GetCategories(userId, searchCriteria?.Category, EntryName.Income, page, itemsPerPage, out int totalItems);
             var viewModel = new CategoriesVm()
             {
                 NewCategory = new() { UserId = userId },
@@ -61,7 +64,7 @@ namespace BudgetTracker.Areas.Income.Controllers
             var category = mapper.Map<Category>(categoryDto);
             try
             {
-                await incomeRepo.InsertCategoryAsync(category, EntryName.Income);
+                await entryRepo.InsertCategoryAsync(category, EntryName.Income);
             }
             catch (InvalidOperationException)
             {
@@ -77,14 +80,45 @@ namespace BudgetTracker.Areas.Income.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int categoryId)
         {
-            var category = await incomeRepo.GetCategoryAsync(categoryId);
-            if (category is null)
+            await entryRepo.DeleteCategoryAsync(categoryId);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Category category, int page = 1)
+        {
+            return View(new CategoryEditVm()
             {
-                logger.LogWarning("Attemp to delete a non-existent category with the id: {id}", categoryId);
-                return RedirectToAction(nameof(Index));
+                CategoryDto = mapper.Map<CategoryDto>(category),
+                ReturnPage = page
+            });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PerformEdit(CategoryEditVm categoryEditVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(nameof(Edit), categoryEditVm);
             }
 
-            await incomeRepo.DeleteAsync(category);
+            try
+            {
+                await entryRepo.EditCategoryAsync(mapper.Map<Category>(categoryEditVm.CategoryDto));
+            }
+            catch (InvalidOperationException)
+            {
+                ModelState.AddModelError($"{nameof(categoryEditVm.CategoryDto)}.{nameof(categoryEditVm.CategoryDto.CategoryName)}", "There is already a category with the given name.");
+                return View(nameof(Edit), categoryEditVm);
+            }
+
+            return RedirectToAction(nameof(Index), new { page = categoryEditVm.ReturnPage });
+        }
+
+        [HttpPost]
+        public IActionResult Search(CategoryCriteriaDto criteria)
+        {
+            HttpContext.Session.Set(searchCriteriaKey, criteria);
             return RedirectToAction(nameof(Index));
         }
     }

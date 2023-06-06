@@ -402,7 +402,7 @@ namespace BudgetTracker.Data.Migrations
                 name: "IX_Categories_CategoryName",
                 table: "Categories",
                 column: "CategoryName",
-                unique: true);
+                unique: false);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_EntryTypeId",
@@ -453,7 +453,7 @@ namespace BudgetTracker.Data.Migrations
                 name: "IX_Tags_TagName",
                 table: "Tags",
                 column: "TagName",
-                unique: true);
+                unique: false);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tags_UserId",

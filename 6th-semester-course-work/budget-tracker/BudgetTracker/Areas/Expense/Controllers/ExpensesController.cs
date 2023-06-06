@@ -17,27 +17,29 @@ namespace BudgetTracker.Areas.Expense.Controllers
     {
         private const string SuccessfulAdditionMessage = "Successfully added.";
         private readonly ILogger<ExpensesController> logger;
-        private readonly EntryRepository incomeRepo;
+        private readonly EntryRepository entryRepo;
         private readonly IMapper mapper;
         private readonly int itemsPerPage;
         private readonly string orderByKey;
+        private readonly string searchCriteriaKey;
 
         public ExpensesController(ILogger<ExpensesController> logger, EntryRepository entryRepo, IMapper mapper, IConfiguration config)
         {
             string items = config["Pagination:ItemsPerPage"] ?? throw new InvalidOperationException("Pagination settings in the configuration aren't initialized.");
             itemsPerPage = int.Parse(items);
             orderByKey = config["Session:Keys:ExpensesOrderBy"] ?? throw new InvalidOperationException("Session Keys settings in the configuration aren't initialized.");
+            searchCriteriaKey = config["Session:Keys:ExpensesSearchCriteria"] ?? throw new InvalidOperationException("Session Keys settings in the configuration aren't initialized.");
             this.logger = logger;
-            this.incomeRepo = entryRepo;
+            this.entryRepo = entryRepo;
             this.mapper = mapper;
         }
 
         [ImportModelState]
-        public async Task<IActionResult> Index(int page = 1)
+        public async Task<IActionResult> Index(int page = 1, int? budgetId = null)
         {
             var userId = User.GetUserId();
             List<SelectListItem> selectCategories = new();
-            foreach (var category in incomeRepo.GetCategories(userId, EntryName.Expense))
+            foreach (var category in entryRepo.GetCategories(userId, EntryName.Expense))
             {
                 selectCategories.Add(new(category.CategoryName, category.Id.ToString()));
             }
@@ -49,8 +51,9 @@ namespace BudgetTracker.Areas.Expense.Controllers
                 HttpContext.Session.Set(orderByKey, orderBy);
             }
 
+            var searchCriteria = HttpContext.Session.Get<EntryCriteriaDto>(searchCriteriaKey);
             OrderBy order = (OrderBy)(orderBy.Property | orderBy.Direction);
-            var (totalItems, incomes) = await incomeRepo.GetEntriesAsync(order, userId, EntryName.Expense, page, itemsPerPage);
+            var (totalItems, incomes) = await entryRepo.GetEntriesAsync(order, searchCriteria, userId, budgetId, EntryName.Expense, page, itemsPerPage);
             var pagingInfo = new PagingInfo()
             {
                 CurrentPage = page,
@@ -60,10 +63,11 @@ namespace BudgetTracker.Areas.Expense.Controllers
             return View(new EntriesVm()
             {
                 NewEntry = new() { Categories = selectCategories, EntryType = EntryName.Expense },
-                SearchForm = new() { Categories = selectCategories },
+                SearchForm = new() { Criteria = searchCriteria ?? new EntryCriteriaDto(), Categories = selectCategories, EntryType = EntryName.Expense },
                 Entries = incomes,
                 Order = orderBy,
-                PagingInfo = pagingInfo
+                PagingInfo = pagingInfo,
+                BudgetId = budgetId
             });
         }
 
@@ -76,15 +80,14 @@ namespace BudgetTracker.Areas.Expense.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            if (incomeForm.IncomeDto is null)
+            if (incomeForm.EntryDto is null)
             {
                 logger.LogError("Income instance of the Income form is null.");
                 return RedirectToAction(nameof(Index));
             }
 
-            var userId = User.GetUserId();
-            var income = mapper.Map<Entry>(incomeForm.IncomeDto);
-            await incomeRepo.InsertEntryAsync(userId, income);
+            var income = mapper.Map<Entry>(incomeForm.EntryDto);
+            await entryRepo.InsertEntryAsync(income);
             TempData["Success"] = SuccessfulAdditionMessage;
             return RedirectToAction(nameof(Index));
         }
@@ -111,6 +114,59 @@ namespace BudgetTracker.Areas.Expense.Controllers
 
             HttpContext.Session.Set(orderByKey, orderDto);
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public IActionResult Search(EntrySearchFormVm searchForm)
+        {
+            HttpContext.Session.Set(searchCriteriaKey, searchForm.Criteria);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public IActionResult ResetSearch(EntrySearchFormVm searchForm)
+        {
+            HttpContext.Session.Remove(searchCriteriaKey);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(Entry entry, int page = 1, int? budgetId = null)
+        {
+            await entryRepo.DeleteEntryAsync(entry);
+            return RedirectToAction(nameof(Index), new { page, budgetId });
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Entry entry, string stringTags, int entryTypeId, int page = 1, int? budgetId = null)
+        {
+            EntryDto entryDto = new()
+            {
+                Id = entry.Id,
+                Description = entry.Description,
+                StringTags = stringTags,
+                Amount = entry.Amount
+            };
+
+            return View(new EntryEditVm()
+            {
+                EntryDto = entryDto,
+                EntryType = (EntryName)entryTypeId,
+                ReturnPage = page,
+                ReturnBudgetId = budgetId
+            });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PerformEdit(EntryEditVm entryEditVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(nameof(Edit), entryEditVm);
+            }
+
+            await entryRepo.EditEntryAsync(mapper.Map<Entry>(entryEditVm.EntryDto));
+            return RedirectToAction(nameof(Index), new { page = entryEditVm.ReturnPage });
         }
     }
 }

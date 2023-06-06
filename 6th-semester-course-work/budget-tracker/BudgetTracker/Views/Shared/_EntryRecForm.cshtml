@@ -3,8 +3,8 @@
 <!-- Add Income form -->
 <div class="card">
     <div class="card-body">
-        <h2 class="card-title">Add Recurring Income</h2>
-        <form asp-action="Recurring" method="post">
+        <h2 class="card-title">Add Recurring @Model.EntryType</h2>
+        <form asp-action="Index" method="post">
             <div class="form-group">
                 <label for="categoryId">Category</label>
                 <select asp-for="EntryRecDto.CategoryId" asp-items="Model.Categories" class="form-control" id="categoryId" required></select>
@@ -25,10 +25,12 @@
             <div class="form-group">
                 <label for="recurringInterval">Interval in days</label>
                 <input asp-for="EntryRecDto.RecurringInterval" type="number" class="form-control" id="description">
+                <span class="text-danger" asp-validation-for="EntryRecDto.RecurringInterval"></span>
             </div>
             <div class="form-group">
                 <label for="endDate">Termination date</label>
                 <input asp-for="EntryRecDto.EndDate" class="form-control" id="description">
+                <span class="text-danger" asp-validation-for="EntryRecDto.EndDate"></span>
             </div>
             <small id="successMessage" class="d-block text-success">@TempData["Success"]</small>
             <button type="submit" class="mt-2 btn btn-primary">Add</button>

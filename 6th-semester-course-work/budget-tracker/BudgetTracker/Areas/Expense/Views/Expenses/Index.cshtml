@@ -19,10 +19,9 @@
             </div>
             <!-- Display Expense history -->
             <div class="card-deck">
-                @foreach (var income in Model.Entries)
+                @foreach (var entry in Model.Entries)
                 {
-                    var entryVm = new EntryVm(income, '-');
-                    <partial name="_EntryCard" model="entryVm" />
+                    <partial name="_EntryCard" model="entry" />
                 }
             </div>
         </div>
@@ -32,6 +31,7 @@
             <div page-model="@Model.PagingInfo" page-action="Index"
                  page-class="btn" page-class-normal="btn-outline-dark"
                  page-class-selected="btn-primary"
+                 page-url-budgetId="@Model.BudgetId"
                  class="btn-group m-1">
             </div>
         </div>

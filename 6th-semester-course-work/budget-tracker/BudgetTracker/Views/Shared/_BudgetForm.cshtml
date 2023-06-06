@@ -1,0 +1,22 @@
+﻿@model BudgetFormVm
+
+<!-- Add Budget form -->
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Add Budget</h2>
+        <form asp-action="Index" method="post">
+            <div class="form-group">
+                <label for="categoryId">Category</label>
+                <select asp-for="BudgetDto.CategoryId" asp-items="Model.Categories" class="form-control" id="categoryId" required></select>
+                <span class="text-danger" asp-validation-for="BudgetDto.CategoryId"></span>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input asp-for="BudgetDto.Amount" class="form-control" id="amount" required>
+                <span class="text-danger" asp-validation-for="BudgetDto.Amount"></span>
+            </div>
+            <small id="successMessage" class="d-block text-success">@TempData["Success"]</small>
+            <button type="submit" class="mt-2 btn btn-primary">Add</button>
+        </form>
+    </div>
+</div>

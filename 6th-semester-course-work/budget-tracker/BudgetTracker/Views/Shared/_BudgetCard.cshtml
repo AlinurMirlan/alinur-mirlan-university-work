@@ -1,0 +1,45 @@
+﻿@model BudgetVm
+
+<div class="card mb-3">
+    <div class="card-header d-flex justify-content-between">
+        <h2 class="display-6">@Model.Budget.Category?.CategoryName</h2>
+        <span>Amount: @Model.Budget.Amount.ToString("C")</span>
+    </div>
+    <div class="card-body">
+        @{
+            var totalExpenses = Model.Budget.Entries.Sum(e => e.Amount);
+        }
+        <h5 class="card-title">Expenses: @totalExpenses.ToString("C")</h5>
+        Expenses consitute @((totalExpenses / Model.Budget.Amount).ToString("P")) of the budget
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-between">
+        <div>
+            @if (Model.FilterOption == FilterOption.All)
+            {
+                <form asp-action="Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this budget?')" class="d-inline-block">
+                    <input type="hidden" asp-for="Budget.Id" />
+                    <input hidden name="page" value="@Context.Request.Query["page"]" />
+                    <button type="submit" class="btn btn-danger me-2">Delete</button>
+                </form>
+            }
+            else if (Model.FilterOption == FilterOption.Active)
+            {
+                <form asp-action="Close" method="post" onsubmit="return confirm('Are you sure you want to close this budget?')" class="d-inline-block">
+                    <input type="hidden" name="categoryId" value="@Model.Budget.CategoryId" />
+                    <button type="submit" class="btn btn-danger me-2">Close</button>
+                </form>
+            }
+            <form asp-action="Edit" method="post" class="d-inline-block">
+                <input type="hidden" asp-for="Budget.Id"/>
+                <input type="hidden" asp-for="Budget.Amount"/>
+                <input type="hidden" name="page" value="@Context.Request.Query["page"]" />
+                <button type="submit" class="btn btn-primary me-2">Edit</button>
+            </form>
+            <form asp-area="Expense" asp-controller="Expenses" asp-action="Index" method="get" class="d-inline-block">
+                <input type="hidden" name="budgetId" value="@Model.Budget.Id" />
+                <button type="submit" class="btn btn-info">Expenses</button>
+            </form>
+        </div>
+        <div>@Model.Budget.Date.ToString("yyyy-MM-dd HH:mm")</div>
+    </div>
+</div>

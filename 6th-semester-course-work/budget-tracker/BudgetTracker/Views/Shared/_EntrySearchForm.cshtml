@@ -3,8 +3,8 @@
 <!-- Search form -->
 <div class="card">
     <div class="card-body">
-        <h2 class="card-title">Search Incomes</h2>
-        <form asp-action="Search" method="get">
+        <h2 class="card-title">Search @(Model.EntryType.HasValue ? $"{Model.EntryType}s" : "Entries")</h2>
+        <form asp-action="Search" method="post">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
@@ -19,10 +19,13 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="categoryId">Category</label>
-                <select asp-for="Criteria.CategoryId" asp-items="Model.Categories" class="form-control" id="categoryId"></select>
-            </div>
+            @if (Model.Categories.Count > 1)
+            {
+                <div class="form-group">
+                    <label for="categoryId">Category</label>
+                    <select asp-for="Criteria.CategoryId" asp-items="Model.Categories" class="form-control" id="categoryId"></select>
+                </div>
+            }
             <div class="form-group">
                 <label for="tagInput">Tags</label>
                 <input asp-for="Criteria.StringTags" type="text" class="form-control" id="tagInput" placeholder="Enter tags">
@@ -31,7 +34,10 @@
                 <label for="description">Description</label>
                 <input asp-for="Criteria.Description" type="text" class="form-control" id="description">
             </div>
-            <button type="submit" class="mt-2 btn btn-primary">Search</button>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="mt-2 btn btn-primary">Search</button>
+                <button asp-action="ResetSearch" type="submit" class="mt-2 btn btn-secondary">Reset</button>
+            </div>
         </form>
     </div>
 </div>
